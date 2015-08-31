@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Daishi.PayPal {
     public class PayPalAdapter {
-        public string GetExpressCheckoutToken(SetExpressCheckoutPayload setExpressCheckoutPayload,
+        public string SetExpressCheckout(SetExpressCheckoutPayload setExpressCheckoutPayload,
             Encoding encoding, string setExpressCheckoutURI) {
 
             var nvc = new NameValueCollection {
@@ -46,6 +46,11 @@ namespace Daishi.PayPal {
             }
 
             return tokenPair[1];
+        }
+
+        public string GetExpressCheckoutDetails() {
+
+            return null;
         }
     }
 }

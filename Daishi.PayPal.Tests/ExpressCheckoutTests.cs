@@ -27,7 +27,7 @@ namespace Daishi.PayPal.Tests {
 
             var payPalAdapter = new PayPalAdapter();
 
-            var token = payPalAdapter.GetExpressCheckoutToken(new SetExpressCheckoutPayload {
+            var token = payPalAdapter.SetExpressCheckout(new SetExpressCheckoutPayload {
                 User = _user,
                 Password = _password,
                 Signature = _signature,
@@ -41,6 +41,6 @@ namespace Daishi.PayPal.Tests {
             }, Encoding.UTF8, _setExpressCheckoutURI);
 
             Assert.IsNotNullOrEmpty(token);
-        }      
+        }
     }
 }

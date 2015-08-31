@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExpressCheckoutDetails.cs" />
     <Compile Include="ExpressCheckoutPayload.cs" />
     <Compile Include="GetExpressCheckoutDetailsPayload.cs" />
     <Compile Include="PayPalAdapter.cs">
