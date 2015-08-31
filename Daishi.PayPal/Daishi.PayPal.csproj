@@ -44,7 +44,6 @@
     <Compile Include="PayPalAdapter.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PayPalException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetExpressCheckoutPayload.cs" />
   </ItemGroup>

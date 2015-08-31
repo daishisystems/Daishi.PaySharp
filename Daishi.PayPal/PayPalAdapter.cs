@@ -25,34 +25,27 @@ namespace Daishi.PayPal {
                 {"returnUrl", setExpressCheckoutPayload.ReturnUrl}
             };
 
-            try {
-                string tokenResponse;
+            string tokenResponse;
 
-                using (var webClient = new WebClient()) {
-                    tokenResponse = encoding.GetString(webClient.UploadValues(
-                        setExpressCheckoutURI, nvc));
-                }
-
-                var parsedTokenResponse = tokenResponse.Split(new[] {'&'},
-                    StringSplitOptions.RemoveEmptyEntries);
-
-                if (parsedTokenResponse.Length.Equals(0)) {
-                    throw new FormatException("PayPal token response could not be parsed.");
-                }
-
-                var tokenPair = parsedTokenResponse[0].Split('=');
-
-                if (!tokenPair.Length.Equals(2)) {
-                    throw new FormatException("PayPal token response is invalid.");
-                }
-
-                return tokenPair[1];
+            using (var webClient = new WebClient()) {
+                tokenResponse = encoding.GetString(webClient.UploadValues(
+                    setExpressCheckoutURI, nvc));
             }
-            catch (Exception exception) {
-                throw new PayPalException(
-                    "An exception occurred while retrieving an Express Checkout Token.",
-                    exception);
+
+            var parsedTokenResponse = tokenResponse.Split(new[] {'&'},
+                StringSplitOptions.RemoveEmptyEntries);
+
+            if (parsedTokenResponse.Length.Equals(0)) {
+                throw new FormatException("PayPal token response could not be parsed.");
             }
+
+            var tokenPair = parsedTokenResponse[0].Split('=');
+
+            if (!tokenPair.Length.Equals(2)) {
+                throw new FormatException("PayPal token response is invalid.");
+            }
+
+            return tokenPair[1];
         }
     }
 }
