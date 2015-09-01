@@ -1,5 +1,5 @@
 namespace Daishi.PayPal {
-    public class ExpressCheckoutDetails {
+    public class CustomerDetails {
         public string Token { get; set; }
         public string BillingAgreementAcceptedStatus { get; set; }
         public string CheckoutStatus { get; set; }
@@ -39,11 +39,11 @@ namespace Daishi.PayPal {
         public string PaymentRequestInsuranceOptionOffered { get; set; }
         public string PaymentRequestShipToName { get; set; }
         public string PaymentRequestShipToStreet { get; set; }
-        public string PaymentRequestshiptoCity { get; set; }
+        public string PaymentRequestShipToCity { get; set; }
         public string PaymentRequestShipToState { get; set; }
-        public string PaymentRequestShiptoZip { get; set; }
-        public string PaymentRequestShiptoCountryCode { get; set; }
-        public string PaymentRequestShiptoCountryName { get; set; }
+        public string PaymentRequestShipToZip { get; set; }
+        public string PaymentRequestShipToCountryCode { get; set; }
+        public string PaymentRequestShipToCountryName { get; set; }
         public string PaymentRequestAddressStatus { get; set; }
         public string PaymentRequestInfoErrorCode { get; set; }
     }

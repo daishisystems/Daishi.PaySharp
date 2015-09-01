@@ -42,5 +42,17 @@ namespace Daishi.PayPal.Tests {
 
             Assert.IsNotNullOrEmpty(token);
         }
+
+        [Test]
+        public void PayPalAdapterParsesGetExpressCheckoutDetails() {
+
+            var customerDetails = Resource.CustomerDetails;
+            var payPalAdapter = new PayPalAdapter();
+
+            var parsed = payPalAdapter.ParseCustomerDetails(customerDetails);
+
+            StringAssert.AreEqualIgnoringCase("EC-080143372V8487112", parsed.Token);
+            StringAssert.AreEqualIgnoringCase("0", parsed.BillingAgreementAcceptedStatus);
+        }
     }
 }
