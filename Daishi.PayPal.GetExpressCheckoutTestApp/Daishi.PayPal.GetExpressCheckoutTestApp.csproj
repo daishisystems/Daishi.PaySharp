@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E4365ED6-672C-4498-80D1-968904E578E6}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{5100D91D-C256-420A-BDDE-9514BCB9B10E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Daishi.PayPal</RootNamespace>
-    <AssemblyName>Daishi.PayPal</AssemblyName>
+    <RootNamespace>Daishi.PayPal.GetExpressCheckoutTestApp</RootNamespace>
+    <AssemblyName>Daishi.PayPal.GetExpressCheckoutTestApp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,8 +33,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,17 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerDetails.cs" />
-    <Compile Include="ExpressCheckoutPayload.cs" />
-    <Compile Include="GetExpressCheckoutDetailsPayload.cs" />
-    <Compile Include="GetExpressCheckoutDetailsPayPalError.cs" />
-    <Compile Include="PayPalAdapter.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PayPalError.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SetExpressCheckoutPayload.cs" />
-    <Compile Include="SetExpressCheckoutPayPalError.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Daishi.PayPal\Daishi.PayPal.csproj">
+      <Project>{e4365ed6-672c-4498-80d1-968904e578e6}</Project>
+      <Name>Daishi.PayPal</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

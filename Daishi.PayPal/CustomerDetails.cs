@@ -1,6 +1,6 @@
 namespace Daishi.PayPal {
     public class CustomerDetails {
-        public string Token { get; set; }
+        public string AccessToken { get; set; }
         public string BillingAgreementAcceptedStatus { get; set; }
         public string CheckoutStatus { get; set; }
         public string TimeStamp { get; set; }

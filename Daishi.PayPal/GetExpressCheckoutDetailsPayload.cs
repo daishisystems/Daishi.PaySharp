@@ -1,5 +1,5 @@
 namespace Daishi.PayPal {
     public class GetExpressCheckoutDetailsPayload : ExpressCheckoutPayload {
-        public string Token { get; set; }
+        public string AccessToken { get; set; }
     }
 }
