@@ -119,6 +119,14 @@
   </resheader>
   <data name="CustomerDetails" xml:space="preserve">
     <value>TOKEN=EC%2d080143372V8487112&amp;BILLINGAGREEMENTACCEPTEDSTATUS=0&amp;CHECKOUTSTATUS=PaymentActionNotInitiated&amp;TIMESTAMP=2015%2d08%2d31T11%3a07%3a13Z&amp;CORRELATIONID=cdb26170126a4&amp;ACK=Success&amp;VERSION=93&amp;BUILD=000000&amp;EMAIL=daishi%2esystems%2dbuyer%40gmail%2ecom&amp;PAYERID=UPMHHXJ72R4EG&amp;PAYERSTATUS=verified&amp;FIRSTNAME=test&amp;LASTNAME=buyer&amp;COUNTRYCODE=US&amp;SHIPTONAME=test%20buyer&amp;SHIPTOSTREET=1%20Main%20St&amp;SHIPTOCITY=San%20Jose&amp;SHIPTOSTATE=CA&amp;SHIPTOZIP=95131&amp;SHIPTOCOUNTRYCODE=US&amp;SHIPTOCOUNTRYNAME=United%20States&amp;ADDRESSSTATUS=Confirmed&amp;CURRENCYCODE=USD&amp;AMT=19%2e00&amp;SHIPPINGAMT=0%2e00&amp;HANDLINGAMT=0%2e00&amp;TAXAMT=0%2e00&amp;INSURANCEAMT=0%2e00&amp;SHIPDISCAMT=0%2e00&amp;PAYMENTREQUEST_0_CURRENCYCODE=USD&amp;PAYMENTREQUEST_0_AMT=19%2e00&amp;PAYMENTREQUEST_0_SHIPPINGAMT=0%2e00&amp;PAYMENTREQUEST_0_HANDLINGAMT=0%2e00&amp;PAYMENTREQUEST_0_TAXAMT=0%2e00&amp;PAYMENTREQUEST_0_INSURANCEAMT=0%2e00&amp;PAYMENTREQUEST_0_SHIPDISCAMT=0%2e00&amp;PAYMENTREQUEST_0_INSURANCEOPTIONOFFERED=false&amp;PAYMENTREQUEST_0_SHIPTONAME=test%20buyer&amp;PAYMENTREQUEST_0_SHIPTOSTREET=1%20Main%20St&amp;PAYMENTREQUEST_0_SHIPTOCITY=San%20Jose&amp;PAYMENTREQUEST_0_SHIPTOSTATE=CA&amp;PAYMENTREQUEST_0_SHIPTOZIP=95131&amp;PAYMENTREQUEST_0_SHIPTOCOUNTRYCODE=US&amp;PAYMENTREQUEST_0_SHIPTOCOUNTRYNAME=United%20States&amp;PAYMENTREQUEST_0_ADDRESSSTATUS=Confirmed&amp;PAYMENTREQUESTINFO_0_ERRORCODE=0</value>
-    <comment>Sample Customer Details output as a result of running GetExpressCheckoutDetails.</comment>
+    <comment>Sample successful output as a result of calling GetExpressCheckoutDetails.</comment>
+  </data>
+  <data name="InvalidSetExpressCheckout" xml:space="preserve">
+    <value>TIMESTAMP=2015%2d09%2d02T16%3a19%3a49Z&amp;CORRELATIONID=d594df3b6b673&amp;ACK=Failure&amp;VERSION=78&amp;BUILD=000000&amp;L_ERRORCODE0=10002&amp;L_SHORTMESSAGE0=Security%20error&amp;L_LONGMESSAGE0=Security%20header%20is%20not%20valid&amp;L_SEVERITYCODE0=Error</value>
+    <comment>Sample unsuccessful output as a result of calling SetExpressCheckout.</comment>
+  </data>
+  <data name="SetExpressCheckout" xml:space="preserve">
+    <value>TOKEN=EC%2d8JV062580S765292N&amp;TIMESTAMP=2015%2d09%2d02T16%3a04%3a05Z&amp;CORRELATIONID=6fccea464cc20&amp;ACK=Success&amp;VERSION=78&amp;BUILD=000000</value>
+    <comment>Sample successful output as a result of calling SetExpressCheckout.</comment>
   </data>
 </root>

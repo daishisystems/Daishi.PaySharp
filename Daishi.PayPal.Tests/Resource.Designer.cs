@@ -68,5 +68,23 @@ namespace Daishi.PayPal.Tests {
                 return ResourceManager.GetString("CustomerDetails", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TIMESTAMP=2015%2d09%2d02T16%3a19%3a49Z&amp;CORRELATIONID=d594df3b6b673&amp;ACK=Failure&amp;VERSION=78&amp;BUILD=000000&amp;L_ERRORCODE0=10002&amp;L_SHORTMESSAGE0=Security%20error&amp;L_LONGMESSAGE0=Security%20header%20is%20not%20valid&amp;L_SEVERITYCODE0=Error.
+        /// </summary>
+        internal static string InvalidSetExpressCheckout {
+            get {
+                return ResourceManager.GetString("InvalidSetExpressCheckout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TOKEN=EC%2d8JV062580S765292N&amp;TIMESTAMP=2015%2d09%2d02T16%3a04%3a05Z&amp;CORRELATIONID=6fccea464cc20&amp;ACK=Success&amp;VERSION=78&amp;BUILD=000000.
+        /// </summary>
+        internal static string SetExpressCheckout {
+            get {
+                return ResourceManager.GetString("SetExpressCheckout", resourceCulture);
+            }
+        }
     }
 }

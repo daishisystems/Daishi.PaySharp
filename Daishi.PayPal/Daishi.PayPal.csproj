@@ -48,6 +48,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PayPalError.cs" />
+    <Compile Include="PayPalUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetExpressCheckoutPayload.cs" />
     <Compile Include="SetExpressCheckoutPayPalError.cs" />

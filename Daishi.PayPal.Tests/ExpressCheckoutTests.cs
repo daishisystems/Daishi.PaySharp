@@ -1,7 +1,5 @@
 ﻿#region Includes
 
-using System.Configuration;
-using System.Text;
 using NUnit.Framework;
 
 #endregion
@@ -10,49 +8,34 @@ namespace Daishi.PayPal.Tests {
 
     [TestFixture]
     internal class ExpressCheckoutTests {
+        #region Passing Tests
 
-        private string _user, _password, _signature, _setExpressCheckoutURI;
+        [Test]
+        public void PayPalUtilityParsesSetExpressCheckout() {
 
-        [TestFixtureSetUp]
-        public void Init() {
+            string accesstoken;
+            SetExpressCheckoutPayPalError error;
 
-            _user = ConfigurationManager.AppSettings["User"];
-            _password = ConfigurationManager.AppSettings["Password"];
-            _signature = ConfigurationManager.AppSettings["Signature"];
-            _setExpressCheckoutURI = ConfigurationManager.AppSettings["SetExpressCheckoutURI"];
+            var methodCompletedOK = PayPalUtility.TryParseAccessToken(
+                Resource.SetExpressCheckout, out accesstoken, out error);
+
+            Assert.IsTrue(methodCompletedOK);
+            Assert.IsNull(error);
+
+            Assert.AreEqual("EC-8JV062580S765292N", accesstoken);
         }
 
         [Test]
-        public void PayPalAdapterReturnsExpressCheckoutToken() {
-
-            var payPalAdapter = new PayPalAdapter();
-
-            var token = PayPalAdapter.SetExpressCheckout(new SetExpressCheckoutPayload {
-                User = _user,
-                Password = _password,
-                Signature = _signature,
-                Method = "SetExpressCheckout",
-                Version = "78",
-                Action = "SALE",
-                Amount = "19",
-                CurrencyCode = "USD",
-                CancelUrl = string.Empty,
-                ReturnUrl = string.Empty
-            }, Encoding.UTF8, _setExpressCheckoutURI);
-
-            Assert.IsNotNullOrEmpty(token);
-        }
-
-        [Test]
-        public void PayPalAdapterParsesGetExpressCheckoutDetails() {            
+        public void PayPalUtilityParsesGetExpressCheckoutDetails() {
 
             CustomerDetails customerDetails;
-            PayPalError error;
+            GetExpressCheckoutDetailsPayPalError error;
 
-            var methodCompletedOK = PayPalAdapter.TryParseCustomerDetails(
+            var methodCompletedOK = PayPalUtility.TryParseCustomerDetails(
                 Resource.CustomerDetails, out customerDetails, out error);
 
             Assert.IsTrue(methodCompletedOK);
+            Assert.IsNull(error);
 
             Assert.AreEqual("EC-080143372V8487112", customerDetails.AccessToken);
             Assert.AreEqual("0", customerDetails.BillingAgreementAcceptedStatus);
@@ -100,5 +83,32 @@ namespace Daishi.PayPal.Tests {
             Assert.AreEqual("Confirmed", customerDetails.PaymentRequestAddressStatus);
             Assert.AreEqual("0", customerDetails.PaymentRequestInfoErrorCode);
         }
+
+        #endregion
+
+        #region Failing Tests
+
+        [Test]
+        public void PayPalUtilityParsesInvalidSetExpressCheckout() {
+
+            string accesstoken;
+            SetExpressCheckoutPayPalError error;
+
+            var methodCompletedOK = PayPalUtility.TryParseAccessToken(
+                Resource.InvalidSetExpressCheckout, out accesstoken, out error);
+
+            Assert.IsFalse(methodCompletedOK);
+            Assert.IsNull(accesstoken);
+
+            Assert.AreEqual("2015-09-02T16:19:49Z", error.Timestamp);
+            Assert.AreEqual("d594df3b6b673", error.CorrelationID);
+            Assert.AreEqual("Failure", error.Ack);
+            Assert.AreEqual("10002", error.ErrorCode);
+            Assert.AreEqual("Security error", error.ShortMessage);
+            Assert.AreEqual("Security header is not valid", error.LongMessage);
+            Assert.AreEqual("Error", error.SeverityCode);
+        }
+
+        #endregion
     }
 }

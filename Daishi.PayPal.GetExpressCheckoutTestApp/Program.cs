@@ -23,9 +23,10 @@ namespace Daishi.PayPal.GetExpressCheckoutTestApp {
             Console.WriteLine("Waiting for PayPal...");
 
             try {
+                var payPalAdapter = new PayPalAdapter();
 
                 // Don't need to await to fulfil test objective.
-                var getExpressCheckoutDetails = PayPalAdapter.GetExpressCheckoutDetailsAsync(
+                var getExpressCheckoutDetails = payPalAdapter.GetExpressCheckoutDetailsAsync(
                     new GetExpressCheckoutDetailsPayload {
                         User = ConfigurationManager.AppSettings["User"],
                         Password = ConfigurationManager.AppSettings["Password"],
@@ -36,13 +37,12 @@ namespace Daishi.PayPal.GetExpressCheckoutTestApp {
                     }, ConfigurationManager.AppSettings["GetExpressCheckoutURI"]);
 
                 CustomerDetails customerDetails;
-                PayPalError payPalError;
+                GetExpressCheckoutDetailsPayPalError payPalError;
 
-                var ok = PayPalAdapter.TryParseCustomerDetails(
+                var ok = PayPalUtility.TryParseCustomerDetails(
                     getExpressCheckoutDetails.Result, out customerDetails, out payPalError);
 
                 if (ok) {
-
                     Console.Write("GETEXPRESSCHECKOUTDETAILS: ");
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.Write("OK");

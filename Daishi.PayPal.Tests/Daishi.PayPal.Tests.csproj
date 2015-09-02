@@ -54,9 +54,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Daishi.PayPal.Tests.dll.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
