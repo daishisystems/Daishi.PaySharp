@@ -10,30 +10,30 @@ using System.Web;
 
 namespace Daishi.PayPal {
     public class PayPalAdapter {
-        public string SetExpressCheckout(SetExpressCheckoutPayload setExpressCheckoutPayload,
+        public string SetExpressCheckout(SetExpressCheckoutPayload payload,
             Encoding encoding, string setExpressCheckoutURI) {
 
             var nvc = new NameValueCollection {
-                {"USER", setExpressCheckoutPayload.User},
-                {"PWD", setExpressCheckoutPayload.Password},
-                {"SIGNATURE", setExpressCheckoutPayload.Signature},
-                {"METHOD", setExpressCheckoutPayload.Method},
-                {"VERSION", setExpressCheckoutPayload.Version},
-                {"PAYMENTREQUEST_0_PAYMENTACTION", setExpressCheckoutPayload.Action},
-                {"PAYMENTREQUEST_0_AMT", setExpressCheckoutPayload.Amount},
-                {"PAYMENTREQUEST_0_CURRENCYCODE", setExpressCheckoutPayload.CurrencyCode},
-                {"cancelUrl", setExpressCheckoutPayload.CancelUrl},
-                {"returnUrl", setExpressCheckoutPayload.ReturnUrl}
+                {"USER", payload.User},
+                {"PWD", payload.Password},
+                {"SIGNATURE", payload.Signature},
+                {"METHOD", payload.Method},
+                {"VERSION", payload.Version},
+                {"PAYMENTREQUEST_0_PAYMENTACTION", payload.Action},
+                {"PAYMENTREQUEST_0_AMT", payload.Amount},
+                {"PAYMENTREQUEST_0_CURRENCYCODE", payload.CurrencyCode},
+                {"cancelUrl", payload.CancelUrl},
+                {"returnUrl", payload.ReturnUrl}
             };
 
-            string tokenResponse;
+            string response;
 
             using (var webClient = new WebClient()) {
-                tokenResponse = encoding.GetString(webClient.UploadValues(
+                response = encoding.GetString(webClient.UploadValues(
                     setExpressCheckoutURI, nvc));
             }
 
-            var parsedTokenResponse = tokenResponse.Split(new[] {'&'},
+            var parsedTokenResponse = response.Split(new[] {'&'},
                 StringSplitOptions.RemoveEmptyEntries);
 
             if (parsedTokenResponse.Length.Equals(0)) {
@@ -47,6 +47,24 @@ namespace Daishi.PayPal {
             }
 
             return tokenPair[1];
+        }
+
+        public string GetExpressCheckoutDetails(GetExpressCheckoutDetailsPayload payload,
+            Encoding encoding, string getExpressCheckoutUri) {
+
+            var nvc = new NameValueCollection {
+                {"USER", payload.User},
+                {"PWD", payload.Password},
+                {"SIGNATURE", payload.Signature},
+                {"METHOD", payload.Method},
+                {"VERSION", payload.Version},
+                {"TOKEN", payload.Token}
+            };
+
+            using (var webClient = new WebClient()) {
+                return encoding.GetString(webClient.UploadValues(
+                    getExpressCheckoutUri, nvc));
+            }
         }
 
         public CustomerDetails ParseCustomerDetails(string expressCheckoutDetails) {
