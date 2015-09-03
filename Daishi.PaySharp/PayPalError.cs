@@ -1,4 +1,9 @@
 ﻿namespace Daishi.PaySharp {
+
+    /// <summary>
+    ///     PayPal error metadata returned from <c>SetExpressCheckout</c> or
+    ///     <c>GetExpressCheckoutDetails</c>.
+    /// </summary>
     public class PayPalError {
         public string Timestamp { get; set; }
         public string CorrelationID { get; set; }

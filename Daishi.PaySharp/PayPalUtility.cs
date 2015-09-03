@@ -7,8 +7,78 @@ using System.Web;
 #endregion
 
 namespace Daishi.PaySharp {
+    /// <summary>
+    ///     <c>PayPalUtility</c> provides functionality designed to augment
+    ///     <see cref="PayPalAdapter" />. It provides parsing mechanisms designed
+    ///     to deserialise PayPal metadata returned by <see cref="PayPalAdapter" />
+    ///     methods.
+    ///     <remarks>
+    ///         PayPal exposes metadata in a form-urlencoded format.
+    ///         <see cref="PayPalUtility" /> provides a means to deserialise PayPal
+    ///         metadata to associated POCO.
+    ///     </remarks>
+    /// </summary>
     public static class PayPalUtility {
 
+        /// <summary>
+        ///     Parses PayPal metadata returned by <c>SetExpressCheckout</c> and returns
+        ///     the encapsulated PayPal Access Token.
+        /// </summary>
+        /// <param name="setExpressCheckoutDetails">
+        ///     PayPal metadata returned by <c>SetExpressCheckout</c>.
+        /// </param>
+        /// <param name="accessToken">PayPal API Access Token.</param>
+        /// <param name="payPalError">
+        ///     PayPal error response.
+        ///     <remarks>
+        ///         PayPalError is a POCO deserialised from a form-urlencoded HTTP response.
+        ///     </remarks>
+        /// </param>
+        /// <returns>Returns a <see cref="bool" /> value indicating success.</returns>
+        public static bool TryParseAccessToken(string setExpressCheckoutDetails,
+            out string accessToken, out PayPalError payPalError) {
+
+            var parsedExpressCheckoutDetails =
+                HttpUtility.ParseQueryString(setExpressCheckoutDetails);
+
+            if (IsErrorResponse(parsedExpressCheckoutDetails)) {
+                accessToken = parsedExpressCheckoutDetails["TOKEN"];
+
+                payPalError = null;
+                return true;
+            }
+
+            payPalError = new PayPalError {
+                Timestamp = parsedExpressCheckoutDetails["TIMESTAMP"],
+                CorrelationID = parsedExpressCheckoutDetails["CORRELATIONID"],
+                Ack = parsedExpressCheckoutDetails["ACK"],
+                ErrorCode = parsedExpressCheckoutDetails["L_ERRORCODE0"],
+                ShortMessage = parsedExpressCheckoutDetails["L_SHORTMESSAGE0"],
+                LongMessage = parsedExpressCheckoutDetails["L_LONGMESSAGE0"],
+                Build = parsedExpressCheckoutDetails["BUILD"],
+                Version = parsedExpressCheckoutDetails["VERSION"],
+                SeverityCode = parsedExpressCheckoutDetails["L_SEVERITYCODE0"]
+            };
+
+            accessToken = null;
+            return false;
+        }
+
+        /// <summary>
+        ///     Parses PayPal metadata returned by SetExpressCheckout and returns
+        ///     the encapsulated PayPal <see cref="CustomerDetails" />.
+        /// </summary>
+        /// <param name="getExpressCheckoutDetails">
+        ///     PayPal metadata returned by <c>GetExpressCheckoutDetails</c>.
+        /// </param>
+        /// <param name="customerDetails">PayPal Customer Details.</param>
+        /// <param name="payPalError">
+        ///     PayPal error response.
+        ///     <remarks>
+        ///         PayPalError is a POCO deserialised from a form-urlencoded HTTP response.
+        ///     </remarks>
+        /// </param>
+        /// <returns>Returns a <see cref="bool" /> value indicating success.</returns>
         public static bool TryParseCustomerDetails(string getExpressCheckoutDetails,
             out CustomerDetails customerDetails,
             out PayPalError payPalError) {
@@ -99,35 +169,15 @@ namespace Daishi.PaySharp {
             return false;
         }
 
-        public static bool TryParseAccessToken(string setExpressCheckoutDetails,
-            out string accessToken, out PayPalError payPalError) {
-
-            var parsedExpressCheckoutDetails =
-                HttpUtility.ParseQueryString(setExpressCheckoutDetails);
-
-            if (IsErrorResponse(parsedExpressCheckoutDetails)) {
-                accessToken = parsedExpressCheckoutDetails["TOKEN"];
-
-                payPalError = null;
-                return true;
-            }
-
-            payPalError = new PayPalError {
-                Timestamp = parsedExpressCheckoutDetails["TIMESTAMP"],
-                CorrelationID = parsedExpressCheckoutDetails["CORRELATIONID"],
-                Ack = parsedExpressCheckoutDetails["ACK"],
-                ErrorCode = parsedExpressCheckoutDetails["L_ERRORCODE0"],
-                ShortMessage = parsedExpressCheckoutDetails["L_SHORTMESSAGE0"],
-                LongMessage = parsedExpressCheckoutDetails["L_LONGMESSAGE0"],
-                Build = parsedExpressCheckoutDetails["BUILD"],
-                Version = parsedExpressCheckoutDetails["VERSION"],
-                SeverityCode = parsedExpressCheckoutDetails["L_SEVERITYCODE0"]
-            };
-
-            accessToken = null;
-            return false;
-        }
-
+        /// <summary>
+        ///     Determines whether or not the specified <see cref="NameValueCollection" />
+        ///     represents error metadata returned from PayPal.
+        /// </summary>
+        /// <param name="nvc">The <see cref="NameValueCollection" /> returned from PayPal.</param>
+        /// <returns>
+        ///     Returns a <see cref="bool" /> value indicating whether or not the specified
+        ///     <see cref="NameValueCollection" /> represents error metadata returned from PayPal.
+        /// </returns>
         private static bool IsErrorResponse(NameValueCollection nvc) {
 
             if (nvc == null || nvc.Count.Equals(0)) {

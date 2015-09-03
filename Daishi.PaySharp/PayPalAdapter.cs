@@ -12,26 +12,30 @@ using System.Web;
 
 namespace Daishi.PaySharp {
     /// <summary>
-    ///     PayPalAdapter interfaces with PayPal HTTP endpoints and provides both
+    ///     <c>PayPalAdapter</c> interfaces with PayPal HTTP endpoints and provides both
     ///     synchronous and asynchronous mechanisms that consume those endpoints.
     ///     <remarks>
-    ///         PayPal exposes metadata in a form-urlencoded PayPalAdapter
-    ///         provides a means to retrieve PayPal metadata in raw-format.
+    ///         PayPal exposes metadata in a form-urlencoded format. <c>PayPalAdapter</c>
+    ///         provides a means to retrieve such PayPal metadata in raw-format.
     ///     </remarks>
     /// </summary>
     public class PayPalAdapter {
 
         /// <summary>
-        ///     Executes PayPal's SetExpressCheckout function in order to return a
+        ///     Executes PayPal's <c>SetExpressCheckout</c> function in order to return a
         ///     PayPal Access Token.
         /// </summary>
         /// <param name="payload">
-        ///     Metadata necessary to facilitate a successful SetExpressCheckout call.
+        ///     Metadata necessary to facilitate a successful <c>SetExpressCheckout</c> call.
         ///     Payload will be converted to key-value format.
         /// </param>
-        /// <param name="encoding">Text encoding to apply during byte-to-text conversion.</param>
+        /// <param name="encoding">
+        ///     Text encoding to apply during byte-to-text conversion.
+        /// </param>
         /// <param name="expressCheckoutURI">Default PayPal ExpressCheckout HTTP URI.</param>
-        /// <returns>Raw metadata, in key-value format, containing a PayPal Access Token.</returns>
+        /// <returns>
+        ///     Raw metadata, in key-value format, containing a PayPal Access Token.
+        /// </returns>
         public string SetExpressCheckout(SetExpressCheckoutPayload payload,
             Encoding encoding, string expressCheckoutURI) {
 
@@ -83,15 +87,18 @@ namespace Daishi.PaySharp {
         }
 
         /// <summary>
-        ///     Executes PayPal's GetExpressCheckoutDetails function in order to
-        ///     return PayPal Customer Details.
+        ///     Executes PayPal's <c>GetExpressCheckoutDetails</c> function in order to
+        ///     return PayPal <see cref="CustomerDetails" />.
         /// </summary>
         /// <param name="payload">
-        ///     Metadata necessary to facilitate a successful GetExpressCheckoutDetails call.
+        ///     Metadata necessary to facilitate a successful <c>GetExpressCheckoutDetails</c> call.
         ///     Payload will be converted to key-value format.
         /// </param>
         /// <param name="expressCheckoutUri">Default PayPal ExpressCheckout HTTP URI.</param>
-        /// <returns>Raw metadata, in key-value format, containing PayPal Customer Details.</returns>
+        /// <returns>
+        ///     Raw metadata, in key-value format, containing PayPal
+        ///     <see cref="CustomerDetails" />.
+        /// </returns>
         public string GetExpressCheckoutDetails(
             GetExpressCheckoutDetailsPayload payload, string expressCheckoutUri) {
 

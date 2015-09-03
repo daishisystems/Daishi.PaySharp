@@ -1,4 +1,8 @@
 namespace Daishi.PaySharp {
+
+    /// <summary>
+    ///     PayPal customer details returned by <c>GetExpressCheckoutDetails</c>.
+    /// </summary>
     public class CustomerDetails {
         public string AccessToken { get; set; }
         public string BillingAgreementAcceptedStatus { get; set; }
