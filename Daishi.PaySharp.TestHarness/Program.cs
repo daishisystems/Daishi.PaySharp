@@ -2,44 +2,104 @@
 
 using System;
 using System.Configuration;
+using System.Text;
 
 #endregion
 
 namespace Daishi.PaySharp.TestHarness {
     internal class Program {
         private static void Main(string[] args) {
-            Console.Write("Enter PayPal Access Token: ");
-            var payPalAccessToken = Console.ReadLine();
 
-            if (string.IsNullOrEmpty(payPalAccessToken)) {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Invalid PayPal Access Token.");
+            Console.Write("Press the <return> key to run...");
+            Console.ReadLine();
 
-                Console.ReadLine();
-                return;
-            }
-
-            Console.WriteLine("Waiting for PayPal...");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Executing SETEXPRESSCHECKOUT...");
+            Console.ResetColor();
 
             try {
+                var user = ConfigurationManager.AppSettings["User"];
+                var password = ConfigurationManager.AppSettings["Password"];
+                var signature = ConfigurationManager.AppSettings["Signature"];
+
                 var payPalAdapter = new PayPalAdapter();
 
-                // Don't need to await to fulfil test objective.
-                var getExpressCheckoutDetails = payPalAdapter.GetExpressCheckoutDetailsAsync(
+                #region SETEXPRESSCHECKOUT
+
+                var setExpresscheckout = payPalAdapter.SetExpressCheckout(new SetExpressCheckoutPayload {
+                    User = user,
+                    Password = password,
+                    Signature = signature,
+                    Method = "SetExpressCheckout",
+                    Version = "78",
+                    Amount = "19",
+                    CurrencyCode = "USD",
+                    CancelUrl = "http://www.example.com/cancel.html",
+                    ReturnUrl = "http://www.example.com/success.html"
+                },
+                    Encoding.UTF8, ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
+
+                string accessToken;
+                PayPalError payPalError;
+
+                var ok = PayPalUtility.TryParseAccessToken(setExpresscheckout, out accessToken, out payPalError);
+
+                if (ok) {
+                    Console.Write("SETEXPRESSCHECKOUT: ");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("OK");
+                    Console.ResetColor();
+
+                    Console.WriteLine();
+                    Console.Write("PayPal Access Token: ");
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.Write(accessToken);
+
+                    Console.ResetColor();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                }
+                else {
+                    Console.Write("SETEXPRESSCHECKOUT: ");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("FAIL");
+                    Console.ResetColor();
+
+                    Console.WriteLine();
+                    Console.Write("PayPal Short Error Message: ");
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.Write(payPalError.ShortMessage);
+
+                    Console.ResetColor();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("Press any key to quit...");
+                    Console.ReadLine();
+                    return;
+                }
+
+                #endregion
+
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Executing GETEXPRESSCHECKOUTDETAILS...");
+                Console.ResetColor();
+
+                #region GETEXPRESSCHECKOUTDETAILS
+
+                var getExpressCheckoutDetails = payPalAdapter.GetExpressCheckoutDetails(
                     new GetExpressCheckoutDetailsPayload {
                         User = ConfigurationManager.AppSettings["User"],
                         Password = ConfigurationManager.AppSettings["Password"],
                         Signature = ConfigurationManager.AppSettings["Signature"],
                         Method = "GetExpressCheckoutDetails",
                         Version = "93",
-                        AccessToken = payPalAccessToken
-                    }, ConfigurationManager.AppSettings["GetExpressCheckoutURI"]);
+                        AccessToken = accessToken
+                    }, ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
 
                 CustomerDetails customerDetails;
-                PayPalError payPalError;
 
-                var ok = PayPalUtility.TryParseCustomerDetails(
-                    getExpressCheckoutDetails.Result, out customerDetails, out payPalError);
+                ok = PayPalUtility.TryParseCustomerDetails(
+                    getExpressCheckoutDetails, out customerDetails, out payPalError);
 
                 if (ok) {
                     Console.Write("GETEXPRESSCHECKOUTDETAILS: ");
@@ -67,6 +127,9 @@ namespace Daishi.PaySharp.TestHarness {
                 Console.ResetColor();
                 Console.WriteLine();
                 Console.WriteLine();
+
+                #endregion
+
                 Console.WriteLine("Press any key to quit...");
             }
             catch (Exception exception) {
