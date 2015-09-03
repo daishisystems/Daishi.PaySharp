@@ -37,7 +37,7 @@ namespace Daishi.PayPal.GetExpressCheckoutTestApp {
                     }, ConfigurationManager.AppSettings["GetExpressCheckoutURI"]);
 
                 CustomerDetails customerDetails;
-                GetExpressCheckoutDetailsPayPalError payPalError;
+                PayPalError payPalError;
 
                 var ok = PayPalUtility.TryParseCustomerDetails(
                     getExpressCheckoutDetails.Result, out customerDetails, out payPalError);

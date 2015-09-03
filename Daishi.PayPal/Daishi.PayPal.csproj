@@ -43,7 +43,6 @@
     <Compile Include="CustomerDetails.cs" />
     <Compile Include="ExpressCheckoutPayload.cs" />
     <Compile Include="GetExpressCheckoutDetailsPayload.cs" />
-    <Compile Include="GetExpressCheckoutDetailsPayPalError.cs" />
     <Compile Include="PayPalAdapter.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -51,7 +50,6 @@
     <Compile Include="PayPalUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetExpressCheckoutPayload.cs" />
-    <Compile Include="SetExpressCheckoutPayPalError.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

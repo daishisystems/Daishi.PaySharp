@@ -14,7 +14,7 @@ namespace Daishi.PayPal.Tests {
         public void PayPalUtilityParsesSetExpressCheckout() {
 
             string accesstoken;
-            SetExpressCheckoutPayPalError error;
+            PayPalError error;
 
             var methodCompletedOK = PayPalUtility.TryParseAccessToken(
                 Resource.SetExpressCheckout, out accesstoken, out error);
@@ -29,7 +29,7 @@ namespace Daishi.PayPal.Tests {
         public void PayPalUtilityParsesGetExpressCheckoutDetails() {
 
             CustomerDetails customerDetails;
-            GetExpressCheckoutDetailsPayPalError error;
+            PayPalError error;
 
             var methodCompletedOK = PayPalUtility.TryParseCustomerDetails(
                 Resource.CustomerDetails, out customerDetails, out error);
@@ -89,13 +89,13 @@ namespace Daishi.PayPal.Tests {
         #region Failing Tests
 
         [Test]
-        public void PayPalUtilityParsesInvalidSetExpressCheckout() {
+        public void PayPalUtilityParsesErrors() {
 
             string accesstoken;
-            SetExpressCheckoutPayPalError error;
+            PayPalError error;
 
             var methodCompletedOK = PayPalUtility.TryParseAccessToken(
-                Resource.InvalidSetExpressCheckout, out accesstoken, out error);
+                Resource.ErrorResponse, out accesstoken, out error);
 
             Assert.IsFalse(methodCompletedOK);
             Assert.IsNull(accesstoken);
@@ -107,6 +107,8 @@ namespace Daishi.PayPal.Tests {
             Assert.AreEqual("Security error", error.ShortMessage);
             Assert.AreEqual("Security header is not valid", error.LongMessage);
             Assert.AreEqual("Error", error.SeverityCode);
+            Assert.AreEqual("000000", error.Build);
+            Assert.AreEqual("78", error.Version);
         }
 
         #endregion

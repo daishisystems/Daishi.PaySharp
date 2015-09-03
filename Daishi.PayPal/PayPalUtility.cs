@@ -11,7 +11,7 @@ namespace Daishi.PayPal {
 
         public static bool TryParseCustomerDetails(string getExpressCheckoutDetails,
             out CustomerDetails customerDetails,
-            out GetExpressCheckoutDetailsPayPalError payPalError) {
+            out PayPalError payPalError) {
 
             var parsedExpressCheckoutDetails =
                 HttpUtility.ParseQueryString(getExpressCheckoutDetails);
@@ -86,7 +86,7 @@ namespace Daishi.PayPal {
                 return true;
             }
 
-            payPalError = new GetExpressCheckoutDetailsPayPalError {
+            payPalError = new PayPalError {
                 Timestamp = parsedExpressCheckoutDetails["TIMESTAMP"],
                 CorrelationID = parsedExpressCheckoutDetails["CORRELATIONID"],
                 Ack = parsedExpressCheckoutDetails["ACK"],
@@ -100,7 +100,7 @@ namespace Daishi.PayPal {
         }
 
         public static bool TryParseAccessToken(string setExpressCheckoutDetails,
-            out string accessToken, out SetExpressCheckoutPayPalError payPalError) {
+            out string accessToken, out PayPalError payPalError) {
 
             var parsedExpressCheckoutDetails =
                 HttpUtility.ParseQueryString(setExpressCheckoutDetails);
@@ -112,7 +112,7 @@ namespace Daishi.PayPal {
                 return true;
             }
 
-            payPalError = new SetExpressCheckoutPayPalError {
+            payPalError = new PayPalError {
                 Timestamp = parsedExpressCheckoutDetails["TIMESTAMP"],
                 CorrelationID = parsedExpressCheckoutDetails["CORRELATIONID"],
                 Ack = parsedExpressCheckoutDetails["ACK"],
