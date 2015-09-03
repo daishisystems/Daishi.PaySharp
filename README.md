@@ -1,2 +1,2 @@
-# Daishi.PayPal
-PayPal Express Checkout POC
+# Daishi.PaySharp
+PayPal .NET Package
