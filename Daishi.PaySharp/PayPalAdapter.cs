@@ -11,8 +11,11 @@ using System.Web;
 #endregion
 
 namespace Daishi.PaySharp {
+    /// <summary>
+    /// <
+    /// </summary>
     public class PayPalAdapter {
-
+        // todo: Document and then add DoExpressCheckout
         public string SetExpressCheckout(SetExpressCheckoutPayload payload,
             Encoding encoding, string setExpressCheckoutURI) {
 
