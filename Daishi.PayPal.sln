@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.PayPal.Tests", "Daishi.PayPal.Tests\Daishi.PayPal.Tests.csproj", "{28588A36-57D9-4D61-B364-C8EE8F60388E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.PaySharp.TestHarness", "Daishi.PaySharp.TestHarness\Daishi.PaySharp.TestHarness.csproj", "{1D817856-695C-4ECC-A1E4-0C02C0161FE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.PayPal", "Daishi.PayPal\Daishi.PayPal.csproj", "{E4365ED6-672C-4498-80D1-968904E578E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.PaySharp", "Daishi.PaySharp\Daishi.PaySharp.csproj", "{C8065B82-DF20-471E-97CB-D60ACE4CABD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.PayPal.GetExpressCheckoutTestApp", "Daishi.PayPal.GetExpressCheckoutTestApp\Daishi.PayPal.GetExpressCheckoutTestApp.csproj", "{5100D91D-C256-420A-BDDE-9514BCB9B10E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.PaySharp.UnitTests", "Daishi.PaySharp.UnitTests\Daishi.PaySharp.UnitTests.csproj", "{568B6D21-B5B0-4524-9207-205D8AFFA73B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{28588A36-57D9-4D61-B364-C8EE8F60388E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{28588A36-57D9-4D61-B364-C8EE8F60388E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{28588A36-57D9-4D61-B364-C8EE8F60388E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{28588A36-57D9-4D61-B364-C8EE8F60388E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E4365ED6-672C-4498-80D1-968904E578E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E4365ED6-672C-4498-80D1-968904E578E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E4365ED6-672C-4498-80D1-968904E578E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E4365ED6-672C-4498-80D1-968904E578E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5100D91D-C256-420A-BDDE-9514BCB9B10E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5100D91D-C256-420A-BDDE-9514BCB9B10E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5100D91D-C256-420A-BDDE-9514BCB9B10E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5100D91D-C256-420A-BDDE-9514BCB9B10E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D817856-695C-4ECC-A1E4-0C02C0161FE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D817856-695C-4ECC-A1E4-0C02C0161FE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D817856-695C-4ECC-A1E4-0C02C0161FE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D817856-695C-4ECC-A1E4-0C02C0161FE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8065B82-DF20-471E-97CB-D60ACE4CABD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8065B82-DF20-471E-97CB-D60ACE4CABD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8065B82-DF20-471E-97CB-D60ACE4CABD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8065B82-DF20-471E-97CB-D60ACE4CABD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{568B6D21-B5B0-4524-9207-205D8AFFA73B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{568B6D21-B5B0-4524-9207-205D8AFFA73B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{568B6D21-B5B0-4524-9207-205D8AFFA73B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{568B6D21-B5B0-4524-9207-205D8AFFA73B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
