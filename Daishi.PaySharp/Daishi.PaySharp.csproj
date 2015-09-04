@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="CustomerDetails.cs" />
     <Compile Include="ExpressCheckoutPayload.cs" />
+    <Compile Include="ExpressCheckoutMetadataFactory.cs" />
     <Compile Include="GetExpressCheckoutDetailsPayload.cs" />
     <Compile Include="PayPalAdapter.cs" />
     <Compile Include="PayPalError.cs" />

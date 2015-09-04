@@ -39,22 +39,13 @@ namespace Daishi.PaySharp {
         public string SetExpressCheckout(SetExpressCheckoutPayload payload,
             Encoding encoding, string expressCheckoutURI) {
 
-            var nvc = new NameValueCollection {
-                {"USER", payload.User},
-                {"PWD", payload.Password},
-                {"SIGNATURE", payload.Signature},
-                {"METHOD", payload.Method},
-                {"VERSION", payload.Version},
-                {"PAYMENTREQUEST_0_PAYMENTACTION", payload.Action},
-                {"PAYMENTREQUEST_0_AMT", payload.Amount},
-                {"PAYMENTREQUEST_0_CURRENCYCODE", payload.CurrencyCode},
-                {"cancelUrl", payload.CancelUrl},
-                {"returnUrl", payload.ReturnUrl}
-            };
+            var setExpressCheckoutMetadata =
+                ExpressCheckoutMetadataFactory.CreateSetExpressCheckoutMetadata(payload);
 
             using (var webClient = new WebClient()) {
 
-                var response = webClient.UploadValues(expressCheckoutURI, nvc);
+                var response = webClient.UploadValues(expressCheckoutURI,
+                    setExpressCheckoutMetadata);
                 return encoding.GetString(response);
             }
         }
@@ -66,22 +57,13 @@ namespace Daishi.PaySharp {
         public async Task<string> SetExpressCheckoutAsync(SetExpressCheckoutPayload payload,
             Encoding encoding, string expressCheckoutURI) {
 
-            var nvc = new NameValueCollection {
-                {"USER", payload.User},
-                {"PWD", payload.Password},
-                {"SIGNATURE", payload.Signature},
-                {"METHOD", payload.Method},
-                {"VERSION", payload.Version},
-                {"PAYMENTREQUEST_0_PAYMENTACTION", payload.Action},
-                {"PAYMENTREQUEST_0_AMT", payload.Amount},
-                {"PAYMENTREQUEST_0_CURRENCYCODE", payload.CurrencyCode},
-                {"cancelUrl", payload.CancelUrl},
-                {"returnUrl", payload.ReturnUrl}
-            };
+            var setExpressCheckoutMetadata =
+                ExpressCheckoutMetadataFactory.CreateSetExpressCheckoutMetadata(payload);
 
             using (var webClient = new WebClient()) {
 
-                var response = await webClient.UploadValuesTaskAsync(expressCheckoutURI, nvc);
+                var response = await webClient.UploadValuesTaskAsync(expressCheckoutURI,
+                    setExpressCheckoutMetadata);
                 return encoding.GetString(response);
             }
         }
