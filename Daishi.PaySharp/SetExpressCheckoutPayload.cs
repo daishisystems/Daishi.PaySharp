@@ -1,4 +1,7 @@
 namespace Daishi.PaySharp {
+    /// <summary>
+    ///     Metadata necessary to facilitate a successful <c>SetExpressCheckout</c> call.
+    /// </summary>
     public class SetExpressCheckoutPayload : ExpressCheckoutPayload {
         private string _action;
 

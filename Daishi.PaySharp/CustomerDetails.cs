@@ -1,5 +1,4 @@
 namespace Daishi.PaySharp {
-
     /// <summary>
     ///     PayPal customer details returned by <c>GetExpressCheckoutDetails</c>.
     /// </summary>
