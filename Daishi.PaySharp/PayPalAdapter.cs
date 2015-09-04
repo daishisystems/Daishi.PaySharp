@@ -1,12 +1,9 @@
 #region Includes
 
 using System;
-using System.Collections.Specialized;
-using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
 
 #endregion
 
@@ -84,17 +81,8 @@ namespace Daishi.PaySharp {
         public string GetExpressCheckoutDetails(
             GetExpressCheckoutDetailsPayload payload, string expressCheckoutUri) {
 
-            var nvc = new NameValueCollection {
-                {"USER", payload.User},
-                {"PWD", payload.Password},
-                {"SIGNATURE", payload.Signature},
-                {"METHOD", payload.Method},
-                {"VERSION", payload.Version},
-                {"TOKEN", payload.AccessToken}
-            };
-
-            var queryString = string.Join("&", nvc.AllKeys.Select(
-                i => string.Concat(i, "=", HttpUtility.UrlEncode(nvc[i]))));
+            var queryString =
+                ExpressCheckoutMetadataFactory.CreateGetExpressCheckoutDetailsQueryString(payload);
 
             using (var webClient = new WebClient()) {
 
@@ -110,17 +98,8 @@ namespace Daishi.PaySharp {
         public async Task<string> GetExpressCheckoutDetailsAsync(
             GetExpressCheckoutDetailsPayload payload, string getExpressCheckoutUri) {
 
-            var nvc = new NameValueCollection {
-                {"USER", payload.User},
-                {"PWD", payload.Password},
-                {"SIGNATURE", payload.Signature},
-                {"METHOD", payload.Method},
-                {"VERSION", payload.Version},
-                {"TOKEN", payload.AccessToken}
-            };
-
-            var queryString = string.Join("&", nvc.AllKeys.Select(
-                i => string.Concat(i, "=", HttpUtility.UrlEncode(nvc[i]))));
+            var queryString =
+                ExpressCheckoutMetadataFactory.CreateGetExpressCheckoutDetailsQueryString(payload);
 
             using (var webClient = new WebClient()) {
 
