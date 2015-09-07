@@ -10,11 +10,11 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly: AssemblyTitle("Daishi.PaySharp")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("PayPal .NET Package.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Daishi.PaySharp")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2015")]
+[assembly: AssemblyCompany("Paul Mooney")]
+[assembly: AssemblyProduct("PaySharp")]
+[assembly: AssemblyCopyright("Copyright © Paul Mooney 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
