@@ -229,3 +229,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+Daishi.PaySharp/_CreateNewNuGetPackage/Config.ps1
+Daishi.PaySharp/_CreateNewNuGetPackage/DoNotModify/New-NuGetPackage.ps1
+Daishi.PaySharp/_CreateNewNuGetPackage/DoNotModify/CreateNuGetPackage.ps1
+Daishi.PaySharp/_CreateNewNuGetPackage/DoNotModify/UploadNuGetPackage.ps1
+Daishi.PaySharp/_CreateNewNuGetPackage/RunMeToUploadNuGetPackage.cmd
