@@ -1,5 +1,4 @@
 ﻿namespace Daishi.PaySharp {
-
     /// <summary>
     ///     PayPal error metadata returned from <c>SetExpressCheckout</c> or
     ///     <c>GetExpressCheckoutDetails</c>.
