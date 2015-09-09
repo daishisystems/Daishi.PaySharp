@@ -5,8 +5,7 @@ namespace Daishi.PaySharp {
     public class SetExpressCheckoutPayload : ExpressCheckoutPayload {
         private string _action;
 
-        public string Action
-        {
+        public string Action {
             get { return string.IsNullOrEmpty(_action) ? "SALE" : _action; }
             set { _action = value; }
         }
@@ -14,5 +13,6 @@ namespace Daishi.PaySharp {
         public string CurrencyCode { get; set; }
         public string CancelUrl { get; set; }
         public string ReturnUrl { get; set; }
+        public string LocalCode { get; set; }
     }
 }

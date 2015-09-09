@@ -31,8 +31,10 @@ namespace Daishi.PaySharp.TestHarness {
                     Password = password,
                     Signature = signature,
                     Method = "SetExpressCheckout",
-                    Version = "78",
+                    Version = "108.0",
                     Amount = "19",
+                    Subject = "NJ9W2NABYSKZ6",
+                    LocalCode = "en-IE",
                     CurrencyCode = "USD",
                     CancelUrl = "http://www.example.com/cancel.html",
                     ReturnUrl = "http://www.example.com/success.html"
@@ -92,8 +94,10 @@ namespace Daishi.PaySharp.TestHarness {
                         Password = ConfigurationManager.AppSettings["Password"],
                         Signature = ConfigurationManager.AppSettings["Signature"],
                         Method = "GetExpressCheckoutDetails",
-                        Version = "93",
-                        AccessToken = accessToken
+                        Version = "108.0",
+                        AccessToken = accessToken,
+                        Subject = "NJ9W2NABYSKZ6",
+                        PayerID = "UPMHHXJ72R4EG"
                     }, ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
 
                 CustomerDetails customerDetails;

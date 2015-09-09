@@ -17,6 +17,8 @@ namespace Daishi.PaySharp {
                 {"SIGNATURE", payload.Signature},
                 {"METHOD", payload.Method},
                 {"VERSION", payload.Version},
+                {"SUBJECT", payload.Subject},
+                {"LOCALCODE", payload.LocalCode},
                 {"PAYMENTREQUEST_0_PAYMENTACTION", payload.Action},
                 {"PAYMENTREQUEST_0_AMT", payload.Amount},
                 {"PAYMENTREQUEST_0_CURRENCYCODE", payload.CurrencyCode},
@@ -34,7 +36,9 @@ namespace Daishi.PaySharp {
                 {"SIGNATURE", payload.Signature},
                 {"METHOD", payload.Method},
                 {"VERSION", payload.Version},
-                {"TOKEN", payload.AccessToken}
+                {"TOKEN", payload.AccessToken},
+                {"SUBJECT", payload.Subject},
+                {"PAYERID", payload.PayerID}
             };
 
             return string.Join("&",

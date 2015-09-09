@@ -8,5 +8,6 @@ namespace Daishi.PaySharp {
         public string Signature { get; set; }
         public string Method { get; set; }
         public string Version { get; set; }
+        public string Subject { get; set; }
     }
 }
