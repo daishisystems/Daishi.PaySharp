@@ -35,7 +35,7 @@ namespace Daishi.PaySharp.TestHarness {
                     Amount = "19",
                     Subject = "NJ9W2NABYSKZ6",
                     LocalCode = "en-IE",
-                    CurrencyCode = "USD",
+                    CurrencyCode = "EUR",
                     CancelUrl = "http://www.example.com/cancel.html",
                     ReturnUrl = "http://www.example.com/success.html"
                 },
