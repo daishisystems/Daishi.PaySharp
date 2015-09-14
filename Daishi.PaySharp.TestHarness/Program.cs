@@ -26,25 +26,28 @@ namespace Daishi.PaySharp.TestHarness {
 
                 #region SETEXPRESSCHECKOUT
 
-                var setExpresscheckout = payPalAdapter.SetExpressCheckout(new SetExpressCheckoutPayload {
-                    User = user,
-                    Password = password,
-                    Signature = signature,
-                    Method = "SetExpressCheckout",
-                    Version = "108.0",
-                    Amount = "19",
-                    Subject = "NJ9W2NABYSKZ6",
-                    LocalCode = "en-IE",
-                    CurrencyCode = "EUR",
-                    CancelUrl = "http://www.example.com/cancel.html",
-                    ReturnUrl = "http://www.example.com/success.html"
-                },
-                    Encoding.UTF8, ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
+                var setExpresscheckout =
+                    payPalAdapter.SetExpressCheckout(
+                        new SetExpressCheckoutPayload {
+                            User = user,
+                            Password = password,
+                            Signature = signature,
+                            Version = "108.0",
+                            Amount = Convert.ToDecimal("19"),
+                            Subject = "NJ9W2NABYSKZ6",
+                            LocaleCode = "en-IE",
+                            CurrencyCode = "EUR",
+                            CancelUrl = "http://www.example.com/cancel.html",
+                            ReturnUrl = "http://www.example.com/success.html"
+                        },
+                        Encoding.UTF8,
+                        ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
 
                 string accessToken;
                 PayPalError payPalError;
 
-                var ok = PayPalUtility.TryParseAccessToken(setExpresscheckout, out accessToken, out payPalError);
+                var ok = PayPalUtility.TryParseAccessToken(setExpresscheckout,
+                    out accessToken, out payPalError);
 
                 if (ok) {
                     Console.Write("SETEXPRESSCHECKOUT: ");
@@ -88,22 +91,26 @@ namespace Daishi.PaySharp.TestHarness {
 
                 #region GETEXPRESSCHECKOUTDETAILS
 
-                var getExpressCheckoutDetails = payPalAdapter.GetExpressCheckoutDetails(
-                    new GetExpressCheckoutDetailsPayload {
-                        User = ConfigurationManager.AppSettings["User"],
-                        Password = ConfigurationManager.AppSettings["Password"],
-                        Signature = ConfigurationManager.AppSettings["Signature"],
-                        Method = "GetExpressCheckoutDetails",
-                        Version = "108.0",
-                        AccessToken = accessToken,
-                        Subject = "NJ9W2NABYSKZ6",
-                        PayerID = "UPMHHXJ72R4EG"
-                    }, ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
+                var getExpressCheckoutDetails = payPalAdapter
+                    .GetExpressCheckoutDetails(
+                        new GetExpressCheckoutDetailsPayload {
+                            User = ConfigurationManager.AppSettings["User"],
+                            Password =
+                                ConfigurationManager.AppSettings["Password"],
+                            Signature =
+                                ConfigurationManager.AppSettings["Signature"],
+                            Version = "108.0",
+                            AccessToken = accessToken,
+                            Subject = "NJ9W2NABYSKZ6",
+                            PayerID = "UPMHHXJ72R4EG"
+                        },
+                        ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
 
                 CustomerDetails customerDetails;
 
                 ok = PayPalUtility.TryParseCustomerDetails(
-                    getExpressCheckoutDetails, out customerDetails, out payPalError);
+                    getExpressCheckoutDetails, out customerDetails,
+                    out payPalError);
 
                 if (ok) {
                     Console.Write("GETEXPRESSCHECKOUTDETAILS: ");

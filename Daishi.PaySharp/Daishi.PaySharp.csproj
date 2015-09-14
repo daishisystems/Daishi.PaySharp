@@ -48,6 +48,8 @@
     <Compile Include="ExpressCheckoutMetadataFactory.cs" />
     <Compile Include="GetExpressCheckoutDetailsPayload.cs" />
     <Compile Include="MerchantAccount.cs" />
+    <Compile Include="Payment.cs" />
+    <Compile Include="PaymentAugmentation.cs" />
     <Compile Include="PayPalAdapter.cs" />
     <Compile Include="PayPalError.cs" />
     <Compile Include="PayPalUtility.cs" />

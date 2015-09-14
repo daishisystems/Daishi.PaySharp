@@ -9,35 +9,34 @@ using System.Threading.Tasks;
 
 namespace Daishi.PaySharp {
     /// <summary>
-    ///     <c>PayPalAdapter</c> interfaces with PayPal HTTP endpoints and provides both
-    ///     synchronous and asynchronous mechanisms that consume those endpoints.
+    ///     <c>PayPalAdapter</c> interfaces with PayPal HTTP endpoints and provides
+    ///     both synchronous and asynchronous mechanisms that consume those endpoints.
     ///     <remarks>
-    ///         PayPal exposes metadata in a form-urlencoded format. <c>PayPalAdapter</c>
+    ///         PayPal exposes metadata in a form-urlencoded format.
+    ///         <c>PayPalAdapter</c>
     ///         provides a means to retrieve such PayPal metadata in raw-format.
     ///     </remarks>
     /// </summary>
     public class PayPalAdapter {
 
         /// <summary>
-        ///     Executes PayPal's <c>SetExpressCheckout</c> function in order to return a
-        ///     PayPal Access Token.
+        ///     Executes PayPal's <c>SetExpressCheckout</c> function in order to
+        ///     return a PayPal Access Token.
         /// </summary>
         /// <param name="payload">
-        ///     Metadata necessary to facilitate a successful <c>SetExpressCheckout</c> call.
-        ///     Payload will be converted to key-value format.
+        ///     Metadata necessary to facilitate a successful
+        ///     <c>SetExpressCheckout</c> call. Payload will be converted to key-value
+        ///     format.
         /// </param>
-        /// <param name="encoding">
-        ///     Text encoding to apply during byte-to-text conversion.
-        /// </param>
+        /// <param name="encoding">Text encoding to apply during byte-to-text conversion.</param>
         /// <param name="expressCheckoutURI">Default PayPal ExpressCheckout HTTP URI.</param>
-        /// <returns>
-        ///     Raw metadata, in key-value format, containing a PayPal Access Token.
-        /// </returns>
+        /// <returns>Raw metadata, in key-value format, containing a PayPal Access Token.</returns>
         public string SetExpressCheckout(SetExpressCheckoutPayload payload,
             Encoding encoding, string expressCheckoutURI) {
 
             var setExpressCheckoutMetadata =
-                ExpressCheckoutMetadataFactory.CreateSetExpressCheckoutMetadata(payload);
+                ExpressCheckoutMetadataFactory.CreateSetExpressCheckoutMetadata(
+                    payload);
 
             using (var webClient = new WebClient()) {
 
@@ -47,31 +46,34 @@ namespace Daishi.PaySharp {
             }
         }
 
-        /// <summary>
-        ///     SetExpressCheckout asynchronous equivalent.
+        /// <summary>SetExpressCheckout asynchronous equivalent.
         ///     <seealso cref="SetExpressCheckout" />
         /// </summary>
-        public async Task<string> SetExpressCheckoutAsync(SetExpressCheckoutPayload payload,
+        public async Task<string> SetExpressCheckoutAsync(
+            SetExpressCheckoutPayload payload,
             Encoding encoding, string expressCheckoutURI) {
 
             var setExpressCheckoutMetadata =
-                ExpressCheckoutMetadataFactory.CreateSetExpressCheckoutMetadata(payload);
+                ExpressCheckoutMetadataFactory.CreateSetExpressCheckoutMetadata(
+                    payload);
 
             using (var webClient = new WebClient()) {
 
-                var response = await webClient.UploadValuesTaskAsync(expressCheckoutURI,
-                    setExpressCheckoutMetadata);
+                var response =
+                    await webClient.UploadValuesTaskAsync(expressCheckoutURI,
+                        setExpressCheckoutMetadata);
                 return encoding.GetString(response);
             }
         }
 
         /// <summary>
-        ///     Executes PayPal's <c>GetExpressCheckoutDetails</c> function in order to
-        ///     return PayPal <see cref="CustomerDetails" />.
+        ///     Executes PayPal's <c>GetExpressCheckoutDetails</c> function in order
+        ///     to return PayPal <see cref="CustomerDetails" />.
         /// </summary>
         /// <param name="payload">
-        ///     Metadata necessary to facilitate a successful <c>GetExpressCheckoutDetails</c> call.
-        ///     Payload will be converted to key-value format.
+        ///     Metadata necessary to facilitate a successful
+        ///     <c>GetExpressCheckoutDetails</c> call. Payload will be converted to
+        ///     key-value format.
         /// </param>
         /// <param name="expressCheckoutUri">Default PayPal ExpressCheckout HTTP URI.</param>
         /// <returns>
@@ -82,7 +84,8 @@ namespace Daishi.PaySharp {
             GetExpressCheckoutDetailsPayload payload, string expressCheckoutUri) {
 
             var queryString =
-                ExpressCheckoutMetadataFactory.CreateGetExpressCheckoutDetailsQueryString(payload);
+                ExpressCheckoutMetadataFactory
+                    .CreateGetExpressCheckoutDetailsQueryString(payload);
 
             using (var webClient = new WebClient()) {
 
@@ -91,21 +94,51 @@ namespace Daishi.PaySharp {
             }
         }
 
-        /// <summary>
-        ///     GetExpressCheckoutDetails asynchronous equivalent.
+        /// <summary>GetExpressCheckoutDetails asynchronous equivalent.
         ///     <seealso cref="GetExpressCheckoutDetails" />
         /// </summary>
         public async Task<string> GetExpressCheckoutDetailsAsync(
-            GetExpressCheckoutDetailsPayload payload, string getExpressCheckoutUri) {
+            GetExpressCheckoutDetailsPayload payload,
+            string getExpressCheckoutUri) {
 
             var queryString =
-                ExpressCheckoutMetadataFactory.CreateGetExpressCheckoutDetailsQueryString(payload);
+                ExpressCheckoutMetadataFactory
+                    .CreateGetExpressCheckoutDetailsQueryString(payload);
 
             using (var webClient = new WebClient()) {
 
                 return await webClient.DownloadStringTaskAsync(
-                    new Uri(string.Concat(getExpressCheckoutUri, "?", queryString)));
+                    new Uri(string.Concat(getExpressCheckoutUri, "?",
+                        queryString)));
             }
+        }
+
+        /// <summary>
+        ///     Augments a <see cref="Payment{TMetadata, TUnderlyingPayment}" /> with
+        ///     <see cref="TMetadata" />.
+        ///     <remarks>
+        ///         This is a
+        ///         <a href="http://www.dofactory.com/net/builder-design-pattern">
+        ///             <c>Director</c>
+        ///         </a>
+        ///         method.
+        ///     </remarks>
+        /// </summary>
+        /// <typeparam name="TMetadata">Metadata to augment the
+        ///     <see cref="Payment{TMetadata, TUnderlyingPayment}" />.</typeparam>
+        /// <typeparam name="TUnderlyingPayment">The
+        ///     <see cref="Payment{TMetadata, TUnderlyingPayment}" /> to augment.</typeparam>
+        /// <param name="payment">The <see cref="Payment{TMetadata, TUnderlyingPayment}" />
+        ///     to augment.</param>
+        /// <param name="metadata">
+        ///     <see cref="TMetadata" /> to augment the
+        ///     <see cref="Payment{TMetadata, TUnderlyingPayment}" />.
+        /// </param>
+        public static void AugmenTUnderlyingPayment
+            <TMetadata, TUnderlyingPayment>(
+            Payment<TMetadata, TUnderlyingPayment> payment, TMetadata metadata) {
+
+            payment.Augment(metadata);
         }
     }
 }

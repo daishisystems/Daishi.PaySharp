@@ -1,29 +1,44 @@
 ﻿#region Includes
 
 using System.Collections.Specialized;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 
 #endregion
 
 namespace Daishi.PaySharp {
-    public static class ExpressCheckoutMetadataFactory {
+    internal static class ExpressCheckoutMetadataFactory {
+
         public static NameValueCollection CreateSetExpressCheckoutMetadata(
             SetExpressCheckoutPayload payload) {
 
             return new NameValueCollection {
+                {"METHOD", payload.Method},
+                {"VERSION", payload.Version},
                 {"USER", payload.User},
                 {"PWD", payload.Password},
                 {"SIGNATURE", payload.Signature},
-                {"METHOD", payload.Method},
-                {"VERSION", payload.Version},
                 {"SUBJECT", payload.Subject},
-                {"LOCALCODE", payload.LocalCode},
-                {"PAYMENTREQUEST_0_PAYMENTACTION", payload.Action},
-                {"PAYMENTREQUEST_0_AMT", payload.Amount},
-                {"PAYMENTREQUEST_0_CURRENCYCODE", payload.CurrencyCode},
-                {"cancelUrl", payload.CancelUrl},
-                {"returnUrl", payload.ReturnUrl}
+                {"LOCALECODE", payload.LocaleCode},
+                {"RETURNURL", payload.ReturnUrl},
+                {"CANCELURL", payload.CancelUrl},
+                {"REQBILLINGADDRESS", payload.RequireBillingAddress},
+                {"NOSHIPPING", payload.NoShipping},
+                {"PAYMENTREQUEST_0_PAYMENTACTION", payload.Action}, {
+                    "PAYMENTREQUEST_0_AMT",
+                    payload.Amount.ToString(CultureInfo.InvariantCulture)
+                },
+                {"PAYMENTREQUEST_0_CURRENCYCODE", payload.CurrencyCode}, {
+                    "MAXAMT",
+                    payload.Amount.ToString(CultureInfo.InvariantCulture)
+                },
+                {"L_PAYMENTREQUEST_0_NAME0", payload.PaymentRequestName},
+                {"L_PAYMENTREQUEST_0_DESC0", payload.PaymentRequestDescription}, {
+                    "L_PAYMENTREQUEST_0_AMT0",
+                    payload.Amount.ToString(CultureInfo.InvariantCulture)
+                },
+                {"L_PAYMENTREQUEST_0_QTY0", payload.PaymentRequestQuantity}
             };
         }
 
@@ -31,14 +46,14 @@ namespace Daishi.PaySharp {
             GetExpressCheckoutDetailsPayload payload) {
 
             var getExpressCheckoutDetailsMetadata = new NameValueCollection {
+                {"METHOD", payload.Method},
+                {"VERSION", payload.Version},
                 {"USER", payload.User},
                 {"PWD", payload.Password},
                 {"SIGNATURE", payload.Signature},
-                {"METHOD", payload.Method},
-                {"VERSION", payload.Version},
-                {"TOKEN", payload.AccessToken},
                 {"SUBJECT", payload.Subject},
-                {"PAYERID", payload.PayerID}
+                {"TOKEN", payload.AccessToken},
+                {"PAYERID", payload.PayerID},
             };
 
             return string.Join("&",
