@@ -11,18 +11,16 @@
     ///     An object that contains metadata necessary for
     ///     augmentation.
     /// </typeparam>
-    /// <typeparam name="TUnderlyingPayment">
-    ///     The underlying
-    ///     <see cref="TUnderlyingPayment" />
-    ///     to augment.
-    /// </typeparam>
+    /// <typeparam name="TUnderlyingPayment">The underlying payment. to augment.</typeparam>
     public abstract class PaymentAugmentation<TMetadata, TUnderlyingPayment> :
         Payment<TMetadata, TUnderlyingPayment> {
 
-        /// <summary>Initialises a new instance of
-        ///     <see cref="Payment{TMetadata, TUnderlyingPayment}" /> with a
-        ///     <see cref="TUnderlyingPayment" /> to augment.</summary>
-        /// <param name="customPayment">The <see cref="TUnderlyingPayment" /> to augment.</param>
+        /// <summary>
+        ///     Initialises a new instance of
+        ///     <see cref="Payment{TMetadata, TUnderlyingPayment}" /> with an underlying
+        ///     payment to augment.
+        /// </summary>
+        /// <param name="customPayment">The underlying payment to augment.</param>
         protected PaymentAugmentation(TUnderlyingPayment customPayment)
             : base(customPayment) {}
     }

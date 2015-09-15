@@ -20,8 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>bin\Debug\Daishi.PaySharp.XML</DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -48,6 +47,7 @@
     <Compile Include="ExpressCheckoutMetadataFactory.cs" />
     <Compile Include="GetExpressCheckoutDetailsPayload.cs" />
     <Compile Include="MerchantAccount.cs" />
+    <Compile Include="NamespaceDoc.cs" />
     <Compile Include="Payment.cs" />
     <Compile Include="PaymentAugmentation.cs" />
     <Compile Include="PayPalAdapter.cs" />

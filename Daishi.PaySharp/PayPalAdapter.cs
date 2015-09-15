@@ -12,7 +12,7 @@ namespace Daishi.PaySharp {
     ///     <c>PayPalAdapter</c> interfaces with PayPal HTTP endpoints and provides
     ///     both synchronous and asynchronous mechanisms that consume those endpoints.
     ///     <remarks>
-    ///         PayPal exposes metadata in a form-urlencoded format.
+    ///         PayPal exposes metadata in a form-encoded format.
     ///         <c>PayPalAdapter</c>
     ///         provides a means to retrieve such PayPal metadata in raw-format.
     ///     </remarks>
@@ -46,9 +46,21 @@ namespace Daishi.PaySharp {
             }
         }
 
-        /// <summary>SetExpressCheckout asynchronous equivalent.
+        /// <summary>
+        ///     SetExpressCheckout asynchronous equivalent.
         ///     <seealso cref="SetExpressCheckout" />
         /// </summary>
+        /// <param name="payload">
+        ///     Metadata necessary to facilitate a successful
+        ///     <c>SetExpressCheckout</c> call. Payload will be converted to key-value
+        ///     format.
+        /// </param>
+        /// <param name="encoding">Text encoding to apply during byte-to-text conversion.</param>
+        /// <param name="expressCheckoutURI">Default PayPal ExpressCheckout HTTP URI.</param>
+        /// <returns>
+        ///     A <see cref="Task" /> of <see cref="string" />, representing raw
+        ///     metadata, in key-value format, containing a PayPal Access Token.
+        /// </returns>
         public async Task<string> SetExpressCheckoutAsync(
             SetExpressCheckoutPayload payload,
             Encoding encoding, string expressCheckoutURI) {
@@ -77,8 +89,8 @@ namespace Daishi.PaySharp {
         /// </param>
         /// <param name="expressCheckoutUri">Default PayPal ExpressCheckout HTTP URI.</param>
         /// <returns>
-        ///     Raw metadata, in key-value format, containing PayPal
-        ///     <see cref="CustomerDetails" />.
+        ///     A <see cref="Task" /> of <see cref="string" />, representing a
+        ///     serialised <see cref="CustomerDetails" /> instance.
         /// </returns>
         public string GetExpressCheckoutDetails(
             GetExpressCheckoutDetailsPayload payload, string expressCheckoutUri) {
@@ -94,9 +106,20 @@ namespace Daishi.PaySharp {
             }
         }
 
-        /// <summary>GetExpressCheckoutDetails asynchronous equivalent.
+        /// <summary>
+        ///     GetExpressCheckoutDetails asynchronous equivalent.
         ///     <seealso cref="GetExpressCheckoutDetails" />
         /// </summary>
+        /// <param name="payload">
+        ///     Metadata necessary to facilitate a successful
+        ///     <c>GetExpressCheckoutDetails</c> call. Payload will be converted to
+        ///     key-value format.
+        /// </param>
+        /// <param name="getExpressCheckoutUri">Default PayPal ExpressCheckout HTTP URI.</param>
+        /// <returns>
+        ///     A <see cref="Task" /> of <see cref="string" />, representing a
+        ///     serialised <see cref="CustomerDetails" /> instance.
+        /// </returns>
         public async Task<string> GetExpressCheckoutDetailsAsync(
             GetExpressCheckoutDetailsPayload payload,
             string getExpressCheckoutUri) {
@@ -115,7 +138,7 @@ namespace Daishi.PaySharp {
 
         /// <summary>
         ///     Augments a <see cref="Payment{TMetadata, TUnderlyingPayment}" /> with
-        ///     <see cref="TMetadata" />.
+        ///     metadata.
         ///     <remarks>
         ///         This is a
         ///         <a href="http://www.dofactory.com/net/builder-design-pattern">
@@ -124,17 +147,23 @@ namespace Daishi.PaySharp {
         ///         method.
         ///     </remarks>
         /// </summary>
-        /// <typeparam name="TMetadata">Metadata to augment the
-        ///     <see cref="Payment{TMetadata, TUnderlyingPayment}" />.</typeparam>
-        /// <typeparam name="TUnderlyingPayment">The
-        ///     <see cref="Payment{TMetadata, TUnderlyingPayment}" /> to augment.</typeparam>
-        /// <param name="payment">The <see cref="Payment{TMetadata, TUnderlyingPayment}" />
-        ///     to augment.</param>
+        /// <typeparam name="TMetadata">
+        ///     Metadata to augment the
+        ///     <see cref="Payment{TMetadata, TUnderlyingPayment}" />.
+        /// </typeparam>
+        /// <typeparam name="TUnderlyingPayment">
+        ///     The
+        ///     <see cref="Payment{TMetadata, TUnderlyingPayment}" /> to augment.
+        /// </typeparam>
+        /// <param name="payment">
+        ///     The <see cref="Payment{TMetadata, TUnderlyingPayment}" />
+        ///     to augment.
+        /// </param>
         /// <param name="metadata">
-        ///     <see cref="TMetadata" /> to augment the
+        ///     Metadata to augment the
         ///     <see cref="Payment{TMetadata, TUnderlyingPayment}" />.
         /// </param>
-        public static void AugmenTUnderlyingPayment
+        public static void AugmentPayment
             <TMetadata, TUnderlyingPayment>(
             Payment<TMetadata, TUnderlyingPayment> payment, TMetadata metadata) {
 

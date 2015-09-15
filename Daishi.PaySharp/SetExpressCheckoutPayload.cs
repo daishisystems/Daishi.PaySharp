@@ -2,18 +2,41 @@ namespace Daishi.PaySharp {
     /// <summary>Metadata necessary to facilitate a successful PayPal
     ///     <c>SetExpressCheckout</c> call.</summary>
     public class SetExpressCheckoutPayload : ExpressCheckoutPayload {
-
+        /// <summary>Gets or sets the action.</summary>
+        /// <value>The action.</value>
         public string Action => "Sale";
+        /// <summary>Gets or sets the amount.</summary>
+        /// <value>The amount.</value>
         public decimal Amount { get; set; }
+        /// <summary>Gets or sets the currency code.</summary>
+        /// <value>The currency code.</value>
         public string CurrencyCode { get; set; }
+        /// <summary>Gets or sets the cancel URL.</summary>
+        /// <value>The cancel URL.</value>
         public string CancelUrl { get; set; }
+        /// <summary>Gets or sets the return URL.</summary>
+        /// <value>The return URL.</value>
         public string ReturnUrl { get; set; }
+        /// <summary>Gets or sets the locale code.</summary>
+        /// <value>The locale code.</value>
         public string LocaleCode { get; set; }
+        /// <summary>Gets or sets the require billing address.</summary>
+        /// <value>The require billing address.</value>
         public string RequireBillingAddress => "1";
+        /// <summary>Gets or sets the no shipping.</summary>
+        /// <value>The no shipping.</value>
         public string NoShipping => "1";
+        /// <summary>Gets or sets the name of the payment request.</summary>
+        /// <value>The name of the payment request.</value>
         public string PaymentRequestName { get; set; }
+        /// <summary>Gets or sets the payment request description.</summary>
+        /// <value>The payment request description.</value>
         public string PaymentRequestDescription { get; set; }
+        /// <summary>Gets or sets the payment request quantity.</summary>
+        /// <value>The payment request quantity.</value>
         public string PaymentRequestQuantity => "1";
+        /// <summary>Gets or sets the method.</summary>
+        /// <value>The method.</value>
         public override string Method => "SetExpressCheckout";
     }
 }
