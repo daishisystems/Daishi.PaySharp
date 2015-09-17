@@ -48,10 +48,9 @@
     <Compile Include="GetExpressCheckoutDetailsPayload.cs" />
     <Compile Include="MerchantAccount.cs" />
     <Compile Include="NamespaceDoc.cs" />
-    <Compile Include="Payment.cs" />
-    <Compile Include="PaymentAugmentation.cs" />
     <Compile Include="PayPalAdapter.cs" />
     <Compile Include="PayPalError.cs" />
+    <Compile Include="Extensibility\PayPalPayload.cs" />
     <Compile Include="PayPalUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetExpressCheckoutPayload.cs" />
@@ -69,6 +68,7 @@
   <ItemGroup>
     <None Include="_CreateNewNuGetPackage\DoNotModify\NuGet.exe" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>REM Create a NuGet package for this project and place the .nupkg file in the project's output directory.

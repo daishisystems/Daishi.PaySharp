@@ -7,7 +7,7 @@ namespace Daishi.PaySharp {
         public string Action => "Sale";
         /// <summary>Gets or sets the amount.</summary>
         /// <value>The amount.</value>
-        public decimal Amount { get; set; }
+        public string Amount { get; set; }
         /// <summary>Gets or sets the currency code.</summary>
         /// <value>The currency code.</value>
         public string CurrencyCode { get; set; }

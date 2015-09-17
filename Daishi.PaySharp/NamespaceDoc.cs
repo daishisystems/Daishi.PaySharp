@@ -1,6 +1,6 @@
 ﻿namespace Daishi.PaySharp {
     /// <summary>
-    ///     Daishi.PaySharp is a PayPal C# SDK that exposes PayPal Express Checkout
+    ///     Daishi.PaySharp is a C# PayPal SDK that exposes PayPal Express Checkout
     ///     functionality including:
     ///     <list type="bullet">
     ///         <item>SetExpressCheckout</item>

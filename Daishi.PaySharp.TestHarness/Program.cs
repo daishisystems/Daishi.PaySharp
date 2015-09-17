@@ -33,12 +33,14 @@ namespace Daishi.PaySharp.TestHarness {
                             Password = password,
                             Signature = signature,
                             Version = "108.0",
-                            Amount = Convert.ToDecimal("19"),
+                            Amount = "19.95",
                             Subject = "NJ9W2NABYSKZ6",
                             LocaleCode = "en-IE",
                             CurrencyCode = "EUR",
                             CancelUrl = "http://www.example.com/cancel.html",
-                            ReturnUrl = "http://www.example.com/success.html"
+                            ReturnUrl = "http://www.example.com/success.html",
+                            PaymentRequestName = "TEST",
+                            PaymentRequestDescription = "TEST BOOKING"
                         },
                         Encoding.UTF8,
                         ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
@@ -119,7 +121,7 @@ namespace Daishi.PaySharp.TestHarness {
                     Console.ResetColor();
 
                     Console.WriteLine();
-                    Console.Write("PayPal Acknowledgement: ");
+                    Console.Write("PayPal Acknowledgment: ");
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.Write(customerDetails.Ack);
                 }

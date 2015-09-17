@@ -134,40 +134,6 @@ namespace Daishi.PaySharp {
                     new Uri(string.Concat(getExpressCheckoutUri, "?",
                         queryString)));
             }
-        }
-
-        /// <summary>
-        ///     Augments a <see cref="Payment{TMetadata, TUnderlyingPayment}" /> with
-        ///     metadata.
-        ///     <remarks>
-        ///         This is a
-        ///         <a href="http://www.dofactory.com/net/builder-design-pattern">
-        ///             <c>Director</c>
-        ///         </a>
-        ///         method.
-        ///     </remarks>
-        /// </summary>
-        /// <typeparam name="TMetadata">
-        ///     Metadata to augment the
-        ///     <see cref="Payment{TMetadata, TUnderlyingPayment}" />.
-        /// </typeparam>
-        /// <typeparam name="TUnderlyingPayment">
-        ///     The
-        ///     <see cref="Payment{TMetadata, TUnderlyingPayment}" /> to augment.
-        /// </typeparam>
-        /// <param name="payment">
-        ///     The <see cref="Payment{TMetadata, TUnderlyingPayment}" />
-        ///     to augment.
-        /// </param>
-        /// <param name="metadata">
-        ///     Metadata to augment the
-        ///     <see cref="Payment{TMetadata, TUnderlyingPayment}" />.
-        /// </param>
-        public static void AugmentPayment
-            <TMetadata, TUnderlyingPayment>(
-            Payment<TMetadata, TUnderlyingPayment> payment, TMetadata metadata) {
-
-            payment.Augment(metadata);
-        }
+        }       
     }
 }

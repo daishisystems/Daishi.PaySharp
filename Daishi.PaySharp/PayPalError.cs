@@ -8,8 +8,8 @@
         /// <summary>Gets or sets the correlation identifier.</summary>
         /// <value>The correlation identifier.</value>
         public string CorrelationID { get; set; }
-        /// <summary>Gets or sets the ack.</summary>
-        /// <value>The ack.</value>
+        /// <summary>Gets or sets the acknowledgment.</summary>
+        /// <value>The acknowledgment.</value>
         public string Ack { get; set; }
         /// <summary>Gets or sets the error code.</summary>
         /// <value>The error code.</value>
