@@ -1,6 +1,7 @@
 namespace Daishi.PaySharp {
-    /// <summary>Represents PayPal customer details returned by
-    ///     <c>GetExpressCheckoutDetails</c>.</summary>
+    /// Represents metadata returned by PayPal as a result of successfully invoking
+    /// <b>GetExpressCheckoutDetails</b>
+    /// .
     public class CustomerDetails {
         /// <summary>Gets or sets the access token.</summary>
         /// <value>The access token.</value>

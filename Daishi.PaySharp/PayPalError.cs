@@ -1,6 +1,6 @@
 ﻿namespace Daishi.PaySharp {
-    /// <summary>PayPal error metadata returned from <c>SetExpressCheckout</c> or
-    ///     <c>GetExpressCheckoutDetails</c>.</summary>
+    /// <summary>PayPal error metadata returned from unsuccessful
+    ///     <b>ExpressCheckout</b> calls.</summary>
     public class PayPalError {
         /// <summary>Gets or sets the time-stamp.</summary>
         /// <value>The time-stamp.</value>

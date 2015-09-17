@@ -19,12 +19,12 @@ namespace Daishi.PaySharp {
     public class PayPalAdapter {
 
         /// <summary>
-        ///     Executes PayPal's <c>SetExpressCheckout</c> function in order to
+        ///     Executes PayPal's <b>SetExpressCheckout</b> function in order to
         ///     return a PayPal Access Token.
         /// </summary>
         /// <param name="payload">
         ///     Metadata necessary to facilitate a successful
-        ///     <c>SetExpressCheckout</c> call. Payload will be converted to key-value
+        ///     <b>SetExpressCheckout</b> call. Payload will be converted to key-value
         ///     format.
         /// </param>
         /// <param name="encoding">Text encoding to apply during byte-to-text conversion.</param>
@@ -51,7 +51,7 @@ namespace Daishi.PaySharp {
         /// </summary>
         /// <param name="payload">
         ///     Metadata necessary to facilitate a successful
-        ///     <c>SetExpressCheckout</c> call. Payload will be converted to key-value
+        ///     <b>SetExpressCheckout</b> call. Payload will be converted to key-value
         ///     format.
         /// </param>
         /// <param name="encoding">Text encoding to apply during byte-to-text conversion.</param>
@@ -78,12 +78,12 @@ namespace Daishi.PaySharp {
         }
 
         /// <summary>
-        ///     Executes PayPal's <c>GetExpressCheckoutDetails</c> function in order
+        ///     Executes PayPal's <b>GetExpressCheckoutDetails</b> function in order
         ///     to return PayPal <see cref="CustomerDetails" />.
         /// </summary>
         /// <param name="payload">
         ///     Metadata necessary to facilitate a successful
-        ///     <c>GetExpressCheckoutDetails</c> call. Payload will be converted to
+        ///     <b>GetExpressCheckoutDetails</b> call. Payload will be converted to
         ///     key-value format.
         /// </param>
         /// <param name="expressCheckoutUri">Default PayPal ExpressCheckout HTTP URI.</param>
@@ -111,7 +111,7 @@ namespace Daishi.PaySharp {
         /// </summary>
         /// <param name="payload">
         ///     Metadata necessary to facilitate a successful
-        ///     <c>GetExpressCheckoutDetails</c> call. Payload will be converted to
+        ///     <b>GetExpressCheckoutDetails</b> call. Payload will be converted to
         ///     key-value format.
         /// </param>
         /// <param name="getExpressCheckoutUri">Default PayPal ExpressCheckout HTTP URI.</param>

@@ -1,6 +1,6 @@
 namespace Daishi.PaySharp {
     /// <summary>Metadata necessary to facilitate a successful PayPal
-    ///     <c>SetExpressCheckout</c> call.</summary>
+    ///     <b>SetExpressCheckout</b> call.</summary>
     public class SetExpressCheckoutPayload : ExpressCheckoutPayload {
         /// <summary>Gets or sets the action.</summary>
         /// <value>The action.</value>

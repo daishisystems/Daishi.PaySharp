@@ -1,6 +1,6 @@
 namespace Daishi.PaySharp {
-    /// <summary>Metadata necessary to facilitate a successful PayPal
-    ///     <c>GetExpressCheckoutDetails</c> call.</summary>
+    /// <summary>Metadata necessary to facilitate successful PayPal
+    ///     <b>GetExpressCheckoutDetails</b> calls.</summary>
     public class GetExpressCheckoutDetailsPayload : ExpressCheckoutPayload {
         /// <summary>Gets or sets the access token.</summary>
         /// <value>The access token.</value>

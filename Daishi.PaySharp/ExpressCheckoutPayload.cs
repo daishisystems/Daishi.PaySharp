@@ -1,6 +1,6 @@
 namespace Daishi.PaySharp {
     /// <summary>Metadata necessary to facilitate successful PayPal
-    ///     <c>ExpressCheckout</c> calls.</summary>
+    ///     <b>ExpressCheckout</b> calls.</summary>
     public abstract class ExpressCheckoutPayload {
         /// <summary>Gets or sets the user.</summary>
         /// <value>The user.</value>

@@ -54,8 +54,10 @@
     <Compile Include="PayPalUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetExpressCheckoutPayload.cs" />
+    <Compile Include="TransactionResults.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Help\Documentation.chm" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

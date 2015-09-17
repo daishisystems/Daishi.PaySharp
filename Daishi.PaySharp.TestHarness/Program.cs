@@ -87,6 +87,10 @@ namespace Daishi.PaySharp.TestHarness {
 
                 #endregion
 
+                Console.WriteLine(
+                    "Press any key to invoke GETEXPRESSCHECKOUTDETAILS...");
+                Console.ReadLine();
+
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("Executing GETEXPRESSCHECKOUTDETAILS...");
                 Console.ResetColor();

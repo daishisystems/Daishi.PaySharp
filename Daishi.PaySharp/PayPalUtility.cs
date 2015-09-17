@@ -21,12 +21,12 @@ namespace Daishi.PaySharp {
     public static class PayPalUtility {
 
         /// <summary>
-        ///     Parses PayPal metadata returned by <c>SetExpressCheckout</c> and
+        ///     Parses PayPal metadata returned by <b>SetExpressCheckout</b> and
         ///     returns the encapsulated PayPal Access Token.
         /// </summary>
         /// <param name="setExpressCheckoutDetails">
         ///     PayPal metadata returned by
-        ///     <c>SetExpressCheckout</c>.
+        ///     <b>SetExpressCheckout</b>.
         /// </param>
         /// <param name="accessToken">PayPal API Access Token.</param>
         /// <param name="payPalError">
@@ -72,13 +72,13 @@ namespace Daishi.PaySharp {
         /// </summary>
         /// <param name="getExpressCheckoutDetails">
         ///     PayPal metadata returned by
-        ///     <c>GetExpressCheckoutDetails</c>.
+        ///     <b>GetExpressCheckoutDetails</b>.
         /// </param>
         /// <param name="customerDetails">PayPal Customer Details.</param>
         /// <param name="payPalError">
         ///     PayPal error response.
         ///     <remarks>
-        ///         PayPalError is a POCO deserialised from a form-urlencoded HTTP
+        ///         PayPalError is a POCO deserialised from a form-encoded HTTP
         ///         response.
         ///     </remarks>
         /// </param>
