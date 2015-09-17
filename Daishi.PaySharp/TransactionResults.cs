@@ -19,6 +19,9 @@
         /// <summary>Gets or sets the acknowledgment.</summary>
         /// <value>The acknowledgment.</value>
         public string Ack { get; set; }
+        /// <summary>Gets or sets the version.</summary>
+        /// <value>The version.</value>
+        public string Version { get; set; }
         /// <summary>Gets or sets the build.</summary>
         /// <value>The build.</value>
         public string Build { get; set; }
@@ -70,9 +73,12 @@
         /// </summary>
         /// <value>The type of the payment information protection eligibility.</value>
         public string PaymentInfoProtectionEligibilityType { get; set; }
-        /// <summary>Gets or sets the secure merchant account identifier.</summary>
-        /// <value>The secure merchant account identifier.</value>
-        public string SecureMerchantAccountID { get; set; }
+        /// <summary>
+        ///     Gets or sets the payment information secure merchant account
+        ///     identifier.
+        /// </summary>
+        /// <value>The payment information secure merchant account identifier.</value>
+        public string PaymentInfoSecureMerchantAccountID { get; set; }
         /// <summary>Gets or sets the payment information error code.</summary>
         /// <value>The payment information error code.</value>
         public string PaymentInfoErrorCode { get; set; }

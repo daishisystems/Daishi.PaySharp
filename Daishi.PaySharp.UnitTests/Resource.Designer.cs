@@ -70,6 +70,31 @@ namespace Daishi.PaySharp.UnitTests {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TOKEN=EC%2d5ED70123NJ325433P
+        ///SUCCESSPAGEREDIRECTREQUESTED=false
+        ///TIMESTAMP=2015%2d09%2d17T11%3a32%3a14Z
+        ///CORRELATIONID=da59801663304
+        ///ACK=Success
+        ///VERSION=108%2e0
+        ///BUILD=000000
+        ///INSURANCEOPTIONSELECTED=false
+        ///SHIPPINGOPTIONISDEFAULT=false
+        ///PAYMENTINFO_0_TRANSACTIONID=6YX65164PA326324T
+        ///PAYMENTINFO_0_TRANSACTIONTYPE=expresscheckout
+        ///PAYMENTINFO_0_PAYMENTTYPE=instant
+        ///PAYMENTINFO_0_ORDERTIME=2015%2d09%2d17T11%3a32%3a14Z
+        ///PAYMENTINFO_0_AMT=19%2e95
+        ///PAYMENTINFO_0_FEEAMT=0%2e93
+        ///PAYMENTINFO_0_TAXAMT=0%2e00
+        ///PAY [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string DoExpressCheckoutPayment {
+            get {
+                return ResourceManager.GetString("DoExpressCheckoutPayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TIMESTAMP=2015%2d09%2d02T16%3a19%3a49Z&amp;CORRELATIONID=d594df3b6b673&amp;ACK=Failure&amp;VERSION=78&amp;BUILD=000000&amp;L_ERRORCODE0=10002&amp;L_SHORTMESSAGE0=Security%20error&amp;L_LONGMESSAGE0=Security%20header%20is%20not%20valid&amp;L_SEVERITYCODE0=Error.
         /// </summary>
         internal static string ErrorResponse {

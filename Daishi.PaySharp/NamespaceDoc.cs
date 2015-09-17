@@ -4,9 +4,15 @@
     ///     including:
     ///     <para>
     ///         <list type="bullet">
-    ///             <item>SetExpressCheckout</item>
-    ///             <item>GetExpressCheckoutDetails</item>
-    ///             <item>DoExpressCheckoutPayment</item>
+    ///             <item>
+    ///                 <b>SetExpressCheckout</b>
+    ///             </item>
+    ///             <item>
+    ///                 <b>GetExpressCheckoutDetails</b>
+    ///             </item>
+    ///             <item>
+    ///                 <b>DoExpressCheckoutPayment</b>
+    ///             </item>
     ///         </list>
     ///     </para>
     /// </summary>

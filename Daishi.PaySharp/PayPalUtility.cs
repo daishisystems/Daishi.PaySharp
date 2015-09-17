@@ -8,35 +8,52 @@ using System.Web;
 
 namespace Daishi.PaySharp {
     /// <summary>
-    ///     Provides functionality designed to augment
-    ///     <see cref="PayPalAdapter" />. It provides parsing mechanisms designed to
-    ///     deserialise PayPal metadata returned by <see cref="PayPalAdapter" />
-    ///     methods.
+    ///     Provides functionality to augment
+    ///     <see cref="PayPalAdapter" />. This class provides parsing mechanisms
+    ///     designed to deserialise PayPal metadata returned by
+    ///     <see cref="PayPalAdapter" />
+    ///     methods that support the following PayPal functions:
+    ///     <para>
+    ///         <list type="bullet">
+    ///             <item>
+    ///                 <b>SetExpressCheckout</b>
+    ///             </item>
+    ///             <item>
+    ///                 <b>GetExpressCheckoutDetails</b>
+    ///             </item>
+    ///             <item>
+    ///                 <b>DoExpressCheckoutPayment</b>
+    ///             </item>
+    ///         </list>
+    ///     </para>
     ///     <remarks>
-    ///         PayPal exposes metadata in a form-encoded format.
-    ///         <see cref="PayPalUtility" /> provides a means to deserialise PayPal
-    ///         metadata to associated POCO.
+    ///         PayPal exposes metadata in a form-encoded format. This class
+    ///         provides a means to deserialise PayPal metadata to associated POCOs.
     ///     </remarks>
     /// </summary>
     public static class PayPalUtility {
 
         /// <summary>
-        ///     Parses PayPal metadata returned by <b>SetExpressCheckout</b> and
-        ///     returns the encapsulated PayPal Access Token.
+        ///     Parses PayPal metadata returned by <b>SetExpressCheckout</b>
+        ///     and returns the encapsulated PayPal <b>Access Token</b>, or a
+        ///     <see cref="PayPalError" />, should an error occur.
         /// </summary>
         /// <param name="setExpressCheckoutDetails">
         ///     PayPal metadata returned by
         ///     <b>SetExpressCheckout</b>.
         /// </param>
-        /// <param name="accessToken">PayPal API Access Token.</param>
+        /// <param name="accessToken">PayPal <b>Access Token</b>.</param>
         /// <param name="payPalError">
-        ///     PayPal error response.
+        ///     <see cref="PayPalError" /> response.
         ///     <remarks>
-        ///         PayPalError is a POCO deserialised from a form-encoded HTTP
+        ///         <see cref="PayPalError" /> is deserialised from a form-encoded HTTP
         ///         response.
         ///     </remarks>
         /// </param>
-        /// <returns>Returns a <see cref="bool" /> value indicating success.</returns>
+        /// <returns>
+        ///     A <see cref="bool" /> response indicating whether or not a
+        ///     <b>SetExpressCheckout</b> transaction was successful.
+        /// </returns>
         public static bool TryParseAccessToken(string setExpressCheckoutDetails,
             out string accessToken, out PayPalError payPalError) {
 
@@ -67,22 +84,34 @@ namespace Daishi.PaySharp {
         }
 
         /// <summary>
-        ///     Parses PayPal metadata returned by SetExpressCheckout and returns the
-        ///     encapsulated PayPal <see cref="CustomerDetails" />.
+        ///     Parses PayPal metadata returned by <b>GetExpressCheckoutDetails</b>
+        ///     and returns the encapsulated PayPal <see cref="CustomerDetails" />, or
+        ///     <see cref="PayPalError" />, should an error occur.
         /// </summary>
         /// <param name="getExpressCheckoutDetails">
         ///     PayPal metadata returned by
         ///     <b>GetExpressCheckoutDetails</b>.
         /// </param>
-        /// <param name="customerDetails">PayPal Customer Details.</param>
-        /// <param name="payPalError">
-        ///     PayPal error response.
+        /// <param name="customerDetails">
+        ///     <see cref="CustomerDetails" />
+        ///     returned as a result of a successful <b>GetExpressCheckoutDetails</b>
+        ///     transaction.
         ///     <remarks>
-        ///         PayPalError is a POCO deserialised from a form-encoded HTTP
+        ///         <see cref="CustomerDetails" /> is deserialised from a form-encoded HTTP
         ///         response.
         ///     </remarks>
         /// </param>
-        /// <returns>Returns a <see cref="bool" /> value indicating success.</returns>
+        /// <param name="payPalError">
+        ///     <see cref="PayPalError" /> response.
+        ///     <remarks>
+        ///         <see cref="PayPalError" /> is deserialised from a form-encoded HTTP
+        ///         response.
+        ///     </remarks>
+        /// </param>
+        /// <returns>
+        ///     A <see cref="bool" /> response indicating whether or not a
+        ///     <b>GetExpressCheckoutDetails</b> transaction was successful.
+        /// </returns>
         public static bool TryParseCustomerDetails(
             string getExpressCheckoutDetails,
             out CustomerDetails customerDetails,
@@ -242,14 +271,135 @@ namespace Daishi.PaySharp {
         }
 
         /// <summary>
+        ///     Parses PayPal metadata returned by <b>DoExpressCheckoutPayment</b> and
+        ///     returns the encapsulated PayPal <see cref="TransactionResults" />, or
+        ///     <see cref="PayPalError" />, should an error occur.
+        /// </summary>
+        /// <param name="doExpressCheckoutPayment">
+        ///     PayPal metadata returned by
+        ///     <b>DoExpressCheckoutPayment</b>.
+        /// </param>
+        /// <param name="transactionResults">
+        ///     <see cref="TransactionResults" />
+        ///     returned as a result of a successful <b>DoExpressCheckoutPayment</b>
+        ///     transaction.
+        ///     <remarks>
+        ///         <see cref="TransactionResults" /> is deserialised from a form-encoded
+        ///         HTTP response.
+        ///     </remarks>
+        /// </param>
+        /// <param name="payPalError">
+        ///     <see cref="PayPalError" /> response.
+        ///     <remarks>
+        ///         <see cref="PayPalError" /> is deserialised from a form-encoded HTTP
+        ///         response.
+        ///     </remarks>
+        /// </param>
+        /// <returns>
+        ///     A <see cref="bool" /> response indicating whether or not a
+        ///     <b>DoExpressCheckoutPayment</b> transaction was successful.
+        /// </returns>
+        public static bool TryParseTransactionResults(
+            string doExpressCheckoutPayment,
+            out TransactionResults transactionResults,
+            out PayPalError payPalError) {
+
+            var parsedDoExpressCheckoutPayment =
+                HttpUtility.ParseQueryString(doExpressCheckoutPayment);
+
+            if (IsNotErrorResponse(parsedDoExpressCheckoutPayment)) {
+                transactionResults = new TransactionResults {
+                    Token = parsedDoExpressCheckoutPayment["TOKEN"],
+                    SuccessPageRedirectRequested =
+                        parsedDoExpressCheckoutPayment[
+                            "SUCCESSPAGEREDIRECTREQUESTED"],
+                    Timestamp = parsedDoExpressCheckoutPayment["TIMESTAMP"],
+                    CorrelationID =
+                        parsedDoExpressCheckoutPayment["CORRELATIONID"],
+                    Ack = parsedDoExpressCheckoutPayment["ACK"],
+                    Version = parsedDoExpressCheckoutPayment["VERSION"],
+                    Build = parsedDoExpressCheckoutPayment["BUILD"],
+                    InsuranceOptionSelected =
+                        parsedDoExpressCheckoutPayment["INSURANCEOPTIONSELECTED"
+                            ],
+                    ShippingOptionIsDefault =
+                        parsedDoExpressCheckoutPayment["SHIPPINGOPTIONISDEFAULT"
+                            ],
+                    PaymentInfoTransactionID =
+                        parsedDoExpressCheckoutPayment[
+                            "PAYMENTINFO_0_TRANSACTIONID"],
+                    PaymentInfoTransactionType =
+                        parsedDoExpressCheckoutPayment[
+                            "PAYMENTINFO_0_TRANSACTIONTYPE"],
+                    PaymentInfoPaymentType =
+                        parsedDoExpressCheckoutPayment[
+                            "PAYMENTINFO_0_PAYMENTTYPE"],
+                    PaymentInfoOrderTime =
+                        parsedDoExpressCheckoutPayment["PAYMENTINFO_0_ORDERTIME"
+                            ],
+                    PaymentInfoAmt =
+                        parsedDoExpressCheckoutPayment["PAYMENTINFO_0_AMT"],
+                    PaymentInfoFeeAmt =
+                        parsedDoExpressCheckoutPayment["PAYMENTINFO_0_FEEAMT"],
+                    PaymentInfoTaxAmt =
+                        parsedDoExpressCheckoutPayment["PAYMENTINFO_0_TAXAMT"],
+                    PaymentInfoCurrencyCode =
+                        parsedDoExpressCheckoutPayment[
+                            "PAYMENTINFO_0_CURRENCYCODE"],
+                    PaymentInfoPaymentStatus =
+                        parsedDoExpressCheckoutPayment[
+                            "PAYMENTINFO_0_PAYMENTSTATUS"],
+                    PaymentInfoPendingReason =
+                        parsedDoExpressCheckoutPayment[
+                            "PAYMENTINFO_0_PENDINGREASON"],
+                    PaymentInfoReasonCode =
+                        parsedDoExpressCheckoutPayment[
+                            "PAYMENTINFO_0_REASONCODE"],
+                    PaymentInfoProtectionEligibility =
+                        parsedDoExpressCheckoutPayment[
+                            "PAYMENTINFO_0_PROTECTIONELIGIBILITY"],
+                    PaymentInfoProtectionEligibilityType =
+                        parsedDoExpressCheckoutPayment[
+                            "PAYMENTINFO_0_PROTECTIONELIGIBILITYTYPE"],
+                    PaymentInfoSecureMerchantAccountID =
+                        parsedDoExpressCheckoutPayment[
+                            "PAYMENTINFO_0_SECUREMERCHANTACCOUNTID"],
+                    PaymentInfoErrorCode =
+                        parsedDoExpressCheckoutPayment["PAYMENTINFO_0_ERRORCODE"
+                            ],
+                    PaymentInfoAck =
+                        parsedDoExpressCheckoutPayment["PAYMENTINFO_0_ACK"]
+                };
+
+                payPalError = null;
+                return true;
+            }
+
+            payPalError = new PayPalError {
+                Timestamp = parsedDoExpressCheckoutPayment["TIMESTAMP"],
+                CorrelationID = parsedDoExpressCheckoutPayment["CORRELATIONID"],
+                Ack = parsedDoExpressCheckoutPayment["ACK"],
+                ErrorCode = parsedDoExpressCheckoutPayment["L_ERRORCODE0"],
+                ShortMessage = parsedDoExpressCheckoutPayment["L_SHORTMESSAGE0"],
+                LongMessage = parsedDoExpressCheckoutPayment["L_LONGMESSAGE0"]
+            };
+
+            transactionResults = null;
+            return false;
+        }
+
+        /// <summary>
         ///     Determines whether or not the specified
         ///     <see cref="NameValueCollection" />
         ///     represents error metadata returned from PayPal.
+        ///     <remarks>
+        ///         A PayPal response is considered erroneous if it contains a key
+        ///         named <c>'L_ERRORCODE0'</c>.
+        ///     </remarks>
         /// </summary>
         /// <param name="nvc">The <see cref="NameValueCollection" /> returned from PayPal.</param>
         /// <returns>
-        ///     Returns a <see cref="bool" /> value indicating whether or not the
-        ///     specified
+        ///     A <see cref="bool" /> value indicating whether or not the specified
         ///     <see cref="NameValueCollection" /> represents error metadata returned from
         ///     PayPal.
         /// </returns>

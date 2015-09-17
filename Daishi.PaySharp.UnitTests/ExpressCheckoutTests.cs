@@ -91,6 +91,9 @@ namespace Daishi.PaySharp.UnitTests {
             Assert.AreEqual("0", customerDetails.PaymentRequestInfoErrorCode);
         }
 
+        [Test]
+        public void PayPalUtilityParsesDoExpressCheckoutPayment() {}
+
         #endregion
 
         #region Failing Tests
