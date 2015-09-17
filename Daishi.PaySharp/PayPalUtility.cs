@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Daishi.PaySharp {
     /// <summary>
-    ///     <c>PayPalUtility</c> provides functionality designed to augment
+    ///     Provides functionality designed to augment
     ///     <see cref="PayPalAdapter" />. It provides parsing mechanisms designed to
     ///     deserialise PayPal metadata returned by <see cref="PayPalAdapter" />
     ///     methods.

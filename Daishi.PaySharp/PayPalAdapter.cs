@@ -9,11 +9,10 @@ using System.Threading.Tasks;
 
 namespace Daishi.PaySharp {
     /// <summary>
-    ///     <c>PayPalAdapter</c> interfaces with PayPal HTTP endpoints and provides
-    ///     both synchronous and asynchronous mechanisms that consume those endpoints.
+    ///     Interfaces with PayPal HTTP endpoints and provides both synchronous and
+    ///     asynchronous mechanisms that consume those endpoints.
     ///     <remarks>
-    ///         PayPal exposes metadata in a form-encoded format.
-    ///         <c>PayPalAdapter</c>
+    ///         PayPal exposes metadata in a form-encoded format. This class
     ///         provides a means to retrieve such PayPal metadata in raw-format.
     ///     </remarks>
     /// </summary>
@@ -134,6 +133,6 @@ namespace Daishi.PaySharp {
                     new Uri(string.Concat(getExpressCheckoutUri, "?",
                         queryString)));
             }
-        }       
+        }
     }
 }

@@ -6,10 +6,16 @@ using System.Collections.Generic;
 
 namespace Daishi.PaySharp {
     /// <summary>
-    ///     <see cref="MerchantAccounts" /> provides a means of managing PayPal
-    ///     Merchant Accounts, by loading Merchant Account metadata from external
-    ///     sources, such as *.config files, and by providing access to underlying
-    ///     Merchant Account metadata through key-value lookup.
+    ///     Provides a means of managing PayPal Merchant Accounts, by loading Merchant
+    ///     Account metadata from external sources, such as *.config files, and by
+    ///     providing access to underlying Merchant Account metadata through key-value
+    ///     lookup.
+    ///     <remarks>
+    ///         Merchant Accounts should ideally be loaded into this class on
+    ///         application-startup, and reference by means of
+    ///         <see cref="MerchantAccounts.GetByCurrencyCode" /> during the course of
+    ///         the application's life-cycle.
+    ///     </remarks>
     /// </summary>
     public class MerchantAccounts {
         private readonly Dictionary<string, string> _merchantAccounts =
