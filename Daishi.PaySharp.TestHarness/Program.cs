@@ -10,8 +10,8 @@ namespace Daishi.PaySharp.TestHarness {
     internal class Program {
         private static void Main(string[] args) {
 
-            Console.Write("Press the <return> key to run...");
-            Console.ReadLine();
+            Console.Write("Press the <return> key to run...");            
+            Console.ReadLine();            
 
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Executing SETEXPRESSCHECKOUT...");
@@ -21,6 +21,7 @@ namespace Daishi.PaySharp.TestHarness {
                 var user = ConfigurationManager.AppSettings["User"];
                 var password = ConfigurationManager.AppSettings["Password"];
                 var signature = ConfigurationManager.AppSettings["Signature"];
+                var subject = ConfigurationManager.AppSettings["Subject"];
 
                 var payPalAdapter = new PayPalAdapter();
 
@@ -75,7 +76,7 @@ namespace Daishi.PaySharp.TestHarness {
                     Console.WriteLine();
                     Console.Write("PayPal Short Error Message: ");
                     Console.ForegroundColor = ConsoleColor.DarkRed;
-                    Console.Write(payPalError.ShortMessage);
+                    Console.Write(payPalError.LongMessage);
 
                     Console.ResetColor();
                     Console.WriteLine();
@@ -89,7 +90,9 @@ namespace Daishi.PaySharp.TestHarness {
 
                 Console.WriteLine(
                     "Press any key to invoke GETEXPRESSCHECKOUTDETAILS...");
-                Console.ReadLine();
+                Console.ReadKey();
+                Console.Write("Enter PayerID: ");
+                var payerID = Console.ReadLine();
 
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("Executing GETEXPRESSCHECKOUTDETAILS...");
@@ -100,15 +103,13 @@ namespace Daishi.PaySharp.TestHarness {
                 var getExpressCheckoutDetails = payPalAdapter
                     .GetExpressCheckoutDetails(
                         new GetExpressCheckoutDetailsPayload {
-                            User = ConfigurationManager.AppSettings["User"],
-                            Password =
-                                ConfigurationManager.AppSettings["Password"],
-                            Signature =
-                                ConfigurationManager.AppSettings["Signature"],
+                            User = user,
+                            Password = password,
+                            Signature = signature,
                             Version = "108.0",
                             AccessToken = accessToken,
-                            Subject = "NJ9W2NABYSKZ6",
-                            PayerID = "UPMHHXJ72R4EG"
+                            Subject = subject,
+                            PayerID = payerID
                         },
                         ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
 
@@ -138,7 +139,67 @@ namespace Daishi.PaySharp.TestHarness {
                     Console.WriteLine();
                     Console.Write("PayPal Short Error Message: ");
                     Console.ForegroundColor = ConsoleColor.DarkRed;
-                    Console.Write(payPalError.ShortMessage);
+                    Console.Write(payPalError.LongMessage);
+                }
+
+                Console.ResetColor();
+                Console.WriteLine();
+                Console.WriteLine();
+
+                #endregion
+
+                Console.WriteLine(
+                    "Press any key to invoke DOEXPRESSCHECKOUTPAYMENT...");
+                Console.ReadKey();
+
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Executing DOEXPRESSCHECKOUTPAYMENT...");
+                Console.ResetColor();
+
+                #region DOEXPRESSCHECKOUTPAYMENT
+
+                var doExpressCheckoutPayment = payPalAdapter
+                    .DoExpressCheckoutPayment(
+                        new DoExpressCheckoutPaymentPayload {
+                            User = user,
+                            Password = password,
+                            Signature = signature,
+                            Version = "108.0",
+                            AccessToken = accessToken,
+                            Subject = subject,
+                            PayerID = payerID,
+                            PaymentRequestAmt = "19.95",
+                            PaymentRequestCurrencyCode = "EUR"
+                        },
+                        ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
+
+                TransactionResults transactionResults;
+
+                ok = PayPalUtility.TryParseTransactionResults(
+                    doExpressCheckoutPayment, out transactionResults,
+                    out payPalError);
+
+                if (ok) {
+                    Console.Write("DOEXPRESSCHECKOUTPAYMENT: ");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("OK");
+                    Console.ResetColor();
+
+                    Console.WriteLine();
+                    Console.Write("PayPal Acknowledgment: ");
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.Write(transactionResults.PaymentInfoPaymentStatus);
+                }
+                else {
+                    Console.Write("DOEXPRESSCHECKOUTPAYMENT: ");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("FAIL");
+                    Console.ResetColor();
+
+                    Console.WriteLine();
+                    Console.Write("PayPal Short Error Message: ");
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.Write(payPalError.LongMessage);
                 }
 
                 Console.ResetColor();
