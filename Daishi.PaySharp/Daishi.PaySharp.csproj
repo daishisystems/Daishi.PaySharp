@@ -45,6 +45,7 @@
     <Compile Include="CustomerDetails.cs" />
     <Compile Include="ExpressCheckoutPayload.cs" />
     <Compile Include="ExpressCheckoutMetadataFactory.cs" />
+    <Compile Include="Extensibility\NamespaceDoc.cs" />
     <Compile Include="GetExpressCheckoutDetailsPayload.cs" />
     <Compile Include="MerchantAccount.cs" />
     <Compile Include="NamespaceDoc.cs" />
