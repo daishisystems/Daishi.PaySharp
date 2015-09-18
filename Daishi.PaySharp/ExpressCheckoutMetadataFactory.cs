@@ -62,5 +62,32 @@ namespace Daishi.PaySharp {
                         getExpressCheckoutDetailsMetadata[key]))));
 
         }
+
+        public static string CreateDoExpressCheckoutPaymentQueryString(
+            DoExpressCheckoutPaymentPayload payload) {
+
+            var doExpressCheckoutPaymentMetadata = new NameValueCollection {
+                {"METHOD", payload.Method},
+                {"VERSION", payload.Version},
+                {"USER", payload.User},
+                {"PWD", payload.Password},
+                {"SIGNATURE", payload.Signature},
+                {"SUBJECT", payload.Subject},
+                {"TOKEN", payload.AccessToken},
+                {"PAYERID", payload.PayerID}, {
+                    "PAYMENTREQUEST_0_PAYMENTACTION",
+                    payload.PaymentRequestPaymentAction
+                },
+                {"PAYMENTREQUEST_0_AMT", payload.PaymentRequestAmt}, {
+                    "PAYMENTREQUEST_0_CURRENCYCODE",
+                    payload.PaymentRequestCurrencyCode
+                }
+            };
+
+            return string.Join("&",
+                doExpressCheckoutPaymentMetadata.AllKeys.Select(
+                    key => string.Concat(key, "=", HttpUtility.UrlEncode(
+                        doExpressCheckoutPaymentMetadata[key]))));
+        }
     }
 }

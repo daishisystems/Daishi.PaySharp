@@ -46,7 +46,7 @@ namespace Daishi.PaySharp {
         }
 
         /// <summary>
-        ///     SetExpressCheckout asynchronous equivalent.
+        ///     <see cref="SetExpressCheckout" /> asynchronous equivalent.
         ///     <seealso cref="SetExpressCheckout" />
         /// </summary>
         /// <param name="payload">
@@ -106,7 +106,7 @@ namespace Daishi.PaySharp {
         }
 
         /// <summary>
-        ///     GetExpressCheckoutDetails asynchronous equivalent.
+        ///     <see cref="GetExpressCheckoutDetails" /> asynchronous equivalent.
         ///     <seealso cref="GetExpressCheckoutDetails" />
         /// </summary>
         /// <param name="payload">
@@ -114,14 +114,14 @@ namespace Daishi.PaySharp {
         ///     <b>GetExpressCheckoutDetails</b> call. Payload will be converted to
         ///     key-value format.
         /// </param>
-        /// <param name="getExpressCheckoutUri">Default PayPal ExpressCheckout HTTP URI.</param>
+        /// <param name="expressCheckoutUri">Default PayPal ExpressCheckout HTTP URI.</param>
         /// <returns>
         ///     A <see cref="Task" /> of <see cref="string" />, representing a
         ///     serialised <see cref="CustomerDetails" /> instance.
         /// </returns>
         public async Task<string> GetExpressCheckoutDetailsAsync(
             GetExpressCheckoutDetailsPayload payload,
-            string getExpressCheckoutUri) {
+            string expressCheckoutUri) {
 
             var queryString =
                 ExpressCheckoutMetadataFactory
@@ -130,9 +130,69 @@ namespace Daishi.PaySharp {
             using (var webClient = new WebClient()) {
 
                 return await webClient.DownloadStringTaskAsync(
-                    new Uri(string.Concat(getExpressCheckoutUri, "?",
+                    new Uri(string.Concat(expressCheckoutUri, "?",
                         queryString)));
             }
+        }
+
+        /// <summary>
+        ///     Executes PayPal's <b>DoExpressCheckoutPayment</b> function in order to
+        ///     return PayPal <see cref="TransactionResults" />.
+        /// </summary>
+        /// <param name="payload">
+        ///     Metadata necessary to facilitate a successful
+        ///     <b>DoExpressCheckoutPayment</b> call. Payload will be converted to
+        ///     key-value format..
+        /// </param>
+        /// <param name="expressCheckoutUri">Default PayPal ExpressCheckout HTTP URI.</param>
+        /// <returns>
+        ///     A <see cref="Task" /> of <see cref="string" />, representing a
+        ///     serialised <see cref="TransactionResults" /> instance.
+        /// </returns>
+        public string DoExpressCheckoutPayment(
+            DoExpressCheckoutPaymentPayload payload,
+            string expressCheckoutUri) {
+
+            var queryString =
+                ExpressCheckoutMetadataFactory
+                    .CreateDoExpressCheckoutPaymentQueryString(payload);
+
+            using (var webClient = new WebClient()) {
+
+                return webClient.DownloadString(
+                    new Uri(string.Concat(expressCheckoutUri, "?", queryString)));
+            }
+
+        }
+
+        /// <summary>
+        ///     <see cref="DoExpressCheckoutPayment" /> asynchronous equivalent.
+        ///     <seealso cref="DoExpressCheckoutPayment" />
+        /// </summary>
+        /// <param name="payload">
+        ///     Metadata necessary to facilitate a successful
+        ///     <b>DoExpressCheckoutPayment</b> call. Payload will be converted to
+        ///     key-value format..
+        /// </param>
+        /// <param name="expressCheckoutUri">Default PayPal ExpressCheckout HTTP URI.</param>
+        /// <returns>
+        ///     A <see cref="Task" /> of <see cref="string" />, representing a
+        ///     serialised <see cref="TransactionResults" /> instance.
+        /// </returns>
+        public async Task<string> DoExpressCheckoutPaymentAsync(
+            DoExpressCheckoutPaymentPayload payload,
+            string expressCheckoutUri) {
+
+            var queryString =
+                ExpressCheckoutMetadataFactory
+                    .CreateDoExpressCheckoutPaymentQueryString(payload);
+
+            using (var webClient = new WebClient()) {
+
+                return await webClient.DownloadStringTaskAsync(
+                    new Uri(string.Concat(expressCheckoutUri, "?", queryString)));
+            }
+
         }
     }
 }

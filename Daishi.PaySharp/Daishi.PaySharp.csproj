@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerDetails.cs" />
+    <Compile Include="DoExpressCheckoutPaymentPayload.cs" />
     <Compile Include="ExpressCheckoutPayload.cs" />
     <Compile Include="ExpressCheckoutMetadataFactory.cs" />
     <Compile Include="Extensibility\NamespaceDoc.cs" />
