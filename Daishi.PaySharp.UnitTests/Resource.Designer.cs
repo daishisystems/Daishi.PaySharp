@@ -70,23 +70,7 @@ namespace Daishi.PaySharp.UnitTests {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TOKEN=EC%2d5ED70123NJ325433P
-        ///SUCCESSPAGEREDIRECTREQUESTED=false
-        ///TIMESTAMP=2015%2d09%2d17T11%3a32%3a14Z
-        ///CORRELATIONID=da59801663304
-        ///ACK=Success
-        ///VERSION=108%2e0
-        ///BUILD=000000
-        ///INSURANCEOPTIONSELECTED=false
-        ///SHIPPINGOPTIONISDEFAULT=false
-        ///PAYMENTINFO_0_TRANSACTIONID=6YX65164PA326324T
-        ///PAYMENTINFO_0_TRANSACTIONTYPE=expresscheckout
-        ///PAYMENTINFO_0_PAYMENTTYPE=instant
-        ///PAYMENTINFO_0_ORDERTIME=2015%2d09%2d17T11%3a32%3a14Z
-        ///PAYMENTINFO_0_AMT=19%2e95
-        ///PAYMENTINFO_0_FEEAMT=0%2e93
-        ///PAYMENTINFO_0_TAXAMT=0%2e00
-        ///PAY [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to TOKEN=EC%2d5ED70123NJ325433P&amp;SUCCESSPAGEREDIRECTREQUESTED=false&amp;TIMESTAMP=2015%2d09%2d17T11%3a32%3a14Z&amp;CORRELATIONID=da59801663304&amp;ACK=Success&amp;VERSION=108%2e0&amp;BUILD=000000&amp;INSURANCEOPTIONSELECTED=false&amp;SHIPPINGOPTIONISDEFAULT=false&amp;PAYMENTINFO_0_TRANSACTIONID=6YX65164PA326324T&amp;PAYMENTINFO_0_TRANSACTIONTYPE=expresscheckout&amp;PAYMENTINFO_0_PAYMENTTYPE=instant&amp;PAYMENTINFO_0_ORDERTIME=2015%2d09%2d17T11%3a32%3a14Z&amp;PAYMENTINFO_0_AMT=19%2e95&amp;PAYMENTINFO_0_FEEAMT=0%2e93&amp;PAYMENTINFO_0_TAXAMT=0%2e00&amp;PAYMENTINFO_0_CURRE [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DoExpressCheckoutPayment {
             get {

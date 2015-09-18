@@ -92,7 +92,52 @@ namespace Daishi.PaySharp.UnitTests {
         }
 
         [Test]
-        public void PayPalUtilityParsesDoExpressCheckoutPayment() {}
+        public void PayPalUtilityParsesDoExpressCheckoutPayment() {
+
+            TransactionResults transactionResults;
+            PayPalError error;
+
+            var methodCompletedOK = PayPalUtility.TryParseTransactionResults(
+                Resource.DoExpressCheckoutPayment, out transactionResults,
+                out error);
+
+            Assert.IsTrue(methodCompletedOK);
+            Assert.IsNull(error);
+
+            Assert.AreEqual("EC-5ED70123NJ325433P", transactionResults.Token);
+            Assert.AreEqual("false",
+                transactionResults.SuccessPageRedirectRequested);
+            Assert.AreEqual("2015-09-17T11:32:14Z", transactionResults.Timestamp);
+            Assert.AreEqual("da59801663304", transactionResults.CorrelationID);
+            Assert.AreEqual("Success", transactionResults.Ack);
+            Assert.AreEqual("108.0", transactionResults.Version);
+            Assert.AreEqual("000000", transactionResults.Build);
+            Assert.AreEqual("false", transactionResults.InsuranceOptionSelected);
+            Assert.AreEqual("false", transactionResults.ShippingOptionIsDefault);
+            Assert.AreEqual("6YX65164PA326324T",
+                transactionResults.PaymentInfoTransactionID);
+            Assert.AreEqual("expresscheckout",
+                transactionResults.PaymentInfoTransactionType);
+            Assert.AreEqual("instant", transactionResults.PaymentInfoPaymentType);
+            Assert.AreEqual("2015-09-17T11:32:14Z",
+                transactionResults.PaymentInfoOrderTime);
+            Assert.AreEqual("19.95", transactionResults.PaymentInfoAmt);
+            Assert.AreEqual("0.93", transactionResults.PaymentInfoFeeAmt);
+            Assert.AreEqual("0.00", transactionResults.PaymentInfoTaxAmt);
+            Assert.AreEqual("EUR", transactionResults.PaymentInfoCurrencyCode);
+            Assert.AreEqual("Completed",
+                transactionResults.PaymentInfoPaymentStatus);
+            Assert.AreEqual("None", transactionResults.PaymentInfoPendingReason);
+            Assert.AreEqual("None", transactionResults.PaymentInfoReasonCode);
+            Assert.AreEqual("Ineligible",
+                transactionResults.PaymentInfoProtectionEligibility);
+            Assert.AreEqual("None",
+                transactionResults.PaymentInfoProtectionEligibilityType);
+            Assert.AreEqual("NJ9W2NABYSKZ6",
+                transactionResults.PaymentInfoSecureMerchantAccountID);
+            Assert.AreEqual("0", transactionResults.PaymentInfoErrorCode);
+            Assert.AreEqual("Success", transactionResults.PaymentInfoAck);
+        }
 
         #endregion
 

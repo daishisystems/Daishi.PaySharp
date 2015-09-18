@@ -39,8 +39,8 @@ namespace Daishi.PaySharp {
         /// <summary>Gets or sets the first name.</summary>
         /// <value>The first name.</value>
         public string FirstName { get; set; }
-        /// <summary>Gets or sets the last name.</summary>
-        /// <value>The last name.</value>
+        /// <summary>Gets or sets theast name.</summary>
+        /// <value>theast name.</value>
         public string LastName { get; set; }
         /// <summary>Gets or sets the country code.</summary>
         /// <value>The country code.</value>
@@ -99,32 +99,32 @@ namespace Daishi.PaySharp {
         /// <summary>Gets or sets the ship disc amt.</summary>
         /// <value>The ship disc amt.</value>
         public string ShipDiscAmt { get; set; }
-        /// <summary>Gets or sets the name of the l.</summary>
-        /// <value>The name of the l.</value>
+        /// <summary>Gets or sets the name of the.</summary>
+        /// <value>The name of the.</value>
         public string LName { get; set; }
-        /// <summary>Gets or sets the l quantity.</summary>
-        /// <value>The l quantity.</value>
+        /// <summary>Gets or sets the quantity.</summary>
+        /// <value>the quantity.</value>
         public string LQuantity { get; set; }
-        /// <summary>Gets or sets the l tax amt.</summary>
-        /// <value>The l tax amt.</value>
+        /// <summary>Gets or sets the tax amt.</summary>
+        /// <value>the tax amt.</value>
         public string LTaxAmt { get; set; }
-        /// <summary>Gets or sets the l amt.</summary>
-        /// <value>The l amt.</value>
+        /// <summary>Gets or sets the amt.</summary>
+        /// <value>the amt.</value>
         public string LAmt { get; set; }
-        /// <summary>Gets or sets the l description.</summary>
-        /// <value>The l description.</value>
+        /// <summary>Gets or sets the description.</summary>
+        /// <value>the description.</value>
         public string LDescription { get; set; }
-        /// <summary>Gets or sets the l item weight value.</summary>
-        /// <value>The l item weight value.</value>
+        /// <summary>Gets or sets the item weight value.</summary>
+        /// <value>the item weight value.</value>
         public string LItemWeightValue { get; set; }
-        /// <summary>Gets or sets the l item length value.</summary>
-        /// <value>The l item length value.</value>
+        /// <summary>Gets or sets the item length value.</summary>
+        /// <value>the item length value.</value>
         public string LItemLengthValue { get; set; }
-        /// <summary>Gets or sets the l item width value.</summary>
-        /// <value>The l item width value.</value>
+        /// <summary>Gets or sets the item width value.</summary>
+        /// <value>the item width value.</value>
         public string LItemWidthValue { get; set; }
-        /// <summary>Gets or sets the l item height value.</summary>
-        /// <value>The l item height value.</value>
+        /// <summary>Gets or sets the item height value.</summary>
+        /// <value>the item height value.</value>
         public string LItemHeightValue { get; set; }
         /// <summary>Gets or sets the payment request currency code.</summary>
         /// <value>The payment request currency code.</value>
@@ -159,32 +159,32 @@ namespace Daishi.PaySharp {
         /// <summary>Gets or sets the payment request address normalisation status.</summary>
         /// <value>The payment request address normalisation status.</value>
         public string PaymentRequestAddressNormalisationStatus { get; set; }
-        /// <summary>Gets or sets the name of the l payment request.</summary>
-        /// <value>The name of the l payment request.</value>
+        /// <summary>Gets or sets the name of the payment request.</summary>
+        /// <value>The name of the payment request.</value>
         public string LPaymentRequestName { get; set; }
-        /// <summary>Gets or sets the l payment request quantity.</summary>
-        /// <value>The l payment request quantity.</value>
+        /// <summary>Gets or sets the payment request quantity.</summary>
+        /// <value>the payment request quantity.</value>
         public string LPaymentRequestQuantity { get; set; }
-        /// <summary>Gets or sets the l payment request tax amt.</summary>
-        /// <value>The l payment request tax amt.</value>
+        /// <summary>Gets or sets the payment request tax amt.</summary>
+        /// <value>the payment request tax amt.</value>
         public string LPaymentRequestTaxAmt { get; set; }
-        /// <summary>Gets or sets the l payment request amt.</summary>
-        /// <value>The l payment request amt.</value>
+        /// <summary>Gets or sets the payment request amt.</summary>
+        /// <value>the payment request amt.</value>
         public string LPaymentRequestAmt { get; set; }
-        /// <summary>Gets or sets the l payment request description.</summary>
-        /// <value>The l payment request description.</value>
+        /// <summary>Gets or sets the payment request description.</summary>
+        /// <value>the payment request description.</value>
         public string LPaymentRequestDescription { get; set; }
-        /// <summary>Gets or sets the l payment request item weight value.</summary>
-        /// <value>The l payment request item weight value.</value>
+        /// <summary>Gets or sets the payment request item weight value.</summary>
+        /// <value>the payment request item weight value.</value>
         public string LPaymentRequestItemWeightValue { get; set; }
-        /// <summary>Gets or sets the l payment request item length value.</summary>
-        /// <value>The l payment request item length value.</value>
+        /// <summary>Gets or sets the payment request item length value.</summary>
+        /// <value>the payment request item length value.</value>
         public string LPaymentRequestItemLengthValue { get; set; }
-        /// <summary>Gets or sets the l payment request item width value.</summary>
-        /// <value>The l payment request item width value.</value>
+        /// <summary>Gets or sets the payment request item width value.</summary>
+        /// <value>the payment request item width value.</value>
         public string LPaymentRequestItemWidthValue { get; set; }
-        /// <summary>Gets or sets the l payment request item height value.</summary>
-        /// <value>The l payment request item height value.</value>
+        /// <summary>Gets or sets the payment request item height value.</summary>
+        /// <value>the payment request item height value.</value>
         public string LPaymentRequestItemHeightValue { get; set; }
         /// <summary>Gets or sets the payment request information transaction identifier.</summary>
         /// <value>The payment request information transaction identifier.</value>
