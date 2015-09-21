@@ -54,35 +54,35 @@ Collects the payment by transferring the transaction amount from the User's acco
 ## Sample Code
 #### SetExpressCheckout
 ```cs
-                var user = ConfigurationManager.AppSettings["User"];
-                var password = ConfigurationManager.AppSettings["Password"];
-                var signature = ConfigurationManager.AppSettings["Signature"];
-                var subject = ConfigurationManager.AppSettings["Subject"];
+var user = ConfigurationManager.AppSettings["User"];
+var password = ConfigurationManager.AppSettings["Password"];
+var signature = ConfigurationManager.AppSettings["Signature"];
+var subject = ConfigurationManager.AppSettings["Subject"];
 
-                var payPalAdapter = new PayPalAdapter();
+var payPalAdapter = new PayPalAdapter();
 
-                var setExpresscheckout =
-                    payPalAdapter.SetExpressCheckout(
-                        new SetExpressCheckoutPayload {
-                            User = user,
-                            Password = password,
-                            Signature = signature,
-                            Version = "108.0",
-                            Amount = "19.95",
-                            Subject = subject,
-                            LocaleCode = "en-IE",
-                            CurrencyCode = "EUR",
-                            CancelUrl = "http://www.example.com/cancel.html",
-                            ReturnUrl = "http://www.example.com/success.html",
-                            PaymentRequestName = "TEST",
-                            PaymentRequestDescription = "TEST BOOKING"
-                        },
-                        Encoding.UTF8,
-                        ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
+var setExpresscheckout =
+    payPalAdapter.SetExpressCheckout(
+        new SetExpressCheckoutPayload {
+            User = user,
+            Password = password,
+            Signature = signature,
+            Version = "108.0",
+            Amount = "19.95",
+            Subject = subject,
+            LocaleCode = "en-IE",
+            CurrencyCode = "EUR",
+            CancelUrl = "http://www.example.com/cancel.html",
+            ReturnUrl = "http://www.example.com/success.html",
+            PaymentRequestName = "TEST",
+            PaymentRequestDescription = "TEST BOOKING"
+        },
+        Encoding.UTF8,
+        ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
 
-                string accessToken;
-                PayPalError payPalError;
+string accessToken;
+PayPalError payPalError;
 
-                var ok = PayPalUtility.TryParseAccessToken(setExpresscheckout,
-                    out accessToken, out payPalError);
+var ok = PayPalUtility.TryParseAccessToken(setExpresscheckout,
+    out accessToken, out payPalError);
 ```
