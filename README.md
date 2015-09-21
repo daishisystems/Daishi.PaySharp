@@ -38,11 +38,11 @@ PaySharp.NET is covered by a range of Unit Tests, included with each build. To p
 10. Press any key when prompted, and input the PayerID parameter from Step 8
 11. GetExpressCheckoutDetails is invoked
 12. Press any key when prompted
-11. DoExpressCheckout is invoked, successfully completing the transaction
+13. DoExpressCheckout is invoked, successfully completing the transaction
 ## Explanation of Terms
-### SetExpressCheckout
+#### SetExpressCheckout
 Establishes a PayPal session based on Merchant credentials, and returns an Access Token pertaining to that session
-### GetExpresscheckoutDetails
+#### GetExpresscheckoutDetails
 Returns a definitive collection of metadata that describes the PayPal user (*name*, *address*, etc.)
-### DoExpressCheckoutPayment
+#### DoExpressCheckoutPayment
 Collects the payment by transferring the transaction amount from the User's account to the Merchant account
