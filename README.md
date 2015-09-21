@@ -1,5 +1,5 @@
-<a href="http://teamcity/viewType.html?buildTypeId=btN&guest=1">
-<img src="http://teamcity/app/rest/builds/buildType:(id:btN)/statusIcon"/>
+<a href="http://teamcity/viewType.html?buildTypeId=PaySharpNet_PaySharpNet&guest=1">
+<img src="http://teamcity/app/rest/builds/buildType:(id:PaySharpNet_PaySharpNet)/statusIcon"/>
 </a>
 # Daishi.PaySharp
 PayPal .NET Package
