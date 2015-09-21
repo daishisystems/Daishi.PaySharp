@@ -9,8 +9,8 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("Daishi.PaySharp")]
-[assembly: AssemblyDescription("PaySharp.NET - a PayPal C# SDK.")]
+[assembly: AssemblyTitle("PaySharp.NET")]
+[assembly: AssemblyDescription("A PayPal SDK targeting the .NET Framework (4.5+), written in C#.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Paul Mooney")]
 [assembly: AssemblyProduct("PaySharp.NET")]
@@ -39,5 +39,5 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: AssemblyVersion("1.0.1.0")]
-[assembly: AssemblyFileVersion("1.0.1.0")]
+[assembly: AssemblyVersion("1.0.2.0")]
+[assembly: AssemblyFileVersion("1.0.2.0")]
