@@ -35,7 +35,7 @@ namespace Daishi.PaySharp.TestHarness {
                             Signature = signature,
                             Version = "108.0",
                             Amount = "19.95",
-                            Subject = "NJ9W2NABYSKZ6",
+                            Subject = subject,
                             LocaleCode = "en-IE",
                             CurrencyCode = "EUR",
                             CancelUrl = "http://www.example.com/cancel.html",
