@@ -17,13 +17,13 @@ Install the [NuGet Package](https://www.nuget.org/packages/Daishi.PaySharp/):
 PM> Install-Package Daishi.PaySharp
 ```
 ## Getting Started
-[Register a Business Account with PayPal](https://developer.paypal.com/webapps/developer/applications/accounts) and follow these instructions. PaySharp.NET requires the following prerequisite PayPal metadata:
+[Register a Business Account with PayPal](https://developer.paypal.com/webapps/developer/applications/accounts). PaySharp.NET requires the following prerequisite PayPal metadata:
 * *Username*
 * *Password*
 * *Signature*
 * *ExpressCheckoutURI*
 
-Each PayPal account is associated with a [Secure Merchant ID](https://www.paypal-community.com/t5/About-Business/Where-can-I-find-my-quot-Secure-Merchant-ID-quot/td-p/810000), which can be included in the *Subject* field, if for example, your application supports multiple currencies. *ExpressCheckoutURI* should refer to [the PayPal Sandbox](https://developer.paypal.com/developer/accounts/) for all non-production environments.
+Each PayPal account is also associated with a [Secure Merchant ID](https://www.paypal-community.com/t5/About-Business/Where-can-I-find-my-quot-Secure-Merchant-ID-quot/td-p/810000), which can be included in the *Subject* field (see Code Samples below), if for example, your application supports multiple currencies. *ExpressCheckoutURI* should refer to [the PayPal Sandbox](https://developer.paypal.com/developer/accounts/) for all non-production environments.
 ## Explanation of Terms
 #### SetExpressCheckout
 Establishes a PayPal session based on Merchant credentials, and returns an Access Token pertaining to that session.
