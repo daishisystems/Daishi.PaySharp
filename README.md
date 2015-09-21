@@ -12,7 +12,7 @@ PaySharp.NET provides features that allow consuming applications and services to
 
 PaySharp.NET provides both synchronous and asynchronous support for each mechanism.
 ## Installation
-Install the NuGet Package:
+Install the [NuGet Package](https://www.nuget.org/packages/Daishi.PaySharp/):
 ```
 PM> Install-Package Daishi.PaySharp
 ```
@@ -23,4 +23,4 @@ PM> Install-Package Daishi.PaySharp
 * *Signature*
 * *ExpressCheckoutURI*
 
-Each PayPal account is associated with a [Secure Merchant ID](https://www.paypal-community.com/t5/About-Business/Where-can-I-find-my-quot-Secure-Merchant-ID-quot/td-p/810000), which can be included in the ***Subject*** field, if for example, your application supports multiple currencies. ***ExpressCheckoutURI*** should refer to [the PayPal Sandbox](https://api-3t.sandbox.paypal.com/nvp) for all non-production environments.
+Each PayPal account is associated with a [Secure Merchant ID](https://www.paypal-community.com/t5/About-Business/Where-can-I-find-my-quot-Secure-Merchant-ID-quot/td-p/810000), which can be included in the ***Subject*** field, if for example, your application supports multiple currencies. ***ExpressCheckoutURI*** should refer to [the PayPal Sandbox](https://developer.paypal.com/developer/accounts/) for all non-production environments.
