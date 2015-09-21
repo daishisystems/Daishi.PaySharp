@@ -1,13 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.PaySharp.TestHarness", "Daishi.PaySharp.TestHarness\Daishi.PaySharp.TestHarness.csproj", "{1D817856-695C-4ECC-A1E4-0C02C0161FE9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.PaySharp", "Daishi.PaySharp\Daishi.PaySharp.csproj", "{C8065B82-DF20-471E-97CB-D60ACE4CABD3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.PaySharp.UnitTests", "Daishi.PaySharp.UnitTests\Daishi.PaySharp.UnitTests.csproj", "{568B6D21-B5B0-4524-9207-205D8AFFA73B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A405CFBD-A8DE-4551-9A1A-96A79F07A731}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
