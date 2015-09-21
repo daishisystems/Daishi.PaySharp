@@ -39,8 +39,8 @@ namespace Daishi.PaySharp {
         /// <summary>Gets or sets the first name.</summary>
         /// <value>The first name.</value>
         public string FirstName { get; set; }
-        /// <summary>Gets or sets theast name.</summary>
-        /// <value>theast name.</value>
+        /// <summary>Gets or sets the last name.</summary>
+        /// <value>the last name.</value>
         public string LastName { get; set; }
         /// <summary>Gets or sets the country code.</summary>
         /// <value>The country code.</value>

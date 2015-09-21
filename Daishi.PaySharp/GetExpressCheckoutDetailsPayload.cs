@@ -10,6 +10,8 @@ namespace Daishi.PaySharp {
         public string PayerID { get; set; }
         /// <summary>Gets or sets the method.</summary>
         /// <value>The method.</value>
-        public override string Method => "GetExpressCheckoutDetails";
+        public override string Method {
+            get { return "GetExpressCheckoutDetails"; }
+        }
     }
 }

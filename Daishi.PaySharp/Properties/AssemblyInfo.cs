@@ -10,10 +10,10 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly: AssemblyTitle("Daishi.PaySharp")]
-[assembly: AssemblyDescription("PayPal .NET Package.")]
+[assembly: AssemblyDescription("PaySharp.NET - a PayPal C# SDK.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Paul Mooney")]
-[assembly: AssemblyProduct("PaySharp")]
+[assembly: AssemblyProduct("PaySharp.NET")]
 [assembly: AssemblyCopyright("Copyright © Paul Mooney 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -39,5 +39,5 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.1.0")]
+[assembly: AssemblyFileVersion("1.0.1.0")]

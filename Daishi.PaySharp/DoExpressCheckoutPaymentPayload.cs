@@ -8,7 +8,9 @@ namespace Daishi.PaySharp {
     public class DoExpressCheckoutPaymentPayload : ExpressCheckoutPayload {
         /// <summary>Gets the method.</summary>
         /// <value>The method.</value>
-        public override string Method => "DoExpressCheckoutPayment";
+        public override string Method {
+            get { return "DoExpressCheckoutPayment"; }
+        }
         /// <summary>Gets or sets the access token.</summary>
         /// <value>The access token.</value>
         public string AccessToken { get; set; }
@@ -17,7 +19,9 @@ namespace Daishi.PaySharp {
         public string PayerID { get; set; }
         /// <summary>Gets or sets the payment request payment action.</summary>
         /// <value>The payment request payment action.</value>
-        public string PaymentRequestPaymentAction = "SALE";
+        public string PaymentRequestPaymentAction {
+            get { return "SALE"; }
+        }
         /// <summary>Gets or sets the payment request amt.</summary>
         /// <value>The payment request amt.</value>
         public string PaymentRequestAmt { get; set; }
