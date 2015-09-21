@@ -4,9 +4,7 @@ namespace Daishi.PaySharp {
     public class SetExpressCheckoutPayload : ExpressCheckoutPayload {
         /// <summary>Gets or sets the action.</summary>
         /// <value>The action.</value>
-        public string Action {
-            get { return "Sale"; }
-        }
+        public string Action => "Sale";
         /// <summary>Gets or sets the amount.</summary>
         /// <value>The amount.</value>
         public string Amount { get; set; }
@@ -24,14 +22,10 @@ namespace Daishi.PaySharp {
         public string LocaleCode { get; set; }
         /// <summary>Gets or sets the require billing address.</summary>
         /// <value>The require billing address.</value>
-        public string RequireBillingAddress {
-            get { return "1"; }
-        }
+        public string RequireBillingAddress => "1";
         /// <summary>Gets or sets the no shipping.</summary>
         /// <value>The no shipping.</value>
-        public string NoShipping {
-            get { return "1"; }
-        }
+        public string NoShipping => "1";
         /// <summary>Gets or sets the name of the payment request.</summary>
         /// <value>The name of the payment request.</value>
         public string PaymentRequestName { get; set; }
@@ -40,13 +34,9 @@ namespace Daishi.PaySharp {
         public string PaymentRequestDescription { get; set; }
         /// <summary>Gets or sets the payment request quantity.</summary>
         /// <value>The payment request quantity.</value>
-        public string PaymentRequestQuantity {
-            get { return "1"; }
-        }
+        public string PaymentRequestQuantity => "1";
         /// <summary>Gets or sets the method.</summary>
         /// <value>The method.</value>
-        public override string Method {
-            get { return "SetExpressCheckout"; }
-        }
+        public override string Method => "SetExpressCheckout";
     }
 }
