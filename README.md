@@ -39,7 +39,9 @@ PaySharp.NET is covered by a range of Unit Tests, included with each build. To p
 3. Run the project (F5)
 4. Press any key when prompted
 5. *SetExpressCheckout* executes and returns a PayPal Access Token
+
 ![SetExpressCheckout](https://dl.dropboxusercontent.com/u/26042707/PaySharp%20Test%20Harness%20Step%201.PNG)
+
 6. Open your web browser and navigate to https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-17W08351SC6397012. Note that the token parameter is set to the value returned in Step 5
 7. Login to PayPal
 8. Your browser will redirect to http://www.example.com/success.html?token=EC-17W08351SC6397012&PayerID=783CTW8EXK5AE. Note the PayerID parameter
