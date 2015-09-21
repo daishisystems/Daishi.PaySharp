@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="6707d1c3-ed34-4840-9eeb-0b7840255fc0" Title="Daishi.PaySharp" Url="html/1168db2e-4930-cbd8-1edc-99d981275d74.htm">
+    <HelpTOCNode Id="fb994717-55d7-4ef6-97b4-9063e830e1b3" Title="CustomerDetails Class" Url="html/19be5a8e-5e64-deeb-5256-cd2c49f25840.htm">
+      <HelpTOCNode Title="CustomerDetails Constructor " Url="html/a99299b6-8a55-610f-b2d0-2ee3cec02b47.htm" />
+      <HelpTOCNode Title="CustomerDetails Methods" Url="html/b7f9ab41-76f0-8327-5c2c-02c22bc301f7.htm" />
+      <HelpTOCNode Id="f215a5c4-45aa-400f-80f8-df315366e246" Title="CustomerDetails Properties" Url="html/a92018bb-0b54-3da8-3436-7418afabfea7.htm">
+        <HelpTOCNode Title="AccessToken Property " Url="html/c8337f3a-2e50-089d-3b80-b785ba7091bd.htm" />
+        <HelpTOCNode Title="Ack Property " Url="html/557d7626-2424-5ab8-dcae-c82ac7be0cc0.htm" />
+        <HelpTOCNode Title="AddressID Property " Url="html/e548aa0b-6647-7b25-f8a3-ecb33b59fa87.htm" />
+        <HelpTOCNode Title="AddressStatus Property " Url="html/1fdb3400-292f-4d2b-ddfd-666bde5ebc22.htm" />
+        <HelpTOCNode Title="Amt Property " Url="html/cc5f37b7-bea8-47b7-1ccd-6352cb1f2a3b.htm" />
+        <HelpTOCNode Title="BillingAgreementAcceptedStatus Property " Url="html/d2386ca0-d092-f307-1770-ccbec626a452.htm" />
+        <HelpTOCNode Title="BillingName Property " Url="html/baa3cf53-cd0c-ca31-719f-91cc087666bd.htm" />
+        <HelpTOCNode Title="Build Property " Url="html/effdd45e-e83a-f550-e8e1-21662fa1643c.htm" />
+        <HelpTOCNode Title="CheckoutStatus Property " Url="html/ff7ba71b-ff9a-5376-a230-9c3a8a79750f.htm" />
+        <HelpTOCNode Title="City Property " Url="html/a2f6f192-b5aa-903c-b4d3-a2af6ae52170.htm" />
+        <HelpTOCNode Title="CorrelationID Property " Url="html/0027cc24-29eb-d588-a2f4-b14673ec6b8f.htm" />
+        <HelpTOCNode Title="Country Property " Url="html/edc8e9b9-259b-3071-3cb8-8cfc059ad209.htm" />
+        <HelpTOCNode Title="CountryCode Property " Url="html/1f4d2579-5fa5-7ba3-fe4f-6fbc5d656cf3.htm" />
+        <HelpTOCNode Title="CountryName Property " Url="html/3690b217-6a6d-8692-eacc-ff5593ff8baf.htm" />
+        <HelpTOCNode Title="CurrencyCode Property " Url="html/41e681da-56de-c87f-0470-8bb94c8135b2.htm" />
+        <HelpTOCNode Title="Email Property " Url="html/330d4c02-3187-2c6b-790c-a91668b24eae.htm" />
+        <HelpTOCNode Title="FirstName Property " Url="html/75397b55-1230-fb0d-e15d-a06e2102a2da.htm" />
+        <HelpTOCNode Title="HandlingAmt Property " Url="html/bfed065b-de48-4ff4-02e2-f1364d1f8c7e.htm" />
+        <HelpTOCNode Title="InsuranceAmt Property " Url="html/217946b7-4c36-21e8-606a-e0b23920f29c.htm" />
+        <HelpTOCNode Title="ItemAmt Property " Url="html/c3e39006-3148-4528-00ad-2c995b9e4c9c.htm" />
+        <HelpTOCNode Title="LAmt Property " Url="html/57c55a6a-0a29-cfc0-3990-730895056b38.htm" />
+        <HelpTOCNode Title="LastName Property " Url="html/f8fe98a4-2154-2eac-d3c9-f02730e3da64.htm" />
+        <HelpTOCNode Title="LDescription Property " Url="html/7217b3d2-7bfc-5232-3c3f-e459dbc659c8.htm" />
+        <HelpTOCNode Title="LItemHeightValue Property " Url="html/9a6c1160-63de-07c3-4fea-3ca4f80238a8.htm" />
+        <HelpTOCNode Title="LItemLengthValue Property " Url="html/2a7164e1-a4de-3384-85a8-36ac5637b5f0.htm" />
+        <HelpTOCNode Title="LItemWeightValue Property " Url="html/82af75c4-35b9-8f70-067b-03dcc0dcd85f.htm" />
+        <HelpTOCNode Title="LItemWidthValue Property " Url="html/7b6c70c2-3c49-859b-c58a-e7b6acc93aa0.htm" />
+        <HelpTOCNode Title="LName Property " Url="html/222ec38d-a08d-233d-5484-9caf99d7ad83.htm" />
+        <HelpTOCNode Title="LPaymentRequestAmt Property " Url="html/0f0a7d68-5f8f-1f45-bd03-edf4f2d738d3.htm" />
+        <HelpTOCNode Title="LPaymentRequestDescription Property " Url="html/47696cd3-8a8f-87fb-2113-419727976e36.htm" />
+        <HelpTOCNode Title="LPaymentRequestItemHeightValue Property " Url="html/5fe4b678-a3b0-8e44-9732-efdd16081736.htm" />
+        <HelpTOCNode Title="LPaymentRequestItemLengthValue Property " Url="html/9095d5df-91bd-2ea0-1d59-f2368578e0bc.htm" />
+        <HelpTOCNode Title="LPaymentRequestItemWeightValue Property " Url="html/dad1dd44-b3fa-76e4-9da3-a2f7d8ef0b64.htm" />
+        <HelpTOCNode Title="LPaymentRequestItemWidthValue Property " Url="html/b31f7f38-c45d-92a5-1b9b-a7b2dfef4899.htm" />
+        <HelpTOCNode Title="LPaymentRequestName Property " Url="html/3b28d288-20d2-95e8-b7c4-10ed9eb8cfbc.htm" />
+        <HelpTOCNode Title="LPaymentRequestQuantity Property " Url="html/a4c1f2aa-4b83-530b-edc3-783f0397a242.htm" />
+        <HelpTOCNode Title="LPaymentRequestTaxAmt Property " Url="html/64c8a4c7-6bfc-0eed-d82f-bd344be15d75.htm" />
+        <HelpTOCNode Title="LQuantity Property " Url="html/12d03bf0-8ffd-c17b-ca5e-1b86f398a66a.htm" />
+        <HelpTOCNode Title="LTaxAmt Property " Url="html/68a613fd-8e62-0010-3d79-7e785cc3d583.htm" />
+        <HelpTOCNode Title="PayerID Property " Url="html/cf09575e-126d-ba14-8258-e77184967847.htm" />
+        <HelpTOCNode Title="PayerStatus Property " Url="html/2f09cf34-297d-729d-c7af-0089ea46d422.htm" />
+        <HelpTOCNode Title="PaymentRequestAddressNormalisationStatus Property " Url="html/b87d774d-933a-5dbe-1557-2148911dcdb9.htm" />
+        <HelpTOCNode Title="PaymentRequestAmt Property " Url="html/39f4320e-be1e-26b5-5a1a-7b678141e13d.htm" />
+        <HelpTOCNode Title="PaymentRequestCurrencyCode Property " Url="html/bbc001fa-53a2-40b0-7f01-fc329f37e474.htm" />
+        <HelpTOCNode Title="PaymentRequestHandlingAmt Property " Url="html/aa554b4b-1db6-eb69-489a-d9264a6ee367.htm" />
+        <HelpTOCNode Title="PaymentRequestInfoErrorCode Property " Url="html/6a89dce3-f35b-8c0e-489f-2da930994249.htm" />
+        <HelpTOCNode Title="PaymentRequestInfoTransactionID Property " Url="html/6d560ab8-1198-fe3e-e9b2-3b4d020b0757.htm" />
+        <HelpTOCNode Title="PaymentRequestInsuranceAmt Property " Url="html/a6166ad9-34f1-9241-94fc-6cde768d1335.htm" />
+        <HelpTOCNode Title="PaymentRequestInsuranceOptionOffered Property " Url="html/355573f5-2846-a9b0-59a1-64f2bf8ebc21.htm" />
+        <HelpTOCNode Title="PaymentRequestItemAmt Property " Url="html/650ac471-405e-2def-2968-06256a649da9.htm" />
+        <HelpTOCNode Title="PaymentRequestShipDiscAmt Property " Url="html/66040b9e-4539-c28c-bd7c-69e6491ab9b2.htm" />
+        <HelpTOCNode Title="PaymentRequestShippingAmt Property " Url="html/990af026-e22a-9832-d0f7-0758a960fb10.htm" />
+        <HelpTOCNode Title="PaymentRequestShipToCity Property " Url="html/9ca8425d-2cd4-0b7b-4318-40ea83457031.htm" />
+        <HelpTOCNode Title="PaymentRequestShipToCountryCode Property " Url="html/bf4aa7ee-f076-ea06-187c-5fa4df9d8327.htm" />
+        <HelpTOCNode Title="PaymentRequestShipToCountryName Property " Url="html/2ee221bb-f90f-c03e-1c00-9184300f608d.htm" />
+        <HelpTOCNode Title="PaymentRequestShipToName Property " Url="html/14995322-0c86-4de1-81cf-d2e256512a33.htm" />
+        <HelpTOCNode Title="PaymentRequestShipToState Property " Url="html/7fd22c75-19fd-f616-d94d-f26f84fe019c.htm" />
+        <HelpTOCNode Title="PaymentRequestShipToStreet Property " Url="html/b1e56a32-4a16-199e-6e40-e52f62b6eceb.htm" />
+        <HelpTOCNode Title="PaymentRequestShipToZip Property " Url="html/8fd86bad-2813-eada-8527-f2c6747c303b.htm" />
+        <HelpTOCNode Title="PaymentRequestTaxAmt Property " Url="html/e281da88-63a5-63cd-c665-335dfa1d67a9.htm" />
+        <HelpTOCNode Title="PaymentRequestTransactionID Property " Url="html/0fbf1293-bf76-9c63-0a45-ae38fcb8e937.htm" />
+        <HelpTOCNode Title="ShipDiscAmt Property " Url="html/eab54ed4-fcb8-df67-89ba-7af3110542b6.htm" />
+        <HelpTOCNode Title="ShippingAmt Property " Url="html/f4b40919-8f05-85b9-0acf-8783e8e417fd.htm" />
+        <HelpTOCNode Title="ShipToCity Property " Url="html/8e1ff671-db0e-e007-9ed1-60bea0676c30.htm" />
+        <HelpTOCNode Title="ShipToCountryCode Property " Url="html/9fccb9f9-aed3-5a22-ceb0-bb806f714703.htm" />
+        <HelpTOCNode Title="ShipToCountryName Property " Url="html/bfa9eeae-a3f2-c0d7-67ae-97e0ccb485c7.htm" />
+        <HelpTOCNode Title="ShipToName Property " Url="html/42d3f9a1-ffd5-5908-fadf-07fda401f295.htm" />
+        <HelpTOCNode Title="ShipToState Property " Url="html/9089cd46-77b5-a8c0-437b-c1d4756ac64f.htm" />
+        <HelpTOCNode Title="ShipToStreet Property " Url="html/c22cc6fa-26db-28c0-77f0-d6da74587306.htm" />
+        <HelpTOCNode Title="ShipToZip Property " Url="html/d0f234bb-7fc6-b9c7-2400-56776feda079.htm" />
+        <HelpTOCNode Title="State Property " Url="html/75839363-b7f6-6722-2648-eef71ebb7fcc.htm" />
+        <HelpTOCNode Title="Street Property " Url="html/49513507-e1db-432a-f560-ae7fb4366a97.htm" />
+        <HelpTOCNode Title="Street2 Property " Url="html/5ba419ed-0d1a-ceb2-f5b5-1d7b2ba673a0.htm" />
+        <HelpTOCNode Title="TaxAmt Property " Url="html/f587340e-f833-3d2e-5ab0-0d460bb64074.htm" />
+        <HelpTOCNode Title="TimeStamp Property " Url="html/1e485743-5dee-6b3e-709a-bdf7baaf1c95.htm" />
+        <HelpTOCNode Title="Version Property " Url="html/b7e6fec8-915c-b230-181b-cec7982b3066.htm" />
+        <HelpTOCNode Title="Zip Property " Url="html/77f0709d-162a-f70f-bf8e-378d02bcacf2.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1b043d87-e164-450d-9ab8-b6a538e489d9" Title="DoExpressCheckoutPaymentPayload Class" Url="html/7c26d011-eb70-2c8b-98d0-900674861c01.htm">
+      <HelpTOCNode Title="DoExpressCheckoutPaymentPayload Constructor " Url="html/316f54b8-847c-89aa-e43e-08f9ad9914fc.htm" />
+      <HelpTOCNode Title="DoExpressCheckoutPaymentPayload Methods" Url="html/6dd1709b-773e-ce11-0f3d-3b71e856e49c.htm" />
+      <HelpTOCNode Id="72f5c0f5-6d3b-4f9b-b96c-a1180d799c98" Title="DoExpressCheckoutPaymentPayload Properties" Url="html/8f276f5d-b384-3c98-d22d-738e7d39ef27.htm">
+        <HelpTOCNode Title="AccessToken Property " Url="html/5ce8c594-1c9b-6757-a8c6-094057b6bbe8.htm" />
+        <HelpTOCNode Title="Method Property " Url="html/dab41b85-1664-26d2-2a5f-4e0d8f96138c.htm" />
+        <HelpTOCNode Title="PayerID Property " Url="html/c3f4aa19-3c1c-66db-847a-fabb4613b015.htm" />
+        <HelpTOCNode Title="PaymentRequestAmt Property " Url="html/8b7c1d6c-4818-74f7-c318-36e50af6d84e.htm" />
+        <HelpTOCNode Title="PaymentRequestCurrencyCode Property " Url="html/faf38b9d-e538-6e28-5d3b-565b22e0ef7b.htm" />
+        <HelpTOCNode Title="PaymentRequestPaymentAction Property " Url="html/d92b85df-a93b-380b-fc53-e5e4487a2aa5.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b3b5d369-55d5-472a-8f92-1d869395fcff" Title="ExpressCheckoutPayload Class" Url="html/611db5e0-b45d-4301-7ef5-87f077649986.htm">
+      <HelpTOCNode Title="ExpressCheckoutPayload Constructor " Url="html/9b677497-dc01-ba7b-e35d-9307499a910b.htm" />
+      <HelpTOCNode Title="ExpressCheckoutPayload Methods" Url="html/81f5859d-54e9-e1fe-a210-926003aa669f.htm" />
+      <HelpTOCNode Id="e2c7acfe-1178-40f7-bede-a0e40fa9db24" Title="ExpressCheckoutPayload Properties" Url="html/5ebbd52d-843e-7d66-bbe9-8466c7e93734.htm">
+        <HelpTOCNode Title="Method Property " Url="html/081e3f69-dfde-56bc-29a1-2d1191fe5603.htm" />
+        <HelpTOCNode Title="Password Property " Url="html/82d5bd71-b001-7d47-0495-d36fec60d21f.htm" />
+        <HelpTOCNode Title="Signature Property " Url="html/8df7836b-0030-f09b-e1eb-9c430b963224.htm" />
+        <HelpTOCNode Title="Subject Property " Url="html/a7ad61c9-fdba-51a8-cba3-1b75a94e3f49.htm" />
+        <HelpTOCNode Title="User Property " Url="html/5936b283-ea70-5947-bfa8-735bffc4bf58.htm" />
+        <HelpTOCNode Title="Version Property " Url="html/e671bbbb-8afb-08fd-ab1c-5e1e63134e67.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f00a1b9a-8a39-4506-86e0-d437fde911c7" Title="GetExpressCheckoutDetailsPayload Class" Url="html/92927e4c-a787-a338-f24b-f788cbab244d.htm">
+      <HelpTOCNode Title="GetExpressCheckoutDetailsPayload Constructor " Url="html/40b066f8-ddea-6bf0-f203-7ccb66f0a814.htm" />
+      <HelpTOCNode Title="GetExpressCheckoutDetailsPayload Methods" Url="html/45c5dc7b-523c-9950-0310-af7e4c154a2f.htm" />
+      <HelpTOCNode Id="0d412f3e-182a-4dae-bea3-b95dc8d5e274" Title="GetExpressCheckoutDetailsPayload Properties" Url="html/4b3a8425-412c-c064-d852-c8e1cb44d052.htm">
+        <HelpTOCNode Title="AccessToken Property " Url="html/ecb0e0e9-288b-811a-caec-68a9dac845f1.htm" />
+        <HelpTOCNode Title="Method Property " Url="html/5b0120e3-7990-849d-8340-a1176e4c6904.htm" />
+        <HelpTOCNode Title="PayerID Property " Url="html/1b41aa8d-c108-2774-43c8-39786534dc38.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="57f78ad7-99fb-446f-ae59-f2b081695a06" Title="MerchantAccounts Class" Url="html/b4ba04b4-689e-ef38-db6f-ac10e44564a5.htm">
+      <HelpTOCNode Title="MerchantAccounts Constructor " Url="html/624760c0-ba60-e485-94e7-ca2c90c30c43.htm" />
+      <HelpTOCNode Id="224bf093-4bd2-4f21-955f-901958a0e6e0" Title="MerchantAccounts Methods" Url="html/f9b77009-dc34-46d1-cb1b-ddbd7d5df5b4.htm">
+        <HelpTOCNode Title="GetByCurrencyCode Method " Url="html/80088433-12ba-58e4-55e3-36f64ce26bb7.htm" />
+        <HelpTOCNode Title="Load Method " Url="html/7d6a4c50-1764-615d-5ed1-86748844eac2.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="NamespaceDoc Class" Url="html/b0611a5b-c366-abf5-c3e4-70a63a94db74.htm" />
+    <HelpTOCNode Id="1fedf142-766e-4c7e-823c-f944197a2b7a" Title="PayPalAdapter Class" Url="html/855bcf22-3c7d-8bff-7328-80bd844aa6a5.htm">
+      <HelpTOCNode Title="PayPalAdapter Constructor " Url="html/263fa2bf-06f6-c951-58f8-810bba3389a0.htm" />
+      <HelpTOCNode Id="01b4347b-8680-4a03-ab29-6b67da2397df" Title="PayPalAdapter Methods" Url="html/66f2e30d-8e54-0f68-bb18-d5b0f3d35e98.htm">
+        <HelpTOCNode Title="DoExpressCheckoutPayment Method " Url="html/5cc34c14-e182-c9cc-949e-fa5b7eb831b0.htm" />
+        <HelpTOCNode Title="DoExpressCheckoutPaymentAsync Method " Url="html/d7f83bda-53d7-0ff0-22fc-0bb951b74acf.htm" />
+        <HelpTOCNode Title="GetExpressCheckoutDetails Method " Url="html/07b71580-f9be-3212-634b-c3a0b0bd60df.htm" />
+        <HelpTOCNode Title="GetExpressCheckoutDetailsAsync Method " Url="html/303c8e6e-dc3d-1e6f-110b-a4aa0d61cd49.htm" />
+        <HelpTOCNode Title="SetExpressCheckout Method " Url="html/e3584452-5db4-397e-4d59-230a5124b46f.htm" />
+        <HelpTOCNode Title="SetExpressCheckoutAsync Method " Url="html/4a7f606f-2b16-3fae-80dc-76d85aee19e1.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="54e51ec8-3102-4454-9d6f-8cc5d9e3afa3" Title="PayPalError Class" Url="html/ae3d88c1-0427-1aef-a4da-b399a98e44c9.htm">
+      <HelpTOCNode Title="PayPalError Constructor " Url="html/66479dff-a660-bfc9-47f1-49d43eb656d4.htm" />
+      <HelpTOCNode Title="PayPalError Methods" Url="html/a331f1e1-0bd5-b7c1-6d10-5af24853bfeb.htm" />
+      <HelpTOCNode Id="6fa5790b-4df3-4cda-afa1-992d02843770" Title="PayPalError Properties" Url="html/3f1c2226-9a58-f808-afac-286a97ec49c9.htm">
+        <HelpTOCNode Title="Ack Property " Url="html/d53b57d4-e0c2-ea37-bc2f-1a9d5d4bf1cb.htm" />
+        <HelpTOCNode Title="Build Property " Url="html/22173a01-1887-b511-5fad-baccf7637a2f.htm" />
+        <HelpTOCNode Title="CorrelationID Property " Url="html/a3171102-522c-9c26-797f-ec207e83d1e4.htm" />
+        <HelpTOCNode Title="ErrorCode Property " Url="html/c731169b-e430-7577-8e2e-6a28d8c9d5a3.htm" />
+        <HelpTOCNode Title="LongMessage Property " Url="html/6c12cb97-6e77-052f-1763-d0969a321118.htm" />
+        <HelpTOCNode Title="SeverityCode Property " Url="html/b976a93d-1e7f-0d1b-4acc-36f829a9b99a.htm" />
+        <HelpTOCNode Title="ShortMessage Property " Url="html/351c5192-ed0c-31d3-4ed2-ae5334f03d34.htm" />
+        <HelpTOCNode Title="Timestamp Property " Url="html/22fed8f1-8580-d5cb-e60f-a4dec7f4e64a.htm" />
+        <HelpTOCNode Title="Version Property " Url="html/d6b028b9-6cca-874f-bbd6-019c414456e1.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="2347950a-aa82-4b61-ac54-b5d60fad7e95" Title="PayPalUtility Class" Url="html/26f92136-348d-b8f0-dfa5-34ed5a5558d1.htm">
+      <HelpTOCNode Id="e9d9837f-1050-4eea-92fd-687d95897a32" Title="PayPalUtility Methods" Url="html/6b48e298-c7bc-1edc-54a1-3e72101d9496.htm">
+        <HelpTOCNode Title="TryParseAccessToken Method " Url="html/d67a8191-485b-eb77-a051-2ec9b3c5c613.htm" />
+        <HelpTOCNode Title="TryParseCustomerDetails Method " Url="html/6d9ba83c-5904-3362-b283-3a034da32f20.htm" />
+        <HelpTOCNode Title="TryParseTransactionResults Method " Url="html/4febcb41-926b-b1d4-a649-6c32ab094a8f.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d9dde4a6-5860-4c55-8d99-b115aadf2c61" Title="SetExpressCheckoutPayload Class" Url="html/ff676302-32e3-6ae5-1728-bb3e562618f5.htm">
+      <HelpTOCNode Title="SetExpressCheckoutPayload Constructor " Url="html/37285c88-cfa9-1163-ed98-9d1748a5dffa.htm" />
+      <HelpTOCNode Title="SetExpressCheckoutPayload Methods" Url="html/da91aa52-b502-d876-4ddf-305d70edd0bd.htm" />
+      <HelpTOCNode Id="0be3ad43-d062-4d15-b60a-c228ac08acb2" Title="SetExpressCheckoutPayload Properties" Url="html/c2251022-3bba-c5d8-ec74-8d62b9abf131.htm">
+        <HelpTOCNode Title="Action Property " Url="html/d65e3b1c-cbd3-a97f-76c8-708234cfaaa9.htm" />
+        <HelpTOCNode Title="Amount Property " Url="html/5d226882-419b-e6f4-53da-12a061b91473.htm" />
+        <HelpTOCNode Title="CancelUrl Property " Url="html/5a8dd8f6-6bb4-8810-3705-bacddff8e44e.htm" />
+        <HelpTOCNode Title="CurrencyCode Property " Url="html/fc276ba3-1b31-851d-002a-19a5b65740de.htm" />
+        <HelpTOCNode Title="LocaleCode Property " Url="html/5fc29865-cdbe-7d1a-f0ea-4f407f87404a.htm" />
+        <HelpTOCNode Title="Method Property " Url="html/cef3c6f4-3898-f207-4ede-d2ca36840118.htm" />
+        <HelpTOCNode Title="NoShipping Property " Url="html/caf63665-5f53-69e4-23e5-b73148026d78.htm" />
+        <HelpTOCNode Title="PaymentRequestDescription Property " Url="html/9fc87370-8a26-140c-6c18-7234ebdcfbd5.htm" />
+        <HelpTOCNode Title="PaymentRequestName Property " Url="html/b8eb5bfa-9ccb-d42a-189a-9c2deafb1f6a.htm" />
+        <HelpTOCNode Title="PaymentRequestQuantity Property " Url="html/2ba8cd18-6ad1-d4a8-a5e2-981819cc0214.htm" />
+        <HelpTOCNode Title="RequireBillingAddress Property " Url="html/97f869c7-f339-0b34-560d-afc6215d5ff5.htm" />
+        <HelpTOCNode Title="ReturnUrl Property " Url="html/7884824a-5aa9-7d35-a557-28f7101f9818.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c72aa70c-824e-4486-b2b1-bf2a6ba839ed" Title="TransactionResults Class" Url="html/b5e51c0b-134d-8ae2-8dda-100e7bd63b40.htm">
+      <HelpTOCNode Title="TransactionResults Constructor " Url="html/5205dacc-50c2-b21f-fe9a-43a66e7aedc4.htm" />
+      <HelpTOCNode Title="TransactionResults Methods" Url="html/4233db36-17bd-23d1-530b-571aacacf1a9.htm" />
+      <HelpTOCNode Id="116b3930-6b36-4f5d-8c45-be840b085a87" Title="TransactionResults Properties" Url="html/9d863a0c-2821-8659-bbd2-306bd7d5c635.htm">
+        <HelpTOCNode Title="Ack Property " Url="html/a6891518-fe16-3951-f986-c2ed1aaf2fbe.htm" />
+        <HelpTOCNode Title="Build Property " Url="html/07d40ed9-8ec5-eb31-c2a1-ab029efe7aa8.htm" />
+        <HelpTOCNode Title="CorrelationID Property " Url="html/dcf57ad5-087f-55a2-0072-05ea8716b8cf.htm" />
+        <HelpTOCNode Title="InsuranceOptionSelected Property " Url="html/955fb9f1-3eda-38f5-a129-cb1444fd22c9.htm" />
+        <HelpTOCNode Title="PaymentInfoAck Property " Url="html/05e36837-bcd5-08a2-d56d-46129dfa956e.htm" />
+        <HelpTOCNode Title="PaymentInfoAmt Property " Url="html/803ea81a-a1a4-0446-f499-a295172b1082.htm" />
+        <HelpTOCNode Title="PaymentInfoCurrencyCode Property " Url="html/68b8f7db-8673-35ae-3d66-b507bbcc8105.htm" />
+        <HelpTOCNode Title="PaymentInfoErrorCode Property " Url="html/a771fb86-239f-ad45-6fd3-4aa6b2dd1c88.htm" />
+        <HelpTOCNode Title="PaymentInfoFeeAmt Property " Url="html/2bd8ec1b-1b87-0784-08ba-28d40a21d6e5.htm" />
+        <HelpTOCNode Title="PaymentInfoOrderTime Property " Url="html/21f52e4f-aa43-90b7-63df-d6f62fe97adc.htm" />
+        <HelpTOCNode Title="PaymentInfoPaymentStatus Property " Url="html/061126df-6ad2-22ad-64d4-2fc459eef397.htm" />
+        <HelpTOCNode Title="PaymentInfoPaymentType Property " Url="html/78ee036b-8771-b595-3e68-99f4486aeb42.htm" />
+        <HelpTOCNode Title="PaymentInfoPendingReason Property " Url="html/56b74270-1b43-e586-4c75-1c81c35d3532.htm" />
+        <HelpTOCNode Title="PaymentInfoProtectionEligibility Property " Url="html/84990d17-4681-ef1d-8d49-ea89604e849b.htm" />
+        <HelpTOCNode Title="PaymentInfoProtectionEligibilityType Property " Url="html/9c55a47b-6003-dd9b-6e3c-450817866720.htm" />
+        <HelpTOCNode Title="PaymentInfoReasonCode Property " Url="html/d7f28a3a-e93f-cd6a-36a0-74b4b30a7ecc.htm" />
+        <HelpTOCNode Title="PaymentInfoSecureMerchantAccountID Property " Url="html/34dde0d8-1dad-2925-cb31-73eff3ae49c6.htm" />
+        <HelpTOCNode Title="PaymentInfoTaxAmt Property " Url="html/50548e85-2e77-220a-18cc-5abd2e9d774d.htm" />
+        <HelpTOCNode Title="PaymentInfoTransactionID Property " Url="html/0f85b459-e0a8-243c-fe92-326a11cd0440.htm" />
+        <HelpTOCNode Title="PaymentInfoTransactionType Property " Url="html/8504da31-a7cd-c35d-c096-3d1a2c10ba20.htm" />
+        <HelpTOCNode Title="ShippingOptionIsDefault Property " Url="html/991bbdd6-a5b6-6dc1-318f-c03165b32404.htm" />
+        <HelpTOCNode Title="SuccessPageRedirectRequested Property " Url="html/fdfccb46-876b-6ed6-6365-eb5ce4c8665c.htm" />
+        <HelpTOCNode Title="Timestamp Property " Url="html/bd9f78f6-004d-ccd9-5c38-a55bb8a2f7ad.htm" />
+        <HelpTOCNode Title="Token Property " Url="html/b778402f-f21b-ce52-f711-8124e42ec831.htm" />
+        <HelpTOCNode Title="Version Property " Url="html/aa134990-7d68-f969-8586-3e10e231753b.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="cab540f2-a074-4ba2-ab19-d6d945650634" Title="Daishi.PaySharp.Extensibility" Url="html/5ceb6a9a-106e-ce1b-9304-b01871ed9f8a.htm">
+    <HelpTOCNode Title="NamespaceDoc Class" Url="html/b1de3d82-10cc-0e65-6be2-37c67316cd16.htm" />
+    <HelpTOCNode Id="796938c3-1190-4c3d-ab24-ed0526a970c8" Title="PayPalPayload Class" Url="html/6ee94845-bac3-2c16-9bc2-97a26f515fe4.htm">
+      <HelpTOCNode Title="PayPalPayload Constructor " Url="html/64e474d6-4dc5-8c8f-ab90-856d5cd3f59a.htm" />
+      <HelpTOCNode Id="4bcd18ef-155d-48ce-af7f-df453b96e19b" Title="PayPalPayload Fields" Url="html/24e8b348-3b63-c301-8c87-fa084deb3ca9.htm">
+        <HelpTOCNode Title="customerDetails Field" Url="html/0e9999b0-78d5-c331-34fe-eb06b386776d.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="PayPalPayload Methods" Url="html/6b5d8da4-8cdb-9263-d677-88a732d7d6b3.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>
