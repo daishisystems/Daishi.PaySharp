@@ -10,8 +10,8 @@ namespace Daishi.PaySharp.TestHarness {
     internal class Program {
         private static void Main(string[] args) {
 
-            Console.Write("Press the <return> key to run...");            
-            Console.ReadLine();            
+            Console.Write("Press the <return> key to run...");
+            Console.ReadLine();
 
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Executing SETEXPRESSCHECKOUT...");
@@ -24,8 +24,6 @@ namespace Daishi.PaySharp.TestHarness {
                 var subject = ConfigurationManager.AppSettings["Subject"];
 
                 var payPalAdapter = new PayPalAdapter();
-
-                #region SETEXPRESSCHECKOUT
 
                 var setExpresscheckout =
                     payPalAdapter.SetExpressCheckout(
@@ -85,8 +83,6 @@ namespace Daishi.PaySharp.TestHarness {
                     Console.ReadLine();
                     return;
                 }
-
-                #endregion
 
                 Console.WriteLine(
                     "Press any key to invoke GETEXPRESSCHECKOUTDETAILS...");
@@ -150,7 +146,7 @@ namespace Daishi.PaySharp.TestHarness {
 
                 Console.WriteLine(
                     "Press any key to invoke DOEXPRESSCHECKOUTPAYMENT...");
-                Console.ReadKey();
+                Console.ReadLine();
 
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("Executing DOEXPRESSCHECKOUTPAYMENT...");
