@@ -46,8 +46,43 @@ PaySharp.NET is covered by a range of Unit Tests, included with each build. To p
 
 ## Explanation of Terms
 #### SetExpressCheckout
-Establishes a PayPal session based on Merchant credentials, and returns an Access Token pertaining to that session
+Establishes a PayPal session based on Merchant credentials, and returns an Access Token pertaining to that session.
 #### GetExpresscheckoutDetails
-Returns a definitive collection of metadata that describes the PayPal user (*name*, *address*, etc.)
+Returns a definitive collection of metadata that describes the PayPal user (*name*, *address*, etc.).
 #### DoExpressCheckoutPayment
-Collects the payment by transferring the transaction amount from the User's account to the Merchant account
+Collects the payment by transferring the transaction amount from the User's account to the Merchant account.
+## Sample Code
+#### SetExpressCheckout
+```cs
+                var user = ConfigurationManager.AppSettings["User"];
+                var password = ConfigurationManager.AppSettings["Password"];
+                var signature = ConfigurationManager.AppSettings["Signature"];
+                var subject = ConfigurationManager.AppSettings["Subject"];
+
+                var payPalAdapter = new PayPalAdapter();
+
+                var setExpresscheckout =
+                    payPalAdapter.SetExpressCheckout(
+                        new SetExpressCheckoutPayload {
+                            User = user,
+                            Password = password,
+                            Signature = signature,
+                            Version = "108.0",
+                            Amount = "19.95",
+                            Subject = subject,
+                            LocaleCode = "en-IE",
+                            CurrencyCode = "EUR",
+                            CancelUrl = "http://www.example.com/cancel.html",
+                            ReturnUrl = "http://www.example.com/success.html",
+                            PaymentRequestName = "TEST",
+                            PaymentRequestDescription = "TEST BOOKING"
+                        },
+                        Encoding.UTF8,
+                        ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
+
+                string accessToken;
+                PayPalError payPalError;
+
+                var ok = PayPalUtility.TryParseAccessToken(setExpresscheckout,
+                    out accessToken, out payPalError);
+```
