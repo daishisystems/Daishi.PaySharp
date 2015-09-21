@@ -23,4 +23,4 @@ PM> Install-Package Daishi.PaySharp
 * *Signature*
 * *ExpressCheckoutURI*
 
-Each PayPal account is associated with a [Secure Merchant ID](https://www.paypal-community.com/t5/About-Business/Where-can-I-find-my-quot-Secure-Merchant-ID-quot/td-p/810000), which can be included in the ***Subject*** field, if for example, your application supports multiple currencies. ***ExpressCheckoutURI*** should refer to [the PayPal Sandbox](https://developer.paypal.com/developer/accounts/) for all non-production environments.
+Each PayPal account is associated with a [Secure Merchant ID](https://www.paypal-community.com/t5/About-Business/Where-can-I-find-my-quot-Secure-Merchant-ID-quot/td-p/810000), which can be included in the *Subject* field, if for example, your application supports multiple currencies. *ExpressCheckoutURI* should refer to [the PayPal Sandbox](https://developer.paypal.com/developer/accounts/) for all non-production environments.
