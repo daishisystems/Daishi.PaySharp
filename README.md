@@ -2,7 +2,7 @@
 # PaySharp.NET
 [![Build status](https://ci.appveyor.com/api/projects/status/fflciv7os94nxl9u?svg=true)](https://ci.appveyor.com/project/daishisystems/daishi-paysharp)
 
-A PayPal SDK targeting the .NET Framework (4.5+), written in C#.
+A PayPal SDK targeting the .NET Framework (4.5+).
 ![PaySharp Image](https://dl.dropboxusercontent.com/u/26042707/PaySharp%20Logo.jpg)
 ## Overview
 PaySharp.NET provides features that allow consuming applications and services to process [PayPal Express Checkout transactions](https://developer.paypal.com/docs/classic/express-checkout/ht_ec-singleItemPayment-curl-etc/). Such transactions consist of a 7-stage process, composed of a series of browser redirects, user input, and the following PayPal mechanisms, each of which is exposed through this SDK:
@@ -32,7 +32,7 @@ Returns a definitive collection of metadata that describes the PayPal user (*nam
 #### DoExpressCheckoutPayment
 Collects the payment by transferring the transaction amount from the User's account to the Merchant account.
 ## Running the Test Harness
-PaySharp.NET is covered by a range of Unit Tests, included with each build. To provide a great degree of reliability, the SDK contains a Test Harness project. This project will execute a full Express Checkout transaction when invoked as follows:
+PaySharp.NET is covered by a range of Unit Tests, included with each build. To provide a greater degree of reliability, the SDK contains a Test Harness project. This project will execute a full Express Checkout transaction when invoked as follows:
 
 1. Locate *App.config* in **Daishi.PaySharp.TestHarness**
 2. Enter appropriate values for *User*, *Password*, *Signature*, and *Subject* (if applicable)
@@ -48,7 +48,7 @@ PaySharp.NET is covered by a range of Unit Tests, included with each build. To p
 11. GetExpressCheckoutDetails is invoked
 ![GetExpressCheckoutDetails](https://dl.dropboxusercontent.com/u/26042707/PaySharp%20Test%20Harness%20Step%202.PNG)
 12. Press any key when prompted
-13. DoExpressCheckout is invoked, successfully completing the transaction
+13. DoExpressCheckoutPayment is invoked, successfully completing the transaction
 ![GetExpressCheckoutDetails](https://dl.dropboxusercontent.com/u/26042707/PaySharp%20Test%20Harness%20Step%203.PNG)
 
 ## Sample Code
