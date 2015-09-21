@@ -130,3 +130,7 @@ ok = PayPalUtility.TryParseTransactionResults(
     doExpressCheckoutPayment, out transactionResults,
     out payPalError);
 ```
+## API Documentation
+The API is fully documented; [a *.chm Help-file](https://github.com/daishisystems/Daishi.PaySharp/blob/master/Daishi.PaySharp/PaySharp.NET%20API%20DOC.chm) is included with every build. If you prefer to view the API documentation in a web-based format, such as HTML, you can run [the Sandcastle tool](https://sandcastle.codeplex.com/) against any branch in order to generate the requisite files.
+
+**Note**: *You will likely need to [unblock the Help-file](https://github.com/matplotlib/matplotlib/issues/3446) as part of Windows security measures*.
