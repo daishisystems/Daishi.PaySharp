@@ -11,3 +11,16 @@ PaySharp.NET provides features that allow consuming applications and services to
 * DoExpressCheckoutPayment
 
 PaySharp.NET provides both synchronous and asynchronous support for each mechanism.
+## Installation
+Install the NuGet Package:
+```
+PM> Install-Package Daishi.PaySharp
+```
+## Getting Started
+[Register a Business Account with PayPal](https://developer.paypal.com/webapps/developer/applications/accounts) and follow these instructions. PaySharp.NET requires the following prerequisite PayPal metadata:
+* User
+* Password
+* Signature
+* ExpressCheckoutURI
+
+Each PayPal account is associated with a [Secure Merchant ID](https://www.paypal-community.com/t5/About-Business/Where-can-I-find-my-quot-Secure-Merchant-ID-quot/td-p/810000), which can be included in the ```Subject``` field, if for example, your application supports multiple currencies. ```ExpressCheckoutURI``` should refer to [the PayPal Sandbox](https://api-3t.sandbox.paypal.com/nvp) for all non-production environments.
