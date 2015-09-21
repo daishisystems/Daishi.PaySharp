@@ -26,6 +26,7 @@ PM> Install-Package Daishi.PaySharp
 Each PayPal account is associated with a [Secure Merchant ID](https://www.paypal-community.com/t5/About-Business/Where-can-I-find-my-quot-Secure-Merchant-ID-quot/td-p/810000), which can be included in the *Subject* field, if for example, your application supports multiple currencies. *ExpressCheckoutURI* should refer to [the PayPal Sandbox](https://developer.paypal.com/developer/accounts/) for all non-production environments.
 ## Running the Test Harness
 PaySharp.NET is covered by a range of Unit Tests, included with each build. To provide a great degree of reliability, the SDK contains a Test Harness project. This project will execute a full Express Checkout transaction when invoked as follows:
+
 1. Locate *App.config* in **Daishi.PaySharp.TestHarness**
 2. Enter appropriate values for *User*, *Password*, *Signature*, and *Subject* (if applicable)
 3. Run the project (F5)
