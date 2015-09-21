@@ -40,6 +40,7 @@ PaySharp.NET is covered by a range of Unit Tests, included with each build. To p
 11. GetExpressCheckoutDetails is invoked
 12. Press any key when prompted
 13. DoExpressCheckout is invoked, successfully completing the transaction
+
 ## Explanation of Terms
 #### SetExpressCheckout
 Establishes a PayPal session based on Merchant credentials, and returns an Access Token pertaining to that session
