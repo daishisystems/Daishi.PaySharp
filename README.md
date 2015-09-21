@@ -86,3 +86,47 @@ PayPalError payPalError;
 var ok = PayPalUtility.TryParseAccessToken(setExpresscheckout,
     out accessToken, out payPalError);
 ```
+#### GetExpressCheckoutDetails
+```cs
+var getExpressCheckoutDetails = payPalAdapter
+	.GetExpressCheckoutDetails(
+	    new GetExpressCheckoutDetailsPayload {
+	        User = user,
+	        Password = password,
+	        Signature = signature,
+	        Version = "108.0",
+	        AccessToken = accessToken,
+	        Subject = subject,
+	        PayerID = payerID
+	    },
+	    ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
+
+CustomerDetails customerDetails;
+
+ok = PayPalUtility.TryParseCustomerDetails(
+	getExpressCheckoutDetails, out customerDetails,
+	out payPalError);
+```
+#### DoExpressCheckoutPayment
+```cs
+var doExpressCheckoutPayment = payPalAdapter
+    .DoExpressCheckoutPayment(
+        new DoExpressCheckoutPaymentPayload {
+            User = user,
+            Password = password,
+            Signature = signature,
+            Version = "108.0",
+            AccessToken = accessToken,
+            Subject = subject,
+            PayerID = payerID,
+            PaymentRequestAmt = "19.95",
+            PaymentRequestCurrencyCode = "EUR"
+        },
+        ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
+
+TransactionResults transactionResults;
+
+ok = PayPalUtility.TryParseTransactionResults(
+    doExpressCheckoutPayment, out transactionResults,
+    out payPalError);
+```
