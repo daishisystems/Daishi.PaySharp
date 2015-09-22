@@ -11,6 +11,8 @@ PaySharp.NET provides features that allow consuming applications and services to
 * *DoExpressCheckoutPayment*
 
 PaySharp.NET provides both synchronous and asynchronous support for each mechanism.
+
+![Express Checkout](https://dl.dropboxusercontent.com/u/26042707/PaySharp.gif)
 ## Installation
 Install the [NuGet Package](https://www.nuget.org/packages/Daishi.PaySharp/):
 ```
@@ -48,11 +50,13 @@ PaySharp.NET is covered by a range of Unit Tests, included with each build. To p
 9. Return to the Test Harness Command Prompt having copied the PayerID parameter from Step 8
 10. Press any key when prompted, and input the PayerID parameter from Step 8
 11. GetExpressCheckoutDetails is invoked
+
 ![GetExpressCheckoutDetails](https://dl.dropboxusercontent.com/u/26042707/PaySharp%20Test%20Harness%20Step%202.PNG)
+
 12. Press any key when prompted
 13. DoExpressCheckoutPayment is invoked, successfully completing the transaction
-![GetExpressCheckoutDetails](https://dl.dropboxusercontent.com/u/26042707/PaySharp%20Test%20Harness%20Step%203.PNG)
 
+![GetExpressCheckoutDetails](https://dl.dropboxusercontent.com/u/26042707/PaySharp%20Test%20Harness%20Step%203.PNG)
 ## Sample Code
 #### SetExpressCheckout
 ```cs
