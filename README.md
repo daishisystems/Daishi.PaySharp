@@ -95,23 +95,23 @@ var ok = PayPalUtility.TryParseAccessToken(setExpresscheckout,
 #### GetExpressCheckoutDetails
 ```cs
 var getExpressCheckoutDetails = payPalAdapter
-	.GetExpressCheckoutDetails(
-	    new GetExpressCheckoutDetailsPayload {
-	        User = user,
-	        Password = password,
-	        Signature = signature,
-	        Version = "108.0",
-	        AccessToken = accessToken,
-	        Subject = subject,
-	        PayerID = payerID
-	    },
-	    ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
+    .GetExpressCheckoutDetails(
+        new GetExpressCheckoutDetailsPayload {
+            User = user,
+            Password = password,
+            Signature = signature,
+            Version = "108.0",
+            AccessToken = accessToken,
+            Subject = subject,
+            PayerID = payerID
+        },
+        ConfigurationManager.AppSettings["ExpressCheckoutURI"]);
 
 CustomerDetails customerDetails;
 
 ok = PayPalUtility.TryParseCustomerDetails(
-	getExpressCheckoutDetails, out customerDetails,
-	out payPalError);
+    getExpressCheckoutDetails, out customerDetails,
+    out payPalError);
 ```
 #### DoExpressCheckoutPayment
 ```cs
@@ -140,3 +140,12 @@ ok = PayPalUtility.TryParseTransactionResults(
 The API is fully documented; [a *.chm Help-file](https://github.com/daishisystems/Daishi.PaySharp/blob/master/Daishi.PaySharp/PaySharp.NET%20API%20DOC.chm) is included with every build. If you prefer to view the API documentation in a web-based format, such as HTML, you can run [the Sandcastle tool](https://sandcastle.codeplex.com/) against any branch in order to generate the requisite files.
 
 **Note**: *You will likely need to [unblock the Help-file](https://github.com/matplotlib/matplotlib/issues/3446) as part of Windows security measures*.
+## FAQ
+**Does this library support C# Async?**
+> Yes, there are asynchronous equivalents of each synchronous method exposed by the SDK.
+**I get weird errors from PayPal**
+> Generally, PayPal issues intuitive error messages. Less intuitive error messages are usually returned as a result of uninitialized payload properties. In the case of SetExpressCheckout, scan through the properties in SetExpressCheckoutPayload and ensure that each property is set to an appropriate value.
+**Can I Fork this project**
+> By all means. I’m happy to contribute to any extensions.
+**What’s next?**
+>An set of extensible components that make it easier for developers to create and augment objects proprietary to downstream systems, such as Fraud Prevention, Booking & Reservation, and Back-office Accounting systems.
