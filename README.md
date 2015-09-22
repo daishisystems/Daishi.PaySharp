@@ -47,11 +47,11 @@ PaySharp.NET is covered by a range of Unit Tests, included with each build. To p
 
 ![SetExpressCheckout](https://dl.dropboxusercontent.com/u/26042707/PaySharp%20Test%20Harness%20Step%201.PNG)
 
-6. Open your web browser and navigate to https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-17W08351SC6397012. Note that the token parameter is set to the value returned in Step 5
+6. Open your web browser and navigate to https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-1UR71602HJ0009422. Note that the token parameter is set to the value previously returned in Step 5
 7. Login to PayPal
-8. Your browser will redirect to http://www.example.com/success.html?token=EC-17W08351SC6397012&PayerID=783CTW8EXK5AE. Note the PayerID parameter
-9. Return to the Test Harness Command Prompt having copied the PayerID parameter from Step 8
-10. Press any key when prompted, and input the PayerID parameter from Step 8
+8. Your browser will redirect to http://www.example.com/success.html?token=EC-1UR71602HJ0009422&PayerID=783CTW8EXK5AE. Note the PayerID parameter
+9. Return to the Test Harness Command Prompt having copied the PayerID parameter from Step 3
+10. Press any key when prompted, and input the PayerID parameter from Step 3
 11. GetExpressCheckoutDetails is invoked
 
 ![GetExpressCheckoutDetails](https://dl.dropboxusercontent.com/u/26042707/PaySharp%20Test%20Harness%20Step%202.PNG)
