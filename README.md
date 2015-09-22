@@ -152,7 +152,11 @@ The API is fully documented; [a *.chm Help-file](https://github.com/daishisystem
 
 **What’s next?**
 >An set of extensible components that make it easier for developers to create and augment objects proprietary to downstream systems, such as Fraud Prevention, Booking & Reservation, and Back-office Accounting systems.
+
 ## Contact the Developer
 Please reach out and contact me for questions, suggestions, or to just talk tech in general.
 <a href="http://insidethecpu.com/feed/">![RSS](https://dl.dropboxusercontent.com/u/26042707/rss.png)</a>
 <a href="https://twitter.com/daishisystems">![Twitter](https://dl.dropboxusercontent.com/u/26042707/twitter.png)</a>
+<a href="https://www.linkedin.com/in/daishisystems">![LinkedIn](https://dl.dropboxusercontent.com/u/26042707/linkedin.png)</a>
+<a href="https://plus.google.com/102806071104797194504/posts">![Google+](https://dl.dropboxusercontent.com/u/26042707/g.png)</a>
+<a href="https://www.youtube.com/user/daishisystems">![YouTube](https://dl.dropboxusercontent.com/u/26042707/youtube.png)</a>
