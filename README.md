@@ -27,13 +27,13 @@ PM> Install-Package Daishi.PaySharp
 
 Each PayPal account is also associated with a [Secure Merchant ID](https://www.paypal-community.com/t5/About-Business/Where-can-I-find-my-quot-Secure-Merchant-ID-quot/td-p/810000), which can be included in the *Subject* field (*see code samples below*), if for example, your application supports multiple currencies. *ExpressCheckoutURI* should refer to [the PayPal Sandbox](https://developer.paypal.com/developer/accounts/) for all non-production environments.
 ## Explanation of Terms
-##### SetExpressCheckout
+#### SetExpressCheckout
 > Establishes a PayPal session based on Merchant credentials, and returns an Access Token pertaining to that session.
 
-##### GetExpresscheckoutDetails
+#### GetExpresscheckoutDetails
 > Returns a definitive collection of metadata that describes the PayPal user (*name*, *address*, etc.).
 
-##### DoExpressCheckoutPayment
+#### DoExpressCheckoutPayment
 > Collects the payment by transferring the transaction amount from the User's account to the Merchant account.
 
 ## Running the Test Harness
