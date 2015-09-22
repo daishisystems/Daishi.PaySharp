@@ -144,7 +144,7 @@ namespace Daishi.PaySharp.TestHarness {
 
                 #endregion
 
-                Console.WriteLine(
+                Console.Write(
                     "Press any key to invoke DOEXPRESSCHECKOUTPAYMENT...");
                 Console.ReadLine();
 
