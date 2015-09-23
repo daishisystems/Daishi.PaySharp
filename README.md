@@ -20,7 +20,7 @@ PaySharp.NET provides both synchronous and asynchronous support for each mechani
 ```
 PM> Install-Package Daishi.PaySharp
 ```
-## Getting Started
+## Getting Started with PayPal Express Checkout
 [Register a Business Account with PayPal](https://developer.paypal.com/webapps/developer/applications/accounts). PaySharp.NET requires the following prerequisite PayPal metadata:
 * *Username*
 * *Password*
