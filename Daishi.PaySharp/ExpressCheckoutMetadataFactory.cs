@@ -31,7 +31,6 @@ namespace Daishi.PaySharp
                 {"PAYMENTREQUEST_0_PAYMENTACTION", payload.Action},
                 {"PAYMENTREQUEST_0_AMT", payload.Amount.ToString(CultureInfo.InvariantCulture)},
                 {"PAYMENTREQUEST_0_CURRENCYCODE", payload.CurrencyCode},
-                {"PAYMENTREQUEST_0_TRANSACTIONID", payload.TransactionId},
                 {"MAXAMT", payload.Amount.ToString(CultureInfo.InvariantCulture)},
                 {"L_PAYMENTREQUEST_0_NAME0", payload.PaymentRequestName},
                 {"L_PAYMENTREQUEST_0_DESC0", payload.PaymentRequestDescription},

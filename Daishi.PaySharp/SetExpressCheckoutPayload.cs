@@ -13,9 +13,6 @@ namespace Daishi.PaySharp
         /// <summary>Gets or sets the amount.</summary>
         /// <value>The amount.</value>
         public string Amount { get; set; }
-        /// <summary>Gets or sets the transaction id.</summary>
-        /// <value>The transaction id.</value>
-        public string TransactionId { get; set; }
         /// <summary>Gets or sets the currency code.</summary>
         /// <value>The currency code.</value>
         public string CurrencyCode { get; set; }
