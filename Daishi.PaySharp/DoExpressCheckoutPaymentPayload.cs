@@ -1,17 +1,12 @@
-﻿using System.Runtime.Remoting.Messaging;
-
-namespace Daishi.PaySharp
-{
+﻿namespace Daishi.PaySharp {
     /// <summary>
     ///     <summary>Metadata necessary to facilitate successful PayPal
     ///         <b>DoExpressCheckoutPayment</b> calls.</summary>
     /// </summary>
-    public class DoExpressCheckoutPaymentPayload : ExpressCheckoutPayload
-    {
+    public class DoExpressCheckoutPaymentPayload : ExpressCheckoutPayload {
         /// <summary>Gets the method.</summary>
         /// <value>The method.</value>
-        public override string Method
-        {
+        public override string Method {
             get { return "DoExpressCheckoutPayment"; }
         }
         /// <summary>Gets or sets the access token.</summary>
@@ -22,8 +17,7 @@ namespace Daishi.PaySharp
         public string PayerID { get; set; }
         /// <summary>Gets or sets the payment request payment action.</summary>
         /// <value>The payment request payment action.</value>
-        public string PaymentRequestPaymentAction
-        {
+        public string PaymentRequestPaymentAction {
             get { return "SALE"; }
         }
         /// <summary>Gets or sets the payment request amt.</summary>

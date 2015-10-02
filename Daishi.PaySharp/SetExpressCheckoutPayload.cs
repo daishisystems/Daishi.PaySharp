@@ -1,13 +1,10 @@
-namespace Daishi.PaySharp
-{
+namespace Daishi.PaySharp {
     /// <summary>Metadata necessary to facilitate a successful PayPal
     ///     <b>SetExpressCheckout</b> call.</summary>
-    public class SetExpressCheckoutPayload : ExpressCheckoutPayload
-    {
+    public class SetExpressCheckoutPayload : ExpressCheckoutPayload {
         /// <summary>Gets or sets the action.</summary>
         /// <value>The action.</value>
-        public string Action
-        {
+        public string Action {
             get { return "Sale"; }
         }
         /// <summary>Gets or sets the amount.</summary>
@@ -30,8 +27,7 @@ namespace Daishi.PaySharp
         public string RequireBillingAddress { get; set; }
         /// <summary>Gets or sets the no shipping.</summary>
         /// <value>The no shipping.</value>
-        public string NoShipping
-        {
+        public string NoShipping {
             get { return "1"; }
         }
         /// <summary>Gets or sets the name of the payment request.</summary>
@@ -42,14 +38,12 @@ namespace Daishi.PaySharp
         public string PaymentRequestDescription { get; set; }
         /// <summary>Gets or sets the payment request quantity.</summary>
         /// <value>The payment request quantity.</value>
-        public string PaymentRequestQuantity
-        {
+        public string PaymentRequestQuantity {
             get { return "1"; }
         }
         /// <summary>Gets or sets the method.</summary>
         /// <value>The method.</value>
-        public override string Method
-        {
+        public override string Method {
             get { return "SetExpressCheckout"; }
         }
     }

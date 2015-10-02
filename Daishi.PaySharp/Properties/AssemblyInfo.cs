@@ -10,7 +10,9 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly: AssemblyTitle("PaySharp.NET")]
-[assembly: AssemblyDescription("A PayPal SDK targeting the .NET Framework (4.5+), written in C#.")]
+[assembly:
+    AssemblyDescription(
+        "A PayPal SDK targeting the .NET Framework (4.5+), written in C#.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Paul Mooney")]
 [assembly: AssemblyProduct("PaySharp.NET")]

@@ -7,14 +7,11 @@ using System.Web;
 
 #endregion
 
-namespace Daishi.PaySharp
-{
-    internal static class ExpressCheckoutMetadataFactory
-    {
+namespace Daishi.PaySharp {
+    internal static class ExpressCheckoutMetadataFactory {
 
         public static NameValueCollection CreateSetExpressCheckoutMetadata(
-            SetExpressCheckoutPayload payload)
-        {
+            SetExpressCheckoutPayload payload) {
 
             return new NameValueCollection {
                 {"METHOD", payload.Method},
@@ -28,20 +25,24 @@ namespace Daishi.PaySharp
                 {"CANCELURL", payload.CancelUrl},
                 {"REQBILLINGADDRESS", payload.RequireBillingAddress},
                 {"NOSHIPPING", payload.NoShipping},
-                {"PAYMENTREQUEST_0_PAYMENTACTION", payload.Action},
-                {"PAYMENTREQUEST_0_AMT", payload.Amount.ToString(CultureInfo.InvariantCulture)},
-                {"PAYMENTREQUEST_0_CURRENCYCODE", payload.CurrencyCode},
-                {"MAXAMT", payload.Amount.ToString(CultureInfo.InvariantCulture)},
+                {"PAYMENTREQUEST_0_PAYMENTACTION", payload.Action}, {
+                    "PAYMENTREQUEST_0_AMT",
+                    payload.Amount.ToString(CultureInfo.InvariantCulture)
+                },
+                {"PAYMENTREQUEST_0_CURRENCYCODE", payload.CurrencyCode}, {
+                    "MAXAMT", payload.Amount.ToString(CultureInfo.InvariantCulture)
+                },
                 {"L_PAYMENTREQUEST_0_NAME0", payload.PaymentRequestName},
-                {"L_PAYMENTREQUEST_0_DESC0", payload.PaymentRequestDescription},
-                {"L_PAYMENTREQUEST_0_AMT0", payload.Amount.ToString(CultureInfo.InvariantCulture)},
+                {"L_PAYMENTREQUEST_0_DESC0", payload.PaymentRequestDescription}, {
+                    "L_PAYMENTREQUEST_0_AMT0",
+                    payload.Amount.ToString(CultureInfo.InvariantCulture)
+                },
                 {"L_PAYMENTREQUEST_0_QTY0", payload.PaymentRequestQuantity}
             };
         }
 
         public static string CreateGetExpressCheckoutDetailsQueryString(
-            GetExpressCheckoutDetailsPayload payload)
-        {
+            GetExpressCheckoutDetailsPayload payload) {
 
             var getExpressCheckoutDetailsMetadata = new NameValueCollection {
                 {"METHOD", payload.Method},
@@ -62,8 +63,7 @@ namespace Daishi.PaySharp
         }
 
         public static string CreateDoExpressCheckoutPaymentQueryString(
-            DoExpressCheckoutPaymentPayload payload)
-        {
+            DoExpressCheckoutPaymentPayload payload) {
 
             var doExpressCheckoutPaymentMetadata = new NameValueCollection {
                 {"METHOD", payload.Method},
