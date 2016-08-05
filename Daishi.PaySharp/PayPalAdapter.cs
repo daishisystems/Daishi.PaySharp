@@ -38,7 +38,7 @@ namespace Daishi.PaySharp {
                     payload);
 
             using (var webClient = new WebClient()) {
-
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 var response = webClient.UploadValues(expressCheckoutURI,
                     setExpressCheckoutMetadata);
                 return encoding.GetString(response);
@@ -69,7 +69,7 @@ namespace Daishi.PaySharp {
                     payload);
 
             using (var webClient = new WebClient()) {
-
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 var response =
                     await webClient.UploadValuesTaskAsync(expressCheckoutURI,
                         setExpressCheckoutMetadata);
@@ -99,7 +99,7 @@ namespace Daishi.PaySharp {
                     .CreateGetExpressCheckoutDetailsQueryString(payload);
 
             using (var webClient = new WebClient()) {
-
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 return webClient.DownloadString(
                     new Uri(string.Concat(expressCheckoutUri, "?", queryString)));
             }
@@ -128,7 +128,7 @@ namespace Daishi.PaySharp {
                     .CreateGetExpressCheckoutDetailsQueryString(payload);
 
             using (var webClient = new WebClient()) {
-
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 return await webClient.DownloadStringTaskAsync(
                     new Uri(string.Concat(expressCheckoutUri, "?",
                         queryString)));
@@ -158,7 +158,7 @@ namespace Daishi.PaySharp {
                     .CreateDoExpressCheckoutPaymentQueryString(payload);
 
             using (var webClient = new WebClient()) {
-
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 return webClient.DownloadString(
                     new Uri(string.Concat(expressCheckoutUri, "?", queryString)));
             }
@@ -188,7 +188,7 @@ namespace Daishi.PaySharp {
                     .CreateDoExpressCheckoutPaymentQueryString(payload);
 
             using (var webClient = new WebClient()) {
-
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 return await webClient.DownloadStringTaskAsync(
                     new Uri(string.Concat(expressCheckoutUri, "?", queryString)));
             }
